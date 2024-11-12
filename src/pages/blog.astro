@@ -1,0 +1,1955 @@
+---
+import Layout from "../layouts/_layout.astro"
+
+---
+<!DOCTYPE html><html lang="en-US"><head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog - Cloud Hawk</title><style id="wp-emoji-styles-inline-css">
+	img.wp-smiley,
+	img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<style id="classic-theme-styles-inline-css">
+	/*! This file is auto-generated */
+	.wp-block-button__link {
+		color: #fff;
+		background-color: #32373c;
+		border-radius: 9999px;
+		box-shadow: none;
+		text-decoration: none;
+		padding: calc(.667em + 2px) calc(1.333em + 2px);
+		font-size: 1.125em
+	}
+
+	.wp-block-file__button {
+		background: #32373c;
+		color: #fff;
+		text-decoration: none
+	}
+</style>
+
+<style id="global-styles-inline-css">
+	:root {
+		--wp--preset--aspect-ratio--square: 1;
+		--wp--preset--aspect-ratio--4-3: 4/3;
+		--wp--preset--aspect-ratio--3-4: 3/4;
+		--wp--preset--aspect-ratio--3-2: 3/2;
+		--wp--preset--aspect-ratio--2-3: 2/3;
+		--wp--preset--aspect-ratio--16-9: 16/9;
+		--wp--preset--aspect-ratio--9-16: 9/16;
+		--wp--preset--color--black: #000000;
+		--wp--preset--color--cyan-bluish-gray: #abb8c3;
+		--wp--preset--color--white: #ffffff;
+		--wp--preset--color--pale-pink: #f78da7;
+		--wp--preset--color--vivid-red: #cf2e2e;
+		--wp--preset--color--luminous-vivid-orange: #ff6900;
+		--wp--preset--color--luminous-vivid-amber: #fcb900;
+		--wp--preset--color--light-green-cyan: #7bdcb5;
+		--wp--preset--color--vivid-green-cyan: #00d084;
+		--wp--preset--color--pale-cyan-blue: #8ed1fc;
+		--wp--preset--color--vivid-cyan-blue: #0693e3;
+		--wp--preset--color--vivid-purple: #9b51e0;
+		--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg, rgba(6, 147, 227, 1) 0%, rgb(155, 81, 224) 100%);
+		--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg, rgb(122, 220, 180) 0%, rgb(0, 208, 130) 100%);
+		--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg, rgba(252, 185, 0, 1) 0%, rgba(255, 105, 0, 1) 100%);
+		--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg, rgba(255, 105, 0, 1) 0%, rgb(207, 46, 46) 100%);
+		--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg, rgb(238, 238, 238) 0%, rgb(169, 184, 195) 100%);
+		--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg, rgb(74, 234, 220) 0%, rgb(151, 120, 209) 20%, rgb(207, 42, 186) 40%, rgb(238, 44, 130) 60%, rgb(251, 105, 98) 80%, rgb(254, 248, 76) 100%);
+		--wp--preset--gradient--blush-light-purple: linear-gradient(135deg, rgb(255, 206, 236) 0%, rgb(152, 150, 240) 100%);
+		--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg, rgb(254, 205, 165) 0%, rgb(254, 45, 45) 50%, rgb(107, 0, 62) 100%);
+		--wp--preset--gradient--luminous-dusk: linear-gradient(135deg, rgb(255, 203, 112) 0%, rgb(199, 81, 192) 50%, rgb(65, 88, 208) 100%);
+		--wp--preset--gradient--pale-ocean: linear-gradient(135deg, rgb(255, 245, 203) 0%, rgb(182, 227, 212) 50%, rgb(51, 167, 181) 100%);
+		--wp--preset--gradient--electric-grass: linear-gradient(135deg, rgb(202, 248, 128) 0%, rgb(113, 206, 126) 100%);
+		--wp--preset--gradient--midnight: linear-gradient(135deg, rgb(2, 3, 129) 0%, rgb(40, 116, 252) 100%);
+		--wp--preset--font-size--small: 13px;
+		--wp--preset--font-size--medium: 20px;
+		--wp--preset--font-size--large: 36px;
+		--wp--preset--font-size--x-large: 42px;
+		--wp--preset--spacing--20: 0.44rem;
+		--wp--preset--spacing--30: 0.67rem;
+		--wp--preset--spacing--40: 1rem;
+		--wp--preset--spacing--50: 1.5rem;
+		--wp--preset--spacing--60: 2.25rem;
+		--wp--preset--spacing--70: 3.38rem;
+		--wp--preset--spacing--80: 5.06rem;
+		--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);
+		--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);
+		--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);
+		--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);
+		--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);
+	}
+
+	:where(.is-layout-flex) {
+		gap: 0.5em;
+	}
+
+	:where(.is-layout-grid) {
+		gap: 0.5em;
+	}
+
+	body .is-layout-flex {
+		display: flex;
+	}
+
+	.is-layout-flex {
+		flex-wrap: wrap;
+		align-items: center;
+	}
+
+	.is-layout-flex> :is(*, div) {
+		margin: 0;
+	}
+
+	body .is-layout-grid {
+		display: grid;
+	}
+
+	.is-layout-grid> :is(*, div) {
+		margin: 0;
+	}
+
+	:where(.wp-block-columns.is-layout-flex) {
+		gap: 2em;
+	}
+
+	:where(.wp-block-columns.is-layout-grid) {
+		gap: 2em;
+	}
+
+	:where(.wp-block-post-template.is-layout-flex) {
+		gap: 1.25em;
+	}
+
+	:where(.wp-block-post-template.is-layout-grid) {
+		gap: 1.25em;
+	}
+
+	.has-black-color {
+		color: var(--wp--preset--color--black) !important;
+	}
+
+	.has-cyan-bluish-gray-color {
+		color: var(--wp--preset--color--cyan-bluish-gray) !important;
+	}
+
+	.has-white-color {
+		color: var(--wp--preset--color--white) !important;
+	}
+
+	.has-pale-pink-color {
+		color: var(--wp--preset--color--pale-pink) !important;
+	}
+
+	.has-vivid-red-color {
+		color: var(--wp--preset--color--vivid-red) !important;
+	}
+
+	.has-luminous-vivid-orange-color {
+		color: var(--wp--preset--color--luminous-vivid-orange) !important;
+	}
+
+	.has-luminous-vivid-amber-color {
+		color: var(--wp--preset--color--luminous-vivid-amber) !important;
+	}
+
+	.has-light-green-cyan-color {
+		color: var(--wp--preset--color--light-green-cyan) !important;
+	}
+
+	.has-vivid-green-cyan-color {
+		color: var(--wp--preset--color--vivid-green-cyan) !important;
+	}
+
+	.has-pale-cyan-blue-color {
+		color: var(--wp--preset--color--pale-cyan-blue) !important;
+	}
+
+	.has-vivid-cyan-blue-color {
+		color: var(--wp--preset--color--vivid-cyan-blue) !important;
+	}
+
+	.has-vivid-purple-color {
+		color: var(--wp--preset--color--vivid-purple) !important;
+	}
+
+	.has-black-background-color {
+		background-color: var(--wp--preset--color--black) !important;
+	}
+
+	.has-cyan-bluish-gray-background-color {
+		background-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+	}
+
+	.has-white-background-color {
+		background-color: var(--wp--preset--color--white) !important;
+	}
+
+	.has-pale-pink-background-color {
+		background-color: var(--wp--preset--color--pale-pink) !important;
+	}
+
+	.has-vivid-red-background-color {
+		background-color: var(--wp--preset--color--vivid-red) !important;
+	}
+
+	.has-luminous-vivid-orange-background-color {
+		background-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+	}
+
+	.has-luminous-vivid-amber-background-color {
+		background-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+	}
+
+	.has-light-green-cyan-background-color {
+		background-color: var(--wp--preset--color--light-green-cyan) !important;
+	}
+
+	.has-vivid-green-cyan-background-color {
+		background-color: var(--wp--preset--color--vivid-green-cyan) !important;
+	}
+
+	.has-pale-cyan-blue-background-color {
+		background-color: var(--wp--preset--color--pale-cyan-blue) !important;
+	}
+
+	.has-vivid-cyan-blue-background-color {
+		background-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+	}
+
+	.has-vivid-purple-background-color {
+		background-color: var(--wp--preset--color--vivid-purple) !important;
+	}
+
+	.has-black-border-color {
+		border-color: var(--wp--preset--color--black) !important;
+	}
+
+	.has-cyan-bluish-gray-border-color {
+		border-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+	}
+
+	.has-white-border-color {
+		border-color: var(--wp--preset--color--white) !important;
+	}
+
+	.has-pale-pink-border-color {
+		border-color: var(--wp--preset--color--pale-pink) !important;
+	}
+
+	.has-vivid-red-border-color {
+		border-color: var(--wp--preset--color--vivid-red) !important;
+	}
+
+	.has-luminous-vivid-orange-border-color {
+		border-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+	}
+
+	.has-luminous-vivid-amber-border-color {
+		border-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+	}
+
+	.has-light-green-cyan-border-color {
+		border-color: var(--wp--preset--color--light-green-cyan) !important;
+	}
+
+	.has-vivid-green-cyan-border-color {
+		border-color: var(--wp--preset--color--vivid-green-cyan) !important;
+	}
+
+	.has-pale-cyan-blue-border-color {
+		border-color: var(--wp--preset--color--pale-cyan-blue) !important;
+	}
+
+	.has-vivid-cyan-blue-border-color {
+		border-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+	}
+
+	.has-vivid-purple-border-color {
+		border-color: var(--wp--preset--color--vivid-purple) !important;
+	}
+
+	.has-vivid-cyan-blue-to-vivid-purple-gradient-background {
+		background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;
+	}
+
+	.has-light-green-cyan-to-vivid-green-cyan-gradient-background {
+		background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;
+	}
+
+	.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background {
+		background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;
+	}
+
+	.has-luminous-vivid-orange-to-vivid-red-gradient-background {
+		background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;
+	}
+
+	.has-very-light-gray-to-cyan-bluish-gray-gradient-background {
+		background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;
+	}
+
+	.has-cool-to-warm-spectrum-gradient-background {
+		background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;
+	}
+
+	.has-blush-light-purple-gradient-background {
+		background: var(--wp--preset--gradient--blush-light-purple) !important;
+	}
+
+	.has-blush-bordeaux-gradient-background {
+		background: var(--wp--preset--gradient--blush-bordeaux) !important;
+	}
+
+	.has-luminous-dusk-gradient-background {
+		background: var(--wp--preset--gradient--luminous-dusk) !important;
+	}
+
+	.has-pale-ocean-gradient-background {
+		background: var(--wp--preset--gradient--pale-ocean) !important;
+	}
+
+	.has-electric-grass-gradient-background {
+		background: var(--wp--preset--gradient--electric-grass) !important;
+	}
+
+	.has-midnight-gradient-background {
+		background: var(--wp--preset--gradient--midnight) !important;
+	}
+
+	.has-small-font-size {
+		font-size: var(--wp--preset--font-size--small) !important;
+	}
+
+	.has-medium-font-size {
+		font-size: var(--wp--preset--font-size--medium) !important;
+	}
+
+	.has-large-font-size {
+		font-size: var(--wp--preset--font-size--large) !important;
+	}
+
+	.has-x-large-font-size {
+		font-size: var(--wp--preset--font-size--x-large) !important;
+	}
+
+	:where(.wp-block-post-template.is-layout-flex) {
+		gap: 1.25em;
+	}
+
+	:where(.wp-block-post-template.is-layout-grid) {
+		gap: 1.25em;
+	}
+
+	:where(.wp-block-columns.is-layout-flex) {
+		gap: 2em;
+	}
+
+	:where(.wp-block-columns.is-layout-grid) {
+		gap: 2em;
+	}
+
+	:root :where(.wp-block-pullquote) {
+		font-size: 1.5em;
+		line-height: 1.6;
+	}
+</style>
+<link rel="stylesheet" id="contact-form-7-css" href="/css/styles.css" media="all">
+<style id="contact-form-7-inline-css">
+	.wpcf7 .wpcf7-recaptcha iframe {
+		margin-bottom: 0;
+	}
+
+	.wpcf7 .wpcf7-recaptcha[data-align="center"]>div {
+		margin: 0 auto;
+	}
+
+	.wpcf7 .wpcf7-recaptcha[data-align="right"]>div {
+		margin: 0 0 0 auto;
+	}
+</style>
+<link rel="stylesheet" id="Cloud Hawk-style-main-css" href="/css/style.min.css" media="all">
+
+<script is:inline src="/js/jquery.js"></script>
+<script is:inline src="/js/scripts.min.js"></script>
+<script is:inline src="/js/custom_scripts.js"></script>
+<script is:inline src="/js/particleslider.js"></script>
+
+<style type="text/css">
+	div.nsl-container[data-align="left"] {
+		text-align: left;
+	}
+
+	div.nsl-container[data-align="center"] {
+		text-align: center;
+	}
+
+	div.nsl-container[data-align="right"] {
+		text-align: right;
+	}
+
+
+	div.nsl-container div.nsl-container-buttons a[data-plugin="nsl"] {
+		text-decoration: none;
+		box-shadow: none;
+		border: 0;
+	}
+
+	div.nsl-container .nsl-container-buttons {
+		display: flex;
+		padding: 5px 0;
+	}
+
+	div.nsl-container.nsl-container-block .nsl-container-buttons {
+		display: inline-grid;
+		grid-template-columns: minmax(145px, auto);
+	}
+
+	div.nsl-container-block-fullwidth .nsl-container-buttons {
+		flex-flow: column;
+		align-items: center;
+	}
+
+	div.nsl-container-block-fullwidth .nsl-container-buttons a,
+	div.nsl-container-block .nsl-container-buttons a {
+		flex: 1 1 auto;
+		display: block;
+		margin: 5px 0;
+		width: 100%;
+	}
+
+	div.nsl-container-inline {
+		margin: -5px;
+		text-align: left;
+	}
+
+	div.nsl-container-inline .nsl-container-buttons {
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	div.nsl-container-inline .nsl-container-buttons a {
+		margin: 5px;
+		display: inline-block;
+	}
+
+	div.nsl-container-grid .nsl-container-buttons {
+		flex-flow: row;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+	div.nsl-container-grid .nsl-container-buttons a {
+		flex: 1 1 auto;
+		display: block;
+		margin: 5px;
+		max-width: 280px;
+		width: 100%;
+	}
+
+	@media only screen and (min-width: 650px) {
+		div.nsl-container-grid .nsl-container-buttons a {
+			width: auto;
+		}
+	}
+
+	div.nsl-container .nsl-button {
+		cursor: pointer;
+		vertical-align: top;
+		border-radius: 4px;
+	}
+
+	div.nsl-container .nsl-button-default {
+		color: #fff;
+		display: flex;
+	}
+
+	div.nsl-container .nsl-button-icon {
+		display: inline-block;
+	}
+
+	div.nsl-container .nsl-button-svg-container {
+		flex: 0 0 auto;
+		padding: 8px;
+		display: flex;
+		align-items: center;
+	}
+
+	div.nsl-container svg {
+		height: 24px;
+		width: 24px;
+		vertical-align: top;
+	}
+
+	div.nsl-container .nsl-button-default div.nsl-button-label-container {
+		margin: 0 24px 0 12px;
+		padding: 10px 0;
+		font-family: Helvetica, Arial, sans-serif;
+		font-size: 16px;
+		line-height: 20px;
+		letter-spacing: .25px;
+		overflow: hidden;
+		text-align: center;
+		text-overflow: clip;
+		white-space: nowrap;
+		flex: 1 1 auto;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-transform: none;
+		display: inline-block;
+	}
+
+	div.nsl-container .nsl-button-google[data-skin="dark"] .nsl-button-svg-container {
+		margin: 1px;
+		padding: 7px;
+		border-radius: 3px;
+		background: #fff;
+	}
+
+	div.nsl-container .nsl-button-google[data-skin="light"] {
+		border-radius: 1px;
+		box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .25);
+		color: RGBA(0, 0, 0, 0.54);
+	}
+
+	div.nsl-container .nsl-button-apple .nsl-button-svg-container {
+		padding: 0 6px;
+	}
+
+	div.nsl-container .nsl-button-apple .nsl-button-svg-container svg {
+		height: 40px;
+		width: auto;
+	}
+
+	div.nsl-container .nsl-button-apple[data-skin="light"] {
+		color: #000;
+		box-shadow: 0 0 0 1px #000;
+	}
+
+	div.nsl-container .nsl-button-facebook[data-skin="white"] {
+		color: #000;
+		box-shadow: inset 0 0 0 1px #000;
+	}
+
+	div.nsl-container .nsl-button-facebook[data-skin="light"] {
+		color: #1877F2;
+		box-shadow: inset 0 0 0 1px #1877F2;
+	}
+
+	div.nsl-container .nsl-button-spotify[data-skin="white"] {
+		color: #191414;
+		box-shadow: inset 0 0 0 1px #191414;
+	}
+
+	div.nsl-container .nsl-button-apple div.nsl-button-label-container {
+		font-size: 17px;
+		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	}
+
+	div.nsl-container .nsl-button-slack div.nsl-button-label-container {
+		font-size: 17px;
+		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	}
+
+	div.nsl-container .nsl-button-slack[data-skin="light"] {
+		color: #000000;
+		box-shadow: inset 0 0 0 1px #DDDDDD;
+	}
+
+	div.nsl-container .nsl-button-tiktok[data-skin="light"] {
+		color: #161823;
+		box-shadow: 0 0 0 1px rgba(22, 24, 35, 0.12);
+	}
+
+
+	div.nsl-container .nsl-button-kakao {
+		color: rgba(0, 0, 0, 0.85);
+	}
+
+	.nsl-clear {
+		clear: both;
+	}
+
+	.nsl-container {
+		clear: both;
+	}
+
+	.nsl-disabled-provider .nsl-button {
+		filter: grayscale(1);
+		opacity: 0.8;
+	}
+
+	/*Button align start*/
+
+	div.nsl-container-inline[data-align="left"] .nsl-container-buttons {
+		justify-content: flex-start;
+	}
+
+	div.nsl-container-inline[data-align="center"] .nsl-container-buttons {
+		justify-content: center;
+	}
+
+	div.nsl-container-inline[data-align="right"] .nsl-container-buttons {
+		justify-content: flex-end;
+	}
+
+
+	div.nsl-container-grid[data-align="left"] .nsl-container-buttons {
+		justify-content: flex-start;
+	}
+
+	div.nsl-container-grid[data-align="center"] .nsl-container-buttons {
+		justify-content: center;
+	}
+
+	div.nsl-container-grid[data-align="right"] .nsl-container-buttons {
+		justify-content: flex-end;
+	}
+
+	div.nsl-container-grid[data-align="space-around"] .nsl-container-buttons {
+		justify-content: space-around;
+	}
+
+	div.nsl-container-grid[data-align="space-between"] .nsl-container-buttons {
+		justify-content: space-between;
+	}
+
+	/* Button align end*/
+
+	/* Redirect */
+
+	#nsl-redirect-overlay {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		position: fixed;
+		z-index: 1000000;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		backdrop-filter: blur(1px);
+		background-color: RGBA(0, 0, 0, .32);
+		;
+	}
+
+	#nsl-redirect-overlay-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-color: white;
+		padding: 30px;
+		border-radius: 10px;
+	}
+
+	#nsl-redirect-overlay-spinner {
+		content: '';
+		display: block;
+		margin: 20px;
+		border: 9px solid RGBA(0, 0, 0, .6);
+		border-top: 9px solid #fff;
+		border-radius: 50%;
+		box-shadow: inset 0 0 0 1px RGBA(0, 0, 0, .6), 0 0 0 1px RGBA(0, 0, 0, .6);
+		width: 40px;
+		height: 40px;
+		animation: nsl-loader-spin 2s linear infinite;
+	}
+
+	@keyframes nsl-loader-spin {
+		0% {
+			transform: rotate(0deg)
+		}
+
+		to {
+			transform: rotate(360deg)
+		}
+	}
+
+	#nsl-redirect-overlay-title {
+		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+		font-size: 18px;
+		font-weight: bold;
+		color: #3C434A;
+	}
+
+	#nsl-redirect-overlay-text {
+		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+		text-align: center;
+		font-size: 14px;
+		color: #3C434A;
+	}
+
+	/* Redirect END*/
+</style>
+
+<style type="text/css">
+	/* Notice fallback */
+	#nsl-notices-fallback {
+		position: fixed;
+		right: 10px;
+		top: 10px;
+		z-index: 10000;
+	}
+
+	.admin-bar #nsl-notices-fallback {
+		top: 42px;
+	}
+
+	#nsl-notices-fallback>div {
+		position: relative;
+		background: #fff;
+		border-left: 4px solid #fff;
+		box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+		margin: 5px 15px 2px;
+		padding: 1px 20px;
+	}
+
+	#nsl-notices-fallback>div.error {
+		display: block;
+		border-left-color: #dc3232;
+	}
+
+	#nsl-notices-fallback>div.updated {
+		display: block;
+		border-left-color: #46b450;
+	}
+
+	#nsl-notices-fallback p {
+		margin: .5em 0;
+		padding: 2px;
+	}
+
+	#nsl-notices-fallback>div:after {
+		position: absolute;
+		right: 5px;
+		top: 5px;
+		content: '\00d7';
+		display: block;
+		height: 16px;
+		width: 16px;
+		line-height: 16px;
+		text-align: center;
+		font-size: 20px;
+		cursor: pointer;
+	}
+</style>
+
+<style id="wp-custom-css">
+	.cky-footer-wrapper div:last-child {
+		display: none !important;
+	}
+
+	.cky-consent-bar .cky-banner-btn-close img {
+		width: 0 !important;
+		height: 0 !important;
+	}
+
+	button.cky-btn.cky-btn-reject:hover,
+	button.cky-btn.cky-btn-accept:hover {
+		background-color: #E15700 !important;
+		opacity: 1 !important;
+		border-color: #E15700 !important;
+	}
+
+	button.cky-btn.cky-btn-preferences {
+		border: 1px solid #FF6300 !important;
+	}
+
+	button.cky-btn.cky-btn-preferences:hover,
+	button.cky-btn.cky-btn-customize:hover {
+		color: #FFFFFF !important;
+		background-color: #FF6300 !important;
+		opacity: 1 !important;
+	}
+
+	.cky-consent-container .cky-consent-bar {
+		background-color: #202227 !important;
+		box-shadow: none !important;
+		border: 0 !important;
+		padding: 16px !important;
+	}
+
+	@media (min-width:1200px) {
+		.cky-consent-container .cky-consent-bar {
+			padding: 32px !important;
+		}
+	}
+
+	.cky-btn {
+		border-radius: 24px !important;
+		font-family: 'Brandon Text' !important;
+		font-style: normal;
+		font-weight: 400 !important;
+		font-size: 16px !important;
+		line-height: 24px !important;
+		letter-spacing: 1px !important;
+		text-transform: uppercase !important;
+		transition: all 0.25s !important;
+	}
+
+	.cky-show-desc-btn {
+		color: #FF6300 !important;
+	}
+
+	.cky-preference-title {
+		font-family: 'Radikal' !important;
+		font-weight: 400;
+		font-size: 22px !important;
+		line-height: 26px !important;
+		letter-spacing: 1px;
+		color: #FFFFFF;
+	}
+
+	@media (min-width:768px) {
+		.cky-preference-title {
+			font-size: 24px !important;
+			line-height: 36px !important;
+		}
+	}
+
+	.cky-preference-content-wrapper p,
+	.cky-accordion-header-des {
+		font-family: 'Brandon Text' !important;
+		font-style: normal;
+		font-weight: 400 !important;
+		font-size: 16px !important;
+		line-height: 24px !important;
+	}
+
+	.cky-accordion-btn {
+		font-family: 'Radikal' !important;
+		font-weight: 500 !important;
+		font-size: 16px !important;
+		line-height: 24px !important;
+		letter-spacing: 1px !important;
+		text-transform: uppercase !important;
+	}
+</style>
+
+</head>
+<body class="archive post-type-archive post-type-archive-blog  release-6.11">
+<div id="page" class=" ">
+<Layout>
+<main>
+<section class="breadcrumbs">
+	<div class="container">
+		<ul class="breadcrumbs-list">
+			<!-- Breadcrumb NavXT 7.3.1 -->
+<li class="breadcrumbs-item"><span itemprop="itemListElement"><a class="breadcrumbs-link" property="item" typeof="WebPage" title="Cloud Hawk" href="https://cloudhawktech.com"><span property="name">Cloud Hawk</span></a><meta property="position" content="1"></span></li><li class="breadcrumbs-item archive post-blog-archive current-item"><span itemprop="itemListElement"><span property="name" itemprop="itemListElement">Blog</span><meta property="url" content="https://cloudhawktech.com/blog/"><meta property="position" content="2"></span></li>			</ul>
+	</div>
+</section>
+<section class="blog-archive-first-screen" data-header="header-white">
+	<div class="container">
+		<div class="blog-archive-first-screen-title-container">
+			<h1 class="blog-archive-first-screen-title">
+				A home for inspiring stories on business and technology				</h1>
+		</div>
+	</div>
+</section>
+
+<section class="blog-archive-first-screen-categories-section" data-header="header-white">
+	<div class="blog-archive-first-screen-categories">
+		<div class="container">
+			<div class="blog-archive-first-screen-categories-container">
+				<div class="blog-archive-first-screen-input-wrap search-section">
+					<span class="blog-archive-first-screen-input-search-icon"></span>
+					<form method="get" id="form_search" action="/blog/">
+						<input type="text" name="search" class="blog-archive-first-screen-input fast-search" id="fast_search" placeholder="What are you looking for?">
+					</form>
+				</div>
+				<ul class="blog-archive-first-screen-input-search-result-list" style="display: none;">
+
+				</ul>
+				<ul class="blog-archive-first-screen-categories-list" data-page_id="1097">
+					<li class="blog-archive-first-screen-categories-item active" data-taxonomy="all_articles">
+						<div class="blog-archive-first-screen-categories-item-link">All articles</div>
+					</li>
+					<li class="blog-archive-first-screen-categories-item" data-tab="tab-industry" data-taxonomy="blog_industry" data-taxonomy_title="industries">
+						<div class="blog-archive-first-screen-categories-item-link">Industries</div>
+					</li>
+					<li class="blog-archive-first-screen-categories-item" data-tab="tab-services" data-taxonomy="blog_service" data-taxonomy_title="services">
+						<div class="blog-archive-first-screen-categories-item-link">Services</div>
+					</li>
+					<li class="blog-archive-first-screen-categories-item" data-tab="tab-expertise" data-taxonomy="blog_expertise" data-taxonomy_title="expertise">
+						<div class="blog-archive-first-screen-categories-item-link">Expertise</div>
+					</li>
+				</ul>
+				<div class="blog-archive-first-screen-search">
+					<span class="blog-archive-first-screen-icon"> </span>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="blog-archive-tabs">
+	<div class="container">
+		<div class="blog-archive-tabs-container tab-industry">
+			<h2 class="blog-archive-tabs-title">Discover our industry experience</h2>
+			<ul class="blog-archive-tabs-list">
+															<li class="blog-archive-tabs-item">
+						<a href="https://cloudhawktech.com/blog/industry/fintech/" class="blog-archive-tabs-item-link">
+							FinTech							</a>
+					</li>
+										<li class="blog-archive-tabs-item">
+						<a href="https://cloudhawktech.com/blog/industry/healthcare/" class="blog-archive-tabs-item-link">
+							Healthcare							</a>
+					</li>
+										<li class="blog-archive-tabs-item">
+						<a href="https://cloudhawktech.com/blog/industry/manufacturing/" class="blog-archive-tabs-item-link">
+							Manufacturing							</a>
+					</li>
+										<li class="blog-archive-tabs-item">
+						<a href="https://cloudhawktech.com/blog/industry/smart-home-and-appliances/" class="blog-archive-tabs-item-link">
+							Smart Home and appliances							</a>
+					</li>
+										<li class="blog-archive-tabs-item">
+						<a href="https://cloudhawktech.com/blog/industry/transportation-and-mobility/" class="blog-archive-tabs-item-link">
+							Transportation and mobility							</a>
+					</li>
+										<li class="blog-archive-tabs-item">
+						<a href="https://cloudhawktech.com/blog/industry/energy-and-resources/" class="blog-archive-tabs-item-link">
+							Energy and resources							</a>
+					</li>
+										<li class="blog-archive-tabs-item">
+						<a href="https://cloudhawktech.com/blog/industry/real-estate/" class="blog-archive-tabs-item-link">
+							Real estate							</a>
+					</li>
+								</ul>
+		</div>
+		<div class="blog-archive-tabs-container tab-services">
+			<h2 class="blog-archive-tabs-title">Discover our industry service</h2>
+			<ul class="blog-archive-tabs-list" data-page_id="1097">
+									<li class="blog-archive-tabs-item all">
+					<div class="blog-archive-tabs-item-link all-btn" data-taxonomy="blog_service" data-taxonomy_title="services">
+						All services
+					</div>
+				</li>
+										<li class="blog-archive-tabs-item">
+						<div class="blog-archive-tabs-item-link change-term" data-term_id="37" data-taxonomy="blog_service">
+							Custom software development							</div>
+					</li>
+										<li class="blog-archive-tabs-item">
+						<div class="blog-archive-tabs-item-link change-term" data-term_id="69" data-taxonomy="blog_service">
+							IT consulting							</div>
+					</li>
+										<li class="blog-archive-tabs-item">
+						<div class="blog-archive-tabs-item-link change-term" data-term_id="78" data-taxonomy="blog_service">
+							Digital transformation							</div>
+					</li>
+										<li class="blog-archive-tabs-item">
+						<div class="blog-archive-tabs-item-link change-term" data-term_id="80" data-taxonomy="blog_service">
+							Dedicated teams							</div>
+					</li>
+								</ul>
+		</div>
+		<div class="blog-archive-tabs-container tab-expertise">
+			<h2 class="blog-archive-tabs-title">Discover our expertise experience</h2>
+			<ul class="blog-archive-tabs-list" data-page_id="1097">
+									<li class="blog-archive-tabs-item all">
+					<div class="blog-archive-tabs-item-link all-btn" data-taxonomy="blog_expertise" data-taxonomy_title="expertise">
+						All expertises
+					</div>
+				</li>
+										<li class="blog-archive-tabs-item">
+						<div class="blog-archive-tabs-item-link change-term" data-term_id="39" data-taxonomy="blog_expertise">
+							Cybersecurity &amp; Compliance							</div>
+					</li>
+										<li class="blog-archive-tabs-item">
+						<div class="blog-archive-tabs-item-link change-term" data-term_id="40" data-taxonomy="blog_expertise">
+							IT infrastructure							</div>
+					</li>
+										<li class="blog-archive-tabs-item">
+						<div class="blog-archive-tabs-item-link change-term" data-term_id="70" data-taxonomy="blog_expertise">
+							Data analytics &amp; BI							</div>
+					</li>
+										<li class="blog-archive-tabs-item">
+						<div class="blog-archive-tabs-item-link change-term" data-term_id="71" data-taxonomy="blog_expertise">
+							Big data							</div>
+					</li>
+										<li class="blog-archive-tabs-item">
+						<div class="blog-archive-tabs-item-link change-term" data-term_id="74" data-taxonomy="blog_expertise">
+							IoT							</div>
+					</li>
+										<li class="blog-archive-tabs-item">
+						<div class="blog-archive-tabs-item-link change-term" data-term_id="76" data-taxonomy="blog_expertise">
+							UI/UX design							</div>
+					</li>
+										<li class="blog-archive-tabs-item">
+						<div class="blog-archive-tabs-item-link change-term" data-term_id="77" data-taxonomy="blog_expertise">
+							Quality Assurance							</div>
+					</li>
+										<li class="blog-archive-tabs-item">
+						<div class="blog-archive-tabs-item-link change-term" data-term_id="82" data-taxonomy="blog_expertise">
+							Machine learning							</div>
+					</li>
+										<li class="blog-archive-tabs-item">
+						<div class="blog-archive-tabs-item-link change-term" data-term_id="83" data-taxonomy="blog_expertise">
+							RPA							</div>
+					</li>
+										<li class="blog-archive-tabs-item">
+						<div class="blog-archive-tabs-item-link change-term" data-term_id="84" data-taxonomy="blog_expertise">
+							Artificial Intelligence							</div>
+					</li>
+										<li class="blog-archive-tabs-item">
+						<div class="blog-archive-tabs-item-link change-term" data-term_id="105" data-taxonomy="blog_expertise">
+							Data science							</div>
+					</li>
+								</ul>
+		</div>
+	</div>
+</section>
+<section class="blog-archive-sort" style="display: none;">
+	<div class="container">
+		<div class="blog-archive-sort-container">
+			<div class="blog-archive-sort-items-count">
+				<p class="blog-archive-sort-items-count-text">Items: <span id="posts_count"></span></p>
+			</div>
+			<div class="blog-archive-sort-by-container">
+				<p class="blog-archive-sort-by-title">Sort by:</p>
+				<p class="blog-archive-sort-by-list-title">Newest</p>
+				<ul class="blog-archive-sort-by-list archive-blog-sort">
+												<li class="blog-archive-sort-by-item">
+							<p class="blog-archive-sort-by-item-title " data-orderby="views_count" data-order="DESC">
+								Most popular								</p>
+						</li>
+												<li class="blog-archive-sort-by-item">
+							<p class="blog-archive-sort-by-item-title " data-orderby="featured" data-order="DESC">
+								Featured								</p>
+						</li>
+												<li class="blog-archive-sort-by-item">
+							<p class="blog-archive-sort-by-item-title active" data-orderby="date" data-order="DESC">
+								Newest								</p>
+						</li>
+												<li class="blog-archive-sort-by-item">
+							<p class="blog-archive-sort-by-item-title " data-orderby="date" data-order="ASC">
+								Latest								</p>
+						</li>
+										</ul>
+				<input type="hidden" name="orderby" value="date" id="blog_orderby">
+				<input type="hidden" name="order" value="DESC" id="blog_order">
+			</div>
+		</div>
+	</div>
+</section>
+<section class="blog-archive-content blog-all-categories">
+	<div class="container" id="blog_content">
+			<div class="blog-archive-content-container">
+				<div class="blog-archive-content-feature-posts-container">
+			<h2 class="blog-archive-content-feature-posts-title">Featured Posts</h2>
+			<div class="blog-archive-content-feature-posts-wrapper">
+				<div class="blog-archive-content-feature-posts-big-container">
+											<a href="https://cloudhawktech.com/blog/wearable-technology-in-healthcare/" class="blog-archive-content-feature-posts-big-container-link">
+						<div class="blog-archive-content-feature-posts-big-container-wrapper">
+							<figure class="blog-archive-content-feature-posts-big-image">
+								<img width="1600" height="560" src="images/Wearable-technology-in-healthcare_-a-comprehensive-integration-guide-for-hospitals-and-clinics-wo-text.png" class="attachment-full size-full" alt="" decoding="async" fetchpriority="high" srcset="images/Wearable-technology-in-healthcare_-a-comprehensive-integration-guide-for-hospitals-and-clinics-wo-text.png 1600w, images/Wearable-technology-in-healthcare_-a-comprehensive-integration-guide-for-hospitals-and-clinics-wo-text-300x105.png 300w, images/Wearable-technology-in-healthcare_-a-comprehensive-integration-guide-for-hospitals-and-clinics-wo-text-1024x358.png 1024w, images/Wearable-technology-in-healthcare_-a-comprehensive-integration-guide-for-hospitals-and-clinics-wo-text-768x269.png 768w, images/Wearable-technology-in-healthcare_-a-comprehensive-integration-guide-for-hospitals-and-clinics-wo-text-1536x538.png 1536w, images/Wearable-technology-in-healthcare_-a-comprehensive-integration-guide-for-hospitals-and-clinics-wo-text-336x118.png 336w, images/Wearable-technology-in-healthcare_-a-comprehensive-integration-guide-for-hospitals-and-clinics-wo-text-288x101.png 288w, images/Wearable-technology-in-healthcare_-a-comprehensive-integration-guide-for-hospitals-and-clinics-wo-text-368x129.png 368w, images/Wearable-technology-in-healthcare_-a-comprehensive-integration-guide-for-hospitals-and-clinics-wo-text-328x115.png 328w, images/Wearable-technology-in-healthcare_-a-comprehensive-integration-guide-for-hospitals-and-clinics-wo-text-120x42.png 120w, images/Wearable-technology-in-healthcare_-a-comprehensive-integration-guide-for-hospitals-and-clinics-wo-text-688x241.png 688w, images/Wearable-technology-in-healthcare_-a-comprehensive-integration-guide-for-hospitals-and-clinics-wo-text-260x91.png 260w, images/Wearable-technology-in-healthcare_-a-comprehensive-integration-guide-for-hospitals-and-clinics-wo-text-732x256.png 732w, images/Wearable-technology-in-healthcare_-a-comprehensive-integration-guide-for-hospitals-and-clinics-wo-text-177x62.png 177w, images/Wearable-technology-in-healthcare_-a-comprehensive-integration-guide-for-hospitals-and-clinics-wo-text-20x7.png 20w, images/Wearable-technology-in-healthcare_-a-comprehensive-integration-guide-for-hospitals-and-clinics-wo-text-100x35.png 100w" sizes="(max-width: 1600px) 100vw, 1600px">								</figure>
+							<div class="blog-archive-content-feature-posts-big-content-container">
+								<h3 class="blog-archive-content-feature-posts-big-content-title">
+									Wearable technology in healthcare: a comprehensive integration guide for hospitals and clinics									</h3>
+																		<p class="blog-archive-content-feature-posts-big-content-text">
+										 Learn why you absolutely have to add wearable health devices into your healthcare facility EHR, and how it will benefit your patients and healthcare providers. 										</p>
+																											<div class="blog-archive-content-feature-posts-big-content-authors-container">
+										<ul class="blog-archive-content-feature-posts-big-content-authors-list">
+																																					<li class="blog-archive-content-feature-posts-big-content-authors-item">
+													<figure>
+														<img width="16" height="20" src="images/img_20231115_100505-16x20.webp" class="attachment-user_avatar_archive size-user_avatar_archive wp-post-image" alt="" decoding="async" srcset="images/img_20231115_100505-16x20.webp 16w, images/img_20231115_100505-240x300.webp 240w, images/img_20231115_100505-819x1024.webp 819w, images/img_20231115_100505-768x960.webp 768w, images/img_20231115_100505-1229x1536.webp 1229w, images/img_20231115_100505-1639x2048.webp 1639w, images/img_20231115_100505-166x208.webp 166w, images/img_20231115_100505-160x200.webp 160w, images/img_20231115_100505-213x266.webp 213w, images/img_20231115_100505-72x90.webp 72w, images/img_20231115_100505-200x250.webp 200w, images/img_20231115_100505-224x280.webp 224w, images/img_20231115_100505-176x220.webp 176w, images/img_20231115_100505-320x400.webp 320w, images/img_20231115_100505-80x100.webp 80w" sizes="(max-width: 16px) 100vw, 16px">														</figure>
+												</li>
+																																					<li class="blog-archive-content-feature-posts-big-content-authors-item">
+													<figure>
+														<img width="20" height="20" src="images/hukov-20x20.webp" class="attachment-user_avatar_archive size-user_avatar_archive wp-post-image" alt="" decoding="async" srcset="images/hukov-20x20.webp 20w, images/hukov-300x300.webp 300w, images/hukov-150x150.webp 150w, images/hukov-208x208.webp 208w, images/hukov-200x200.webp 200w, images/hukov-266x266.webp 266w, images/hukov-90x90.webp 90w, images/hukov-250x250.webp 250w, images/hukov-280x280.webp 280w, images/hukov-220x220.webp 220w, images/hukov-344x344.webp 344w, images/hukov-100x100.webp 100w, images/hukov.webp 400w" sizes="(max-width: 20px) 100vw, 20px">														</figure>
+												</li>
+																						</ul>
+																																	<p class="blog-archive-content-feature-posts-big-content-authors-text">
+												By Market researcher Nataliia Shcherban, Head of IoT Unit at Cloud Hawk Denys Hukov												</p>
+																				</div>
+																</div>
+						</div>
+					</a>
+				</div>
+				<div class="blog-archive-content-feature-posts-list-container">
+					<ul class="blog-archive-content-feature-posts-list">
+																																																<li class="blog-archive-content-feature-posts-item">
+									<a href="https://cloudhawktech.com/blog/remote-patient-monitoring-game-changer/">
+										<div class="blog-archive-content-feature-posts-item-mobile-top">
+											<p class="blog-archive-content-feature-posts-item-cat">
+												Whitepapper												</p>
+																								<p class="blog-archive-content-feature-posts-item-time-to-read">
+													5 read
+												</p>
+																						</div>
+										<h3 class="blog-archive-content-feature-posts-item-title">
+											Remote patient monitoring: A healthcare game-changer and a golden goose for businesses											</h3>
+										<div class="blog-archive-content-feature-posts-item-bottom-content">
+											<p class="blog-archive-content-feature-posts-item-cat">
+												Whitepapper												</p>
+																								<p class="blog-archive-content-feature-posts-item-time-to-read">
+													5 read
+												</p>
+																																				<p class="blog-archive-content-feature-posts-item-text">
+													By Head of IoT Unit at Cloud Hawk Denys Hukov, Market researcher Kateryna Kosmyna													</p>
+																						</div>
+									</a>
+								</li>
+																																									<li class="blog-archive-content-feature-posts-item">
+									<a href="https://cloudhawktech.com/blog/ai-software-development-lifecycle/">
+										<div class="blog-archive-content-feature-posts-item-mobile-top">
+											<p class="blog-archive-content-feature-posts-item-cat">
+												How to												</p>
+																								<p class="blog-archive-content-feature-posts-item-time-to-read">
+													10 read
+												</p>
+																						</div>
+										<h3 class="blog-archive-content-feature-posts-item-title">
+											AI SDLC: Unveiling real-life benefits and challenges behind the hype											</h3>
+										<div class="blog-archive-content-feature-posts-item-bottom-content">
+											<p class="blog-archive-content-feature-posts-item-cat">
+												How to												</p>
+																								<p class="blog-archive-content-feature-posts-item-time-to-read">
+													10 read
+												</p>
+																																				<p class="blog-archive-content-feature-posts-item-text">
+													By Market researcher Yuliia Panasenko													</p>
+																						</div>
+									</a>
+								</li>
+																																									<li class="blog-archive-content-feature-posts-item">
+									<a href="https://cloudhawktech.com/blog/how-to-choose-a-database/">
+										<div class="blog-archive-content-feature-posts-item-mobile-top">
+											<p class="blog-archive-content-feature-posts-item-cat">
+												How to												</p>
+																								<p class="blog-archive-content-feature-posts-item-time-to-read">
+													12 min read
+												</p>
+																						</div>
+										<h3 class="blog-archive-content-feature-posts-item-title">
+											A guide to choosing a reliable and scalable database solution for your product											</h3>
+										<div class="blog-archive-content-feature-posts-item-bottom-content">
+											<p class="blog-archive-content-feature-posts-item-cat">
+												How to												</p>
+																								<p class="blog-archive-content-feature-posts-item-time-to-read">
+													12 min read
+												</p>
+																																				<p class="blog-archive-content-feature-posts-item-text">
+													By Market researcher Yuliia Panasenko, Software engineer Danila Omelchenko, Market researcher Nataliia Shcherban													</p>
+																						</div>
+									</a>
+								</li>
+																																									<li class="blog-archive-content-feature-posts-item">
+									<a href="https://cloudhawktech.com/blog/automotive-iot-for-sustainability/">
+										<div class="blog-archive-content-feature-posts-item-mobile-top">
+											<p class="blog-archive-content-feature-posts-item-cat">
+												How to												</p>
+																						</div>
+										<h3 class="blog-archive-content-feature-posts-item-title">
+											Automotive IoT for enhanced sustainability and citizen welfare: How to open new business opportunities by solving critical urbanization problems											</h3>
+										<div class="blog-archive-content-feature-posts-item-bottom-content">
+											<p class="blog-archive-content-feature-posts-item-cat">
+												How to												</p>
+																																				<p class="blog-archive-content-feature-posts-item-text">
+													By Market researcher Kateryna Kosmyna, Head of IoT Unit at Cloud Hawk Denys Hukov													</p>
+																						</div>
+									</a>
+								</li>
+																					</ul>
+				</div>
+			</div>
+		</div>
+								<div class="blog-archive-content-press-container">
+			<div class="blog-archive-content-press-title-container">
+				<h2 class="blog-archive-content-press-title">
+					Press releases					</h2>
+				<div class="blog-archive-content-title-link-container">
+					<div class="blog-archive-content-press-more-button blog-archive-content-title-link change-term" data-term_id="41" data-taxonomy="blog_category">
+						More Press releases						</div>
+					<div class="blog-archive-content-press-more-button blog-archive-content-title-link change-term" data-term_id="41" data-taxonomy="blog_category">
+						More Press releases						</div>
+					<div class="blog-archive-content-processes-link-mobile blog-archive-content-title-link change-term" data-term_id="41" data-taxonomy="blog_category">
+						More articles
+					</div>
+				</div>
+			</div>
+			<ul class="blog-archive-content-press-list">
+																<li class="blog-archive-content-press-item">
+						<a href="https://cloudhawktech.com/blog/Cloud Hawk-becomes-aws-partner/">
+							<div class="blog-archive-content-press-item-container">
+								<figure>
+									<img width="1200" height="365" src="images/amazon-press-release-image-2.webp" class="attachment-full size-full" alt="" decoding="async" srcset="images/amazon-press-release-image-2.webp 1200w, images/amazon-press-release-image-2-300x91.webp 300w, images/amazon-press-release-image-2-1024x311.webp 1024w, images/amazon-press-release-image-2-768x234.webp 768w, images/amazon-press-release-image-2-336x102.webp 336w, images/amazon-press-release-image-2-288x88.webp 288w, images/amazon-press-release-image-2-368x112.webp 368w, images/amazon-press-release-image-2-328x100.webp 328w, images/amazon-press-release-image-2-120x37.webp 120w, images/amazon-press-release-image-2-688x209.webp 688w, images/amazon-press-release-image-2-260x79.webp 260w, images/amazon-press-release-image-2-732x223.webp 732w, images/amazon-press-release-image-2-177x54.webp 177w, images/amazon-press-release-image-2-20x6.webp 20w, images/amazon-press-release-image-2-100x30.webp 100w" sizes="(max-width: 1200px) 100vw, 1200px">									</figure>
+								<div class="blog-archive-content-press-item-content">
+									<h3 class="blog-archive-content-press-item-content-title">
+										Efficiently handle your cloud projects with Cloud Hawk, now an official Amazon Web Services partner										</h3>
+																				<p class="blog-archive-content-press-item-content-text">
+											Written by Chief Technology Officer Denis Doronin											</p>
+																														<p class="blog-archive-content-press-item-content-read-time">
+											3 read
+										</p>
+																		</div>
+							</div>
+						</a>
+					</li>
+																<li class="blog-archive-content-press-item">
+						<a href="https://cloudhawktech.com/blog/Cloud Hawk-gets-certified-to-new-iso-standard/">
+							<div class="blog-archive-content-press-item-container">
+								<figure>
+									<img width="2560" height="1707" src="images/Cloud Hawk-new-iso-certification-scaled.webp" class="attachment-full size-full" alt="" decoding="async" srcset="images/Cloud Hawk-new-iso-certification-scaled.webp 2560w, images/Cloud Hawk-new-iso-certification-300x200.webp 300w, images/Cloud Hawk-new-iso-certification-1024x683.webp 1024w, images/Cloud Hawk-new-iso-certification-768x512.webp 768w, images/Cloud Hawk-new-iso-certification-1536x1024.webp 1536w, images/Cloud Hawk-new-iso-certification-2048x1365.webp 2048w, images/Cloud Hawk-new-iso-certification-312x208.webp 312w, images/Cloud Hawk-new-iso-certification-288x192.webp 288w, images/Cloud Hawk-new-iso-certification-328x219.webp 328w, images/Cloud Hawk-new-iso-certification-120x80.webp 120w, images/Cloud Hawk-new-iso-certification-375x250.webp 375w, images/Cloud Hawk-new-iso-certification-368x245.webp 368w, images/Cloud Hawk-new-iso-certification-260x173.webp 260w, images/Cloud Hawk-new-iso-certification-600x400.webp 600w, images/Cloud Hawk-new-iso-certification-150x100.webp 150w, images/Cloud Hawk-new-iso-certification-20x13.webp 20w, images/Cloud Hawk-new-iso-certification-100x67.webp 100w" sizes="(max-width: 2560px) 100vw, 2560px">									</figure>
+								<div class="blog-archive-content-press-item-content">
+									<h3 class="blog-archive-content-press-item-content-title">
+										Reaffirming our commitment to global privacy standards: Cloud Hawk receives ISO 27701 certification										</h3>
+																				<p class="blog-archive-content-press-item-content-text">
+											Written by Market researcher Anna Huzei, Compliance specialist Nataliia Lypka-Zahrebelna											</p>
+																														<p class="blog-archive-content-press-item-content-read-time">
+											4 read
+										</p>
+																		</div>
+							</div>
+						</a>
+					</li>
+																<li class="blog-archive-content-press-item">
+						<a href="https://cloudhawktech.com/blog/Cloud Hawk-anniversary/">
+							<div class="blog-archive-content-press-item-container">
+								<figure>
+									<img width="990" height="504" src="images/press-release_image-1.webp" class="attachment-full size-full" alt="" decoding="async" srcset="images/press-release_image-1.webp 990w, images/press-release_image-1-300x153.webp 300w, images/press-release_image-1-768x391.webp 768w, images/press-release_image-1-336x171.webp 336w, images/press-release_image-1-288x147.webp 288w, images/press-release_image-1-368x187.webp 368w, images/press-release_image-1-328x167.webp 328w, images/press-release_image-1-120x61.webp 120w, images/press-release_image-1-491x250.webp 491w, images/press-release_image-1-260x132.webp 260w, images/press-release_image-1-732x373.webp 732w, images/press-release_image-1-177x90.webp 177w, images/press-release_image-1-20x10.webp 20w, images/press-release_image-1-100x51.webp 100w" sizes="(max-width: 990px) 100vw, 990px">									</figure>
+								<div class="blog-archive-content-press-item-content">
+									<h3 class="blog-archive-content-press-item-content-title">
+										Together everyone achieves more: Cloud Hawk celebrates 15 years in the market										</h3>
+																				<p class="blog-archive-content-press-item-content-text">
+											Written by President, Co-founder Oleksander Kholodov, CHIEF FINANCIAL OFFICER, Co-founder Serhii Fesenko											</p>
+																												</div>
+							</div>
+						</a>
+					</li>
+																<li class="blog-archive-content-press-item">
+						<a href="https://cloudhawktech.com/blog/solution-hub-launch/">
+							<div class="blog-archive-content-press-item-container">
+								<figure>
+									<img width="2400" height="888" src="images/bg_solution_hub_announcement.webp" class="attachment-full size-full" alt="" decoding="async" srcset="images/bg_solution_hub_announcement.webp 2400w, images/bg_solution_hub_announcement-300x111.webp 300w, images/bg_solution_hub_announcement-1024x379.webp 1024w, images/bg_solution_hub_announcement-768x284.webp 768w, images/bg_solution_hub_announcement-1536x568.webp 1536w, images/bg_solution_hub_announcement-2048x758.webp 2048w, images/bg_solution_hub_announcement-336x124.webp 336w, images/bg_solution_hub_announcement-288x107.webp 288w, images/bg_solution_hub_announcement-368x136.webp 368w, images/bg_solution_hub_announcement-328x121.webp 328w, images/bg_solution_hub_announcement-120x44.webp 120w, images/bg_solution_hub_announcement-676x250.webp 676w, images/bg_solution_hub_announcement-260x96.webp 260w, images/bg_solution_hub_announcement-732x271.webp 732w, images/bg_solution_hub_announcement-177x65.webp 177w, images/bg_solution_hub_announcement-20x7.webp 20w, images/bg_solution_hub_announcement-100x37.webp 100w, images/bg_solution_hub_announcement-930x344.webp 930w" sizes="(max-width: 2400px) 100vw, 2400px">									</figure>
+								<div class="blog-archive-content-press-item-content">
+									<h3 class="blog-archive-content-press-item-content-title">
+										Official announcement: Cloud Hawk opens a marketplace for digital solutions and products										</h3>
+																				<p class="blog-archive-content-press-item-content-text">
+											Written by Chief Technology Officer Denis Doronin											</p>
+																														<p class="blog-archive-content-press-item-content-read-time">
+											5 min read
+										</p>
+																		</div>
+							</div>
+						</a>
+					</li>
+																<li class="blog-archive-content-press-item">
+						<a href="https://cloudhawktech.com/blog/Cloud Hawk-most-reviewed-developers-in-warsaw-by-manifest/">
+							<div class="blog-archive-content-press-item-container">
+								<figure>
+									<img width="990" height="504" src="images/new_achievement.webp" class="attachment-full size-full" alt="" decoding="async" srcset="images/new_achievement.webp 990w, images/new_achievement-300x153.webp 300w, images/new_achievement-768x391.webp 768w, images/new_achievement-336x171.webp 336w, images/new_achievement-288x147.webp 288w, images/new_achievement-368x187.webp 368w, images/new_achievement-328x167.webp 328w, images/new_achievement-120x61.webp 120w, images/new_achievement-491x250.webp 491w, images/new_achievement-260x132.webp 260w, images/new_achievement-732x373.webp 732w, images/new_achievement-177x90.webp 177w, images/new_achievement-20x10.webp 20w, images/new_achievement-100x51.webp 100w, images/new_achievement-676x344.webp 676w" sizes="(max-width: 990px) 100vw, 990px">									</figure>
+								<div class="blog-archive-content-press-item-content">
+									<h3 class="blog-archive-content-press-item-content-title">
+										The Manifest recognizes Cloud Hawk as one of the most reviewed software developers in Warsaw										</h3>
+																				<p class="blog-archive-content-press-item-content-text">
+											Written by Marketing manager at Cloud Hawk Viktor Osadchii											</p>
+																														<p class="blog-archive-content-press-item-content-read-time">
+											7 read
+										</p>
+																		</div>
+							</div>
+						</a>
+					</li>
+																<li class="blog-archive-content-press-item">
+						<a href="https://cloudhawktech.com/blog/effective-machine-learning-project-approach/">
+							<div class="blog-archive-content-press-item-container">
+								<figure>
+									<img width="1920" height="1282" src="images/joshua-sortino-lqkhndzsf-8-unsplash-min.webp" class="attachment-full size-full" alt="" decoding="async" srcset="images/joshua-sortino-lqkhndzsf-8-unsplash-min.webp 1920w, images/joshua-sortino-lqkhndzsf-8-unsplash-min-300x200.webp 300w, images/joshua-sortino-lqkhndzsf-8-unsplash-min-1024x684.webp 1024w, images/joshua-sortino-lqkhndzsf-8-unsplash-min-768x513.webp 768w, images/joshua-sortino-lqkhndzsf-8-unsplash-min-1536x1026.webp 1536w, images/joshua-sortino-lqkhndzsf-8-unsplash-min-312x208.webp 312w, images/joshua-sortino-lqkhndzsf-8-unsplash-min-288x192.webp 288w, images/joshua-sortino-lqkhndzsf-8-unsplash-min-328x219.webp 328w, images/joshua-sortino-lqkhndzsf-8-unsplash-min-120x80.webp 120w, images/joshua-sortino-lqkhndzsf-8-unsplash-min-374x250.webp 374w, images/joshua-sortino-lqkhndzsf-8-unsplash-min-368x246.webp 368w, images/joshua-sortino-lqkhndzsf-8-unsplash-min-260x174.webp 260w, images/joshua-sortino-lqkhndzsf-8-unsplash-min-515x344.webp 515w, images/joshua-sortino-lqkhndzsf-8-unsplash-min-599x400.webp 599w, images/joshua-sortino-lqkhndzsf-8-unsplash-min-150x100.webp 150w, images/joshua-sortino-lqkhndzsf-8-unsplash-min-20x13.webp 20w, images/joshua-sortino-lqkhndzsf-8-unsplash-min-100x67.webp 100w" sizes="(max-width: 1920px) 100vw, 1920px">									</figure>
+								<div class="blog-archive-content-press-item-content">
+									<h3 class="blog-archive-content-press-item-content-title">
+										How to streamline your ML software development project										</h3>
+																				<p class="blog-archive-content-press-item-content-text">
+											Written by Head of Architecture Office Maksym Moskvychev, Business Process Director Serhii Zhuravel, Content manager Daria Bulatovych, Chief Technology Officer Denis Doronin											</p>
+																														<p class="blog-archive-content-press-item-content-read-time">
+											10 min read
+										</p>
+																		</div>
+							</div>
+						</a>
+					</li>
+								</ul>
+			<div class="blog-archive-content-press-list-mobile blog-mobile-slider swiper">
+				<div class="swiper-wrapper">
+												<div class="blog-archive-content-press-item-mobile swiper-slide">
+							<a href="https://cloudhawktech.com/blog/Cloud Hawk-becomes-aws-partner/">
+								<div class="blog-archive-content-press-item-mobile-container">
+									<figure>
+										<img width="1200" height="365" src="images/amazon-press-release-image-2.webp" class="attachment-full size-full" alt="" decoding="async" srcset="images/amazon-press-release-image-2.webp 1200w, images/amazon-press-release-image-2-300x91.webp 300w, images/amazon-press-release-image-2-1024x311.webp 1024w, images/amazon-press-release-image-2-768x234.webp 768w, images/amazon-press-release-image-2-336x102.webp 336w, images/amazon-press-release-image-2-288x88.webp 288w, images/amazon-press-release-image-2-368x112.webp 368w, images/amazon-press-release-image-2-328x100.webp 328w, images/amazon-press-release-image-2-120x37.webp 120w, images/amazon-press-release-image-2-688x209.webp 688w, images/amazon-press-release-image-2-260x79.webp 260w, images/amazon-press-release-image-2-732x223.webp 732w, images/amazon-press-release-image-2-177x54.webp 177w, images/amazon-press-release-image-2-20x6.webp 20w, images/amazon-press-release-image-2-100x30.webp 100w" sizes="(max-width: 1200px) 100vw, 1200px">										</figure>
+									<div class="blog-archive-content-press-item-mobile-content">
+										<h3 class="blog-archive-content-press-item-mobile-content-title">
+											Efficiently handle your cloud projects with Cloud Hawk, now an official Amazon Web Services partner											</h3>
+									</div>
+								</div>
+							</a>
+						</div>
+												<div class="blog-archive-content-press-item-mobile swiper-slide">
+							<a href="https://cloudhawktech.com/blog/Cloud Hawk-gets-certified-to-new-iso-standard/">
+								<div class="blog-archive-content-press-item-mobile-container">
+									<figure>
+										<img width="2560" height="1707" src="images/Cloud Hawk-new-iso-certification-scaled.webp" class="attachment-full size-full" alt="" decoding="async" srcset="images/Cloud Hawk-new-iso-certification-scaled.webp 2560w, images/Cloud Hawk-new-iso-certification-300x200.webp 300w, images/Cloud Hawk-new-iso-certification-1024x683.webp 1024w, images/Cloud Hawk-new-iso-certification-768x512.webp 768w, images/Cloud Hawk-new-iso-certification-1536x1024.webp 1536w, images/Cloud Hawk-new-iso-certification-2048x1365.webp 2048w, images/Cloud Hawk-new-iso-certification-312x208.webp 312w, images/Cloud Hawk-new-iso-certification-288x192.webp 288w, images/Cloud Hawk-new-iso-certification-328x219.webp 328w, images/Cloud Hawk-new-iso-certification-120x80.webp 120w, images/Cloud Hawk-new-iso-certification-375x250.webp 375w, images/Cloud Hawk-new-iso-certification-368x245.webp 368w, images/Cloud Hawk-new-iso-certification-260x173.webp 260w, images/Cloud Hawk-new-iso-certification-600x400.webp 600w, images/Cloud Hawk-new-iso-certification-150x100.webp 150w, images/Cloud Hawk-new-iso-certification-20x13.webp 20w, images/Cloud Hawk-new-iso-certification-100x67.webp 100w" sizes="(max-width: 2560px) 100vw, 2560px">										</figure>
+									<div class="blog-archive-content-press-item-mobile-content">
+										<h3 class="blog-archive-content-press-item-mobile-content-title">
+											Reaffirming our commitment to global privacy standards: Cloud Hawk receives ISO 27701 certification											</h3>
+									</div>
+								</div>
+							</a>
+						</div>
+												<div class="blog-archive-content-press-item-mobile swiper-slide">
+							<a href="https://cloudhawktech.com/blog/Cloud Hawk-anniversary/">
+								<div class="blog-archive-content-press-item-mobile-container">
+									<figure>
+										<img width="990" height="504" src="images/press-release_image-1.webp" class="attachment-full size-full" alt="" decoding="async" srcset="images/press-release_image-1.webp 990w, images/press-release_image-1-300x153.webp 300w, images/press-release_image-1-768x391.webp 768w, images/press-release_image-1-336x171.webp 336w, images/press-release_image-1-288x147.webp 288w, images/press-release_image-1-368x187.webp 368w, images/press-release_image-1-328x167.webp 328w, images/press-release_image-1-120x61.webp 120w, images/press-release_image-1-491x250.webp 491w, images/press-release_image-1-260x132.webp 260w, images/press-release_image-1-732x373.webp 732w, images/press-release_image-1-177x90.webp 177w, images/press-release_image-1-20x10.webp 20w, images/press-release_image-1-100x51.webp 100w" sizes="(max-width: 990px) 100vw, 990px">										</figure>
+									<div class="blog-archive-content-press-item-mobile-content">
+										<h3 class="blog-archive-content-press-item-mobile-content-title">
+											Together everyone achieves more: Cloud Hawk celebrates 15 years in the market											</h3>
+									</div>
+								</div>
+							</a>
+						</div>
+												<div class="blog-archive-content-press-item-mobile swiper-slide">
+							<a href="https://cloudhawktech.com/blog/solution-hub-launch/">
+								<div class="blog-archive-content-press-item-mobile-container">
+									<figure>
+										<img width="2400" height="888" src="images/bg_solution_hub_announcement.webp" class="attachment-full size-full" alt="" decoding="async" srcset="images/bg_solution_hub_announcement.webp 2400w, images/bg_solution_hub_announcement-300x111.webp 300w, images/bg_solution_hub_announcement-1024x379.webp 1024w, images/bg_solution_hub_announcement-768x284.webp 768w, images/bg_solution_hub_announcement-1536x568.webp 1536w, images/bg_solution_hub_announcement-2048x758.webp 2048w, images/bg_solution_hub_announcement-336x124.webp 336w, images/bg_solution_hub_announcement-288x107.webp 288w, images/bg_solution_hub_announcement-368x136.webp 368w, images/bg_solution_hub_announcement-328x121.webp 328w, images/bg_solution_hub_announcement-120x44.webp 120w, images/bg_solution_hub_announcement-676x250.webp 676w, images/bg_solution_hub_announcement-260x96.webp 260w, images/bg_solution_hub_announcement-732x271.webp 732w, images/bg_solution_hub_announcement-177x65.webp 177w, images/bg_solution_hub_announcement-20x7.webp 20w, images/bg_solution_hub_announcement-100x37.webp 100w, images/bg_solution_hub_announcement-930x344.webp 930w" sizes="(max-width: 2400px) 100vw, 2400px">										</figure>
+									<div class="blog-archive-content-press-item-mobile-content">
+										<h3 class="blog-archive-content-press-item-mobile-content-title">
+											Official announcement: Cloud Hawk opens a marketplace for digital solutions and products											</h3>
+									</div>
+								</div>
+							</a>
+						</div>
+												<div class="blog-archive-content-press-item-mobile swiper-slide">
+							<a href="https://cloudhawktech.com/blog/Cloud Hawk-most-reviewed-developers-in-warsaw-by-manifest/">
+								<div class="blog-archive-content-press-item-mobile-container">
+									<figure>
+										<img width="990" height="504" src="images/new_achievement.webp" class="attachment-full size-full" alt="" decoding="async" srcset="images/new_achievement.webp 990w, images/new_achievement-300x153.webp 300w, images/new_achievement-768x391.webp 768w, images/new_achievement-336x171.webp 336w, images/new_achievement-288x147.webp 288w, images/new_achievement-368x187.webp 368w, images/new_achievement-328x167.webp 328w, images/new_achievement-120x61.webp 120w, images/new_achievement-491x250.webp 491w, images/new_achievement-260x132.webp 260w, images/new_achievement-732x373.webp 732w, images/new_achievement-177x90.webp 177w, images/new_achievement-20x10.webp 20w, images/new_achievement-100x51.webp 100w, images/new_achievement-676x344.webp 676w" sizes="(max-width: 990px) 100vw, 990px">										</figure>
+									<div class="blog-archive-content-press-item-mobile-content">
+										<h3 class="blog-archive-content-press-item-mobile-content-title">
+											The Manifest recognizes Cloud Hawk as one of the most reviewed software developers in Warsaw											</h3>
+									</div>
+								</div>
+							</a>
+						</div>
+												<div class="blog-archive-content-press-item-mobile swiper-slide">
+							<a href="https://cloudhawktech.com/blog/effective-machine-learning-project-approach/">
+								<div class="blog-archive-content-press-item-mobile-container">
+									<figure>
+										<img width="1920" height="1282" src="images/joshua-sortino-lqkhndzsf-8-unsplash-min.webp" class="attachment-full size-full" alt="" decoding="async" srcset="images/joshua-sortino-lqkhndzsf-8-unsplash-min.webp 1920w, images/joshua-sortino-lqkhndzsf-8-unsplash-min-300x200.webp 300w, images/joshua-sortino-lqkhndzsf-8-unsplash-min-1024x684.webp 1024w, images/joshua-sortino-lqkhndzsf-8-unsplash-min-768x513.webp 768w, images/joshua-sortino-lqkhndzsf-8-unsplash-min-1536x1026.webp 1536w, images/joshua-sortino-lqkhndzsf-8-unsplash-min-312x208.webp 312w, images/joshua-sortino-lqkhndzsf-8-unsplash-min-288x192.webp 288w, images/joshua-sortino-lqkhndzsf-8-unsplash-min-328x219.webp 328w, images/joshua-sortino-lqkhndzsf-8-unsplash-min-120x80.webp 120w, images/joshua-sortino-lqkhndzsf-8-unsplash-min-374x250.webp 374w, images/joshua-sortino-lqkhndzsf-8-unsplash-min-368x246.webp 368w, images/joshua-sortino-lqkhndzsf-8-unsplash-min-260x174.webp 260w, images/joshua-sortino-lqkhndzsf-8-unsplash-min-515x344.webp 515w, images/joshua-sortino-lqkhndzsf-8-unsplash-min-599x400.webp 599w, images/joshua-sortino-lqkhndzsf-8-unsplash-min-150x100.webp 150w, images/joshua-sortino-lqkhndzsf-8-unsplash-min-20x13.webp 20w, images/joshua-sortino-lqkhndzsf-8-unsplash-min-100x67.webp 100w" sizes="(max-width: 1920px) 100vw, 1920px">										</figure>
+									<div class="blog-archive-content-press-item-mobile-content">
+										<h3 class="blog-archive-content-press-item-mobile-content-title">
+											How to streamline your ML software development project											</h3>
+									</div>
+								</div>
+							</a>
+						</div>
+										</div>
+				<div class="blog-archive-content-press-list-mobile-nav blog-mobile-slider-navigation"></div>
+			</div>
+		</div>
+								<div class="blog-archive-content-processes-container">
+			<div class="blog-archive-content-processes-title-container">
+				<h2 class="blog-archive-content-processes-title">
+					Our processes					</h2>
+				<div class="blog-archive-content-title-link-container">
+					<div class="blog-archive-content-processes-title-link blog-archive-content-title-link change-term" data-term_id="67" data-taxonomy="blog_category">
+						More Our processes						</div>
+					<div class="blog-archive-content-processes-title-link blog-archive-content-title-link change-term" data-term_id="67" data-taxonomy="blog_category">
+						More Our processes						</div>
+					<div class="blog-archive-content-processes-link-mobile blog-archive-content-title-link change-term" data-term_id="67" data-taxonomy="blog_category">
+						More articles
+					</div>
+				</div>
+			</div>
+			<ul class="blog-archive-content-processes-list">
+																<li class="blog-archive-content-processes-item">
+						<a href="https://cloudhawktech.com/blog/value-Cloud Hawk-project-manager-app-development-process/" class="blog-archive-content-processes-item-link">
+							<h3 class="blog-archive-content-processes-item-title">
+								What a project manager does at each stage of the software development process								</h3>
+																<p class="blog-archive-content-processes-item-text">
+									Discover why project managers are vital during the whole app development process and what benefits you get from hiring one for your project.									</p>
+																								<div class="blog-archive-content-processes-item-author-container">
+									<ul class="blog-archive-content-processes-item-authors-list">
+																																		<li class="blog-archive-content-processes-item-authors-item">
+												<figure class="blog-archive-content-processes-item-author-image">
+													<img width="20" height="20" src="images/t0257r3sl-ua9dk0wf5-68292833defe-512-20x20.webp" class="attachment-user_avatar_archive size-user_avatar_archive wp-post-image" alt="" decoding="async" srcset="images/t0257r3sl-ua9dk0wf5-68292833defe-512-20x20.webp 20w, images/t0257r3sl-ua9dk0wf5-68292833defe-512-300x300.webp 300w, images/t0257r3sl-ua9dk0wf5-68292833defe-512-150x150.webp 150w, images/t0257r3sl-ua9dk0wf5-68292833defe-512-208x208.webp 208w, images/t0257r3sl-ua9dk0wf5-68292833defe-512-200x200.webp 200w, images/t0257r3sl-ua9dk0wf5-68292833defe-512-265x266.webp 265w, images/t0257r3sl-ua9dk0wf5-68292833defe-512-90x90.webp 90w, images/t0257r3sl-ua9dk0wf5-68292833defe-512-250x250.webp 250w, images/t0257r3sl-ua9dk0wf5-68292833defe-512-279x280.webp 279w, images/t0257r3sl-ua9dk0wf5-68292833defe-512-220x220.webp 220w, images/t0257r3sl-ua9dk0wf5-68292833defe-512-343x344.webp 343w, images/t0257r3sl-ua9dk0wf5-68292833defe-512-399x400.webp 399w, images/t0257r3sl-ua9dk0wf5-68292833defe-512-100x100.webp 100w, images/t0257r3sl-ua9dk0wf5-68292833defe-512.webp 511w" sizes="(max-width: 20px) 100vw, 20px">													</figure>
+											</li>
+																				</ul>
+																														<p class="blog-archive-content-processes-item-author-text">
+											By Chief executive officer Den Rudenko											</p>
+																														<p class="blog-archive-content-processes-item-time">
+											8 min  read
+										</p>
+																		</div>
+														</a>
+					</li>
+																<li class="blog-archive-content-processes-item">
+						<a href="https://cloudhawktech.com/blog/criteria-to-evaluate-an-it-service-provider/" class="blog-archive-content-processes-item-link">
+							<h3 class="blog-archive-content-processes-item-title">
+								Ultimate guide to evaluating a software development partner based on your needs								</h3>
+																<p class="blog-archive-content-processes-item-text">
+									What are the key areas in evaluating an IT service provider? Check out the ​​сriteria for choosing a software development company.									</p>
+																								<div class="blog-archive-content-processes-item-author-container">
+									<ul class="blog-archive-content-processes-item-authors-list">
+																																		<li class="blog-archive-content-processes-item-authors-item">
+												<figure class="blog-archive-content-processes-item-author-image">
+													<img width="20" height="20" src="images/iaskova-20x20.webp" class="attachment-user_avatar_archive size-user_avatar_archive wp-post-image" alt="" decoding="async" srcset="images/iaskova-20x20.webp 20w, images/iaskova-90x90.webp 90w, images/iaskova-100x100.webp 100w, images/iaskova.webp 130w" sizes="(max-width: 20px) 100vw, 20px">													</figure>
+											</li>
+																				</ul>
+																														<p class="blog-archive-content-processes-item-author-text">
+											By Market researcher Dariia Iaskova											</p>
+																														<p class="blog-archive-content-processes-item-time">
+											6 min read
+										</p>
+																		</div>
+														</a>
+					</li>
+																<li class="blog-archive-content-processes-item">
+						<a href="https://cloudhawktech.com/blog/how-to-meet-project-constraints-and-gain-quality/" class="blog-archive-content-processes-item-link">
+							<h3 class="blog-archive-content-processes-item-title">
+								How to deal with strict project limitations and achieve high product quality								</h3>
+																<p class="blog-archive-content-processes-item-text">
+									Learn best practices for dealing with strict project constraints and read about Cloud Hawk’ approach to constraints management to maintain quality.									</p>
+																								<div class="blog-archive-content-processes-item-author-container">
+									<ul class="blog-archive-content-processes-item-authors-list">
+																																		<li class="blog-archive-content-processes-item-authors-item">
+												<figure class="blog-archive-content-processes-item-author-image">
+													<img width="15" height="20" src="images/iryna_kanziuba-1-15x20.webp" class="attachment-user_avatar_archive size-user_avatar_archive wp-post-image" alt="" decoding="async" srcset="images/iryna_kanziuba-1-15x20.webp 15w, images/iryna_kanziuba-1-68x90.webp 68w, images/iryna_kanziuba-1.webp 75w" sizes="(max-width: 15px) 100vw, 15px">													</figure>
+											</li>
+																																		<li class="blog-archive-content-processes-item-authors-item">
+												<figure class="blog-archive-content-processes-item-author-image">
+													<img width="20" height="20" src="images/gaidamaka-1-20x20.webp" class="attachment-user_avatar_archive size-user_avatar_archive wp-post-image" alt="" decoding="async" srcset="images/gaidamaka-1-20x20.webp 20w, images/gaidamaka-1-90x90.webp 90w, images/gaidamaka-1.webp 100w" sizes="(max-width: 20px) 100vw, 20px">													</figure>
+											</li>
+																																		<li class="blog-archive-content-processes-item-authors-item">
+												<figure class="blog-archive-content-processes-item-author-image">
+													<img width="20" height="20" src="images/ustinova-20x20.webp" class="attachment-user_avatar_archive size-user_avatar_archive wp-post-image" alt="" decoding="async" srcset="images/ustinova-20x20.webp 20w, images/ustinova-90x90.webp 90w, images/ustinova.webp 100w" sizes="(max-width: 20px) 100vw, 20px">													</figure>
+											</li>
+																				</ul>
+																														<p class="blog-archive-content-processes-item-author-text">
+											By Business analyst Iryna Kanziuba, Head of PMO Tatiana Gaydamaka, Market researcher Yevheniia Ustynova											</p>
+																														<p class="blog-archive-content-processes-item-time">
+											15 min read
+										</p>
+																		</div>
+														</a>
+					</li>
+																<li class="blog-archive-content-processes-item">
+						<a href="https://cloudhawktech.com/blog/eula/" class="blog-archive-content-processes-item-link">
+							<h3 class="blog-archive-content-processes-item-title">
+								Why is an end user license agreement important for your software								</h3>
+																<p class="blog-archive-content-processes-item-text">
+									Find out why end user license agreements are important for your software in this article									</p>
+																								<div class="blog-archive-content-processes-item-author-container">
+									<ul class="blog-archive-content-processes-item-authors-list">
+																																		<li class="blog-archive-content-processes-item-authors-item">
+												<figure class="blog-archive-content-processes-item-author-image">
+													<img width="20" height="20" src="images/vik-1-20x20.webp" class="attachment-user_avatar_archive size-user_avatar_archive wp-post-image" alt="" decoding="async" srcset="images/vik-1-20x20.webp 20w, images/vik-1-300x300.webp 300w, images/vik-1-150x150.webp 150w, images/vik-1-207x208.webp 207w, images/vik-1-200x200.webp 200w, images/vik-1-265x266.webp 265w, images/vik-1-90x90.webp 90w, images/vik-1-249x250.webp 249w, images/vik-1-279x280.webp 279w, images/vik-1-219x220.webp 219w, images/vik-1-343x344.webp 343w, images/vik-1-100x100.webp 100w, images/vik-1.webp 399w" sizes="(max-width: 20px) 100vw, 20px">													</figure>
+											</li>
+																																		<li class="blog-archive-content-processes-item-authors-item">
+												<figure class="blog-archive-content-processes-item-author-image">
+													<img width="20" height="20" src="images/yauhen_zaremba-1-20x20.webp" class="attachment-user_avatar_archive size-user_avatar_archive wp-post-image" alt="" decoding="async" srcset="images/yauhen_zaremba-1-20x20.webp 20w, images/yauhen_zaremba-1-300x300.webp 300w, images/yauhen_zaremba-1-150x150.webp 150w, images/yauhen_zaremba-1-208x208.webp 208w, images/yauhen_zaremba-1-200x200.webp 200w, images/yauhen_zaremba-1-266x266.webp 266w, images/yauhen_zaremba-1-90x90.webp 90w, images/yauhen_zaremba-1-250x250.webp 250w, images/yauhen_zaremba-1-280x280.webp 280w, images/yauhen_zaremba-1-220x220.webp 220w, images/yauhen_zaremba-1-344x344.webp 344w, images/yauhen_zaremba-1-100x100.webp 100w, images/yauhen_zaremba-1.webp 400w" sizes="(max-width: 20px) 100vw, 20px">													</figure>
+											</li>
+																				</ul>
+																														<p class="blog-archive-content-processes-item-author-text">
+											By Marketing manager at Cloud Hawk Viktor Osadchii, Senior Director of Demand Generation at PandaDoc Yauhen Zaremba											</p>
+																														<p class="blog-archive-content-processes-item-time">
+											15 min  read
+										</p>
+																		</div>
+														</a>
+					</li>
+																<li class="blog-archive-content-processes-item">
+						<a href="https://cloudhawktech.com/blog/architecture-assessment-process-Cloud Hawk/" class="blog-archive-content-processes-item-link">
+							<h3 class="blog-archive-content-processes-item-title">
+								How do we perform an architecture assessment process at Cloud Hawk with TOGAF?								</h3>
+																<p class="blog-archive-content-processes-item-text">
+									Explore the Cloud Hawk architecture assessment process with software architecture assessment templates and examples. 									</p>
+																								<div class="blog-archive-content-processes-item-author-container">
+									<ul class="blog-archive-content-processes-item-authors-list">
+																																		<li class="blog-archive-content-processes-item-authors-item">
+												<figure class="blog-archive-content-processes-item-author-image">
+													<img width="20" height="20" src="images/ustinova-20x20.webp" class="attachment-user_avatar_archive size-user_avatar_archive wp-post-image" alt="" decoding="async" srcset="images/ustinova-20x20.webp 20w, images/ustinova-90x90.webp 90w, images/ustinova.webp 100w" sizes="(max-width: 20px) 100vw, 20px">													</figure>
+											</li>
+																																		<li class="blog-archive-content-processes-item-authors-item">
+												<figure class="blog-archive-content-processes-item-author-image">
+													<img width="13" height="20" src="images/image_from_ios-13x20.webp" class="attachment-user_avatar_archive size-user_avatar_archive wp-post-image" alt="" decoding="async" srcset="images/image_from_ios-13x20.webp 13w, images/image_from_ios-200x300.webp 200w, images/image_from_ios-683x1024.webp 683w, images/image_from_ios-768x1152.webp 768w, images/image_from_ios-1024x1536.webp 1024w, images/image_from_ios-139x208.webp 139w, images/image_from_ios-133x200.webp 133w, images/image_from_ios-177x266.webp 177w, images/image_from_ios-60x90.webp 60w, images/image_from_ios-167x250.webp 167w, images/image_from_ios-187x280.webp 187w, images/image_from_ios-147x220.webp 147w, images/image_from_ios-229x344.webp 229w, images/image_from_ios-267x400.webp 267w, images/image_from_ios-67x100.webp 67w, images/image_from_ios.webp 1280w" sizes="(max-width: 13px) 100vw, 13px">													</figure>
+											</li>
+																				</ul>
+																														<p class="blog-archive-content-processes-item-author-text">
+											By Market researcher Yevheniia Ustynova, Head of Architecture Office Maksym Moskvychev											</p>
+																														<p class="blog-archive-content-processes-item-time">
+											13 min read
+										</p>
+																		</div>
+														</a>
+					</li>
+																<li class="blog-archive-content-processes-item">
+						<a href="https://cloudhawktech.com/blog/program-management-best-practices/" class="blog-archive-content-processes-item-link">
+							<h3 class="blog-archive-content-processes-item-title">
+								Successful program management — Cloud Hawk approach								</h3>
+																<p class="blog-archive-content-processes-item-text">
+									Learn about a mature program management approach, Cloud Hawk’ tips, program best practices, and our strong program management office.									</p>
+																								<div class="blog-archive-content-processes-item-author-container">
+									<ul class="blog-archive-content-processes-item-authors-list">
+																																		<li class="blog-archive-content-processes-item-authors-item">
+												<figure class="blog-archive-content-processes-item-author-image">
+													<img width="20" height="20" src="images/gaidamaka-1-20x20.webp" class="attachment-user_avatar_archive size-user_avatar_archive wp-post-image" alt="" decoding="async" srcset="images/gaidamaka-1-20x20.webp 20w, images/gaidamaka-1-90x90.webp 90w, images/gaidamaka-1.webp 100w" sizes="(max-width: 20px) 100vw, 20px">													</figure>
+											</li>
+																																		<li class="blog-archive-content-processes-item-authors-item">
+												<figure class="blog-archive-content-processes-item-author-image">
+													<img width="20" height="20" src="images/ustinova-20x20.webp" class="attachment-user_avatar_archive size-user_avatar_archive wp-post-image" alt="" decoding="async" srcset="images/ustinova-20x20.webp 20w, images/ustinova-90x90.webp 90w, images/ustinova.webp 100w" sizes="(max-width: 20px) 100vw, 20px">													</figure>
+											</li>
+																				</ul>
+																														<p class="blog-archive-content-processes-item-author-text">
+											By Head of PMO Tatiana Gaydamaka, Market researcher Yevheniia Ustynova											</p>
+																														<p class="blog-archive-content-processes-item-time">
+											13 min  read
+										</p>
+																		</div>
+														</a>
+					</li>
+								</ul>
+			<div class="blog-archive-content-processes-list-mobile blog-mobile-slider swiper">
+				<div class="swiper-wrapper">
+																			<div class="blog-archive-content-processes-item swiper-slide">
+							<a class="blog-archive-content-processes-item-link">
+								<h3 class="blog-archive-content-processes-item-title">
+									What a project manager does at each stage of the software development process									</h3>
+																		<p class="blog-archive-content-processes-item-text">
+										Discover why project managers are vital during the whole app development process and what benefits you get from hiring one for your project.										</p>
+																	<div class="blog-archive-content-processes-item-author-container">
+									<ul class="blog-archive-content-processes-item-authors-list">
+																																		<li class="blog-archive-content-processes-item-authors-item">
+												<figure class="blog-archive-content-processes-item-author-image">
+													<img width="20" height="20" src="images/t0257r3sl-ua9dk0wf5-68292833defe-512-20x20.webp" class="attachment-user_avatar_archive size-user_avatar_archive wp-post-image" alt="" decoding="async" srcset="images/t0257r3sl-ua9dk0wf5-68292833defe-512-20x20.webp 20w, images/t0257r3sl-ua9dk0wf5-68292833defe-512-300x300.webp 300w, images/t0257r3sl-ua9dk0wf5-68292833defe-512-150x150.webp 150w, images/t0257r3sl-ua9dk0wf5-68292833defe-512-208x208.webp 208w, images/t0257r3sl-ua9dk0wf5-68292833defe-512-200x200.webp 200w, images/t0257r3sl-ua9dk0wf5-68292833defe-512-265x266.webp 265w, images/t0257r3sl-ua9dk0wf5-68292833defe-512-90x90.webp 90w, images/t0257r3sl-ua9dk0wf5-68292833defe-512-250x250.webp 250w, images/t0257r3sl-ua9dk0wf5-68292833defe-512-279x280.webp 279w, images/t0257r3sl-ua9dk0wf5-68292833defe-512-220x220.webp 220w, images/t0257r3sl-ua9dk0wf5-68292833defe-512-343x344.webp 343w, images/t0257r3sl-ua9dk0wf5-68292833defe-512-399x400.webp 399w, images/t0257r3sl-ua9dk0wf5-68292833defe-512-100x100.webp 100w, images/t0257r3sl-ua9dk0wf5-68292833defe-512.webp 511w" sizes="(max-width: 20px) 100vw, 20px">													</figure>
+											</li>
+																				</ul>
+																														<p class="blog-archive-content-processes-item-author-text-mobile">
+											By Chief executive officer Den Rudenko											</p>
+																														<p class="blog-archive-content-processes-item-time">
+											8 min read
+										</p>
+																		</div>
+							</a>
+						</div>
+																			<div class="blog-archive-content-processes-item swiper-slide">
+							<a class="blog-archive-content-processes-item-link">
+								<h3 class="blog-archive-content-processes-item-title">
+									Ultimate guide to evaluating a software development partner based on your needs									</h3>
+																		<p class="blog-archive-content-processes-item-text">
+										What are the key areas in evaluating an IT service provider? Check out the ​​сriteria for choosing a software development company.										</p>
+																	<div class="blog-archive-content-processes-item-author-container">
+									<ul class="blog-archive-content-processes-item-authors-list">
+																																		<li class="blog-archive-content-processes-item-authors-item">
+												<figure class="blog-archive-content-processes-item-author-image">
+													<img width="20" height="20" src="images/iaskova-20x20.webp" class="attachment-user_avatar_archive size-user_avatar_archive wp-post-image" alt="" decoding="async" srcset="images/iaskova-20x20.webp 20w, images/iaskova-90x90.webp 90w, images/iaskova-100x100.webp 100w, images/iaskova.webp 130w" sizes="(max-width: 20px) 100vw, 20px">													</figure>
+											</li>
+																				</ul>
+																														<p class="blog-archive-content-processes-item-author-text-mobile">
+											By Market researcher Dariia Iaskova											</p>
+																														<p class="blog-archive-content-processes-item-time">
+											6 minread
+										</p>
+																		</div>
+							</a>
+						</div>
+																			<div class="blog-archive-content-processes-item swiper-slide">
+							<a class="blog-archive-content-processes-item-link">
+								<h3 class="blog-archive-content-processes-item-title">
+									How to deal with strict project limitations and achieve high product quality									</h3>
+																		<p class="blog-archive-content-processes-item-text">
+										Learn best practices for dealing with strict project constraints and read about Cloud Hawk’ approach to constraints management to maintain quality.										</p>
+																	<div class="blog-archive-content-processes-item-author-container">
+									<ul class="blog-archive-content-processes-item-authors-list">
+																																		<li class="blog-archive-content-processes-item-authors-item">
+												<figure class="blog-archive-content-processes-item-author-image">
+													<img width="15" height="20" src="images/iryna_kanziuba-1-15x20.webp" class="attachment-user_avatar_archive size-user_avatar_archive wp-post-image" alt="" decoding="async" srcset="images/iryna_kanziuba-1-15x20.webp 15w, images/iryna_kanziuba-1-68x90.webp 68w, images/iryna_kanziuba-1.webp 75w" sizes="(max-width: 15px) 100vw, 15px">													</figure>
+											</li>
+																																		<li class="blog-archive-content-processes-item-authors-item">
+												<figure class="blog-archive-content-processes-item-author-image">
+													<img width="20" height="20" src="images/gaidamaka-1-20x20.webp" class="attachment-user_avatar_archive size-user_avatar_archive wp-post-image" alt="" decoding="async" srcset="images/gaidamaka-1-20x20.webp 20w, images/gaidamaka-1-90x90.webp 90w, images/gaidamaka-1.webp 100w" sizes="(max-width: 20px) 100vw, 20px">													</figure>
+											</li>
+																																		<li class="blog-archive-content-processes-item-authors-item">
+												<figure class="blog-archive-content-processes-item-author-image">
+													<img width="20" height="20" src="images/ustinova-20x20.webp" class="attachment-user_avatar_archive size-user_avatar_archive wp-post-image" alt="" decoding="async" srcset="images/ustinova-20x20.webp 20w, images/ustinova-90x90.webp 90w, images/ustinova.webp 100w" sizes="(max-width: 20px) 100vw, 20px">													</figure>
+											</li>
+																				</ul>
+																														<p class="blog-archive-content-processes-item-author-text-mobile">
+											By Business analyst Iryna Kanziuba, Head of PMO Tatiana Gaydamaka, Market researcher Yevheniia Ustynova											</p>
+																														<p class="blog-archive-content-processes-item-time">
+											15 minread
+										</p>
+																		</div>
+							</a>
+						</div>
+																			<div class="blog-archive-content-processes-item swiper-slide">
+							<a class="blog-archive-content-processes-item-link">
+								<h3 class="blog-archive-content-processes-item-title">
+									Why is an end user license agreement important for your software									</h3>
+																		<p class="blog-archive-content-processes-item-text">
+										Find out why end user license agreements are important for your software in this article										</p>
+																	<div class="blog-archive-content-processes-item-author-container">
+									<ul class="blog-archive-content-processes-item-authors-list">
+																																		<li class="blog-archive-content-processes-item-authors-item">
+												<figure class="blog-archive-content-processes-item-author-image">
+													<img width="20" height="20" src="images/vik-1-20x20.webp" class="attachment-user_avatar_archive size-user_avatar_archive wp-post-image" alt="" decoding="async" srcset="images/vik-1-20x20.webp 20w, images/vik-1-300x300.webp 300w, images/vik-1-150x150.webp 150w, images/vik-1-207x208.webp 207w, images/vik-1-200x200.webp 200w, images/vik-1-265x266.webp 265w, images/vik-1-90x90.webp 90w, images/vik-1-249x250.webp 249w, images/vik-1-279x280.webp 279w, images/vik-1-219x220.webp 219w, images/vik-1-343x344.webp 343w, images/vik-1-100x100.webp 100w, images/vik-1.webp 399w" sizes="(max-width: 20px) 100vw, 20px">													</figure>
+											</li>
+																																		<li class="blog-archive-content-processes-item-authors-item">
+												<figure class="blog-archive-content-processes-item-author-image">
+													<img width="20" height="20" src="images/yauhen_zaremba-1-20x20.webp" class="attachment-user_avatar_archive size-user_avatar_archive wp-post-image" alt="" decoding="async" srcset="images/yauhen_zaremba-1-20x20.webp 20w, images/yauhen_zaremba-1-300x300.webp 300w, images/yauhen_zaremba-1-150x150.webp 150w, images/yauhen_zaremba-1-208x208.webp 208w, images/yauhen_zaremba-1-200x200.webp 200w, images/yauhen_zaremba-1-266x266.webp 266w, images/yauhen_zaremba-1-90x90.webp 90w, images/yauhen_zaremba-1-250x250.webp 250w, images/yauhen_zaremba-1-280x280.webp 280w, images/yauhen_zaremba-1-220x220.webp 220w, images/yauhen_zaremba-1-344x344.webp 344w, images/yauhen_zaremba-1-100x100.webp 100w, images/yauhen_zaremba-1.webp 400w" sizes="(max-width: 20px) 100vw, 20px">													</figure>
+											</li>
+																				</ul>
+																														<p class="blog-archive-content-processes-item-author-text-mobile">
+											By Marketing manager at Cloud Hawk Viktor Osadchii, Senior Director of Demand Generation at PandaDoc Yauhen Zaremba											</p>
+																														<p class="blog-archive-content-processes-item-time">
+											15 min read
+										</p>
+																		</div>
+							</a>
+						</div>
+																			<div class="blog-archive-content-processes-item swiper-slide">
+							<a class="blog-archive-content-processes-item-link">
+								<h3 class="blog-archive-content-processes-item-title">
+									How do we perform an architecture assessment process at Cloud Hawk with TOGAF?									</h3>
+																		<p class="blog-archive-content-processes-item-text">
+										Explore the Cloud Hawk architecture assessment process with software architecture assessment templates and examples. 										</p>
+																	<div class="blog-archive-content-processes-item-author-container">
+									<ul class="blog-archive-content-processes-item-authors-list">
+																																		<li class="blog-archive-content-processes-item-authors-item">
+												<figure class="blog-archive-content-processes-item-author-image">
+													<img width="20" height="20" src="images/ustinova-20x20.webp" class="attachment-user_avatar_archive size-user_avatar_archive wp-post-image" alt="" decoding="async" srcset="images/ustinova-20x20.webp 20w, images/ustinova-90x90.webp 90w, images/ustinova.webp 100w" sizes="(max-width: 20px) 100vw, 20px">													</figure>
+											</li>
+																																		<li class="blog-archive-content-processes-item-authors-item">
+												<figure class="blog-archive-content-processes-item-author-image">
+													<img width="13" height="20" src="images/image_from_ios-13x20.webp" class="attachment-user_avatar_archive size-user_avatar_archive wp-post-image" alt="" decoding="async" srcset="images/image_from_ios-13x20.webp 13w, images/image_from_ios-200x300.webp 200w, images/image_from_ios-683x1024.webp 683w, images/image_from_ios-768x1152.webp 768w, images/image_from_ios-1024x1536.webp 1024w, images/image_from_ios-139x208.webp 139w, images/image_from_ios-133x200.webp 133w, images/image_from_ios-177x266.webp 177w, images/image_from_ios-60x90.webp 60w, images/image_from_ios-167x250.webp 167w, images/image_from_ios-187x280.webp 187w, images/image_from_ios-147x220.webp 147w, images/image_from_ios-229x344.webp 229w, images/image_from_ios-267x400.webp 267w, images/image_from_ios-67x100.webp 67w, images/image_from_ios.webp 1280w" sizes="(max-width: 13px) 100vw, 13px">													</figure>
+											</li>
+																				</ul>
+																														<p class="blog-archive-content-processes-item-author-text-mobile">
+											By Market researcher Yevheniia Ustynova, Head of Architecture Office Maksym Moskvychev											</p>
+																														<p class="blog-archive-content-processes-item-time">
+											13 minread
+										</p>
+																		</div>
+							</a>
+						</div>
+																			<div class="blog-archive-content-processes-item swiper-slide">
+							<a class="blog-archive-content-processes-item-link">
+								<h3 class="blog-archive-content-processes-item-title">
+									Successful program management — Cloud Hawk approach									</h3>
+																		<p class="blog-archive-content-processes-item-text">
+										Learn about a mature program management approach, Cloud Hawk’ tips, program best practices, and our strong program management office.										</p>
+																	<div class="blog-archive-content-processes-item-author-container">
+									<ul class="blog-archive-content-processes-item-authors-list">
+																																		<li class="blog-archive-content-processes-item-authors-item">
+												<figure class="blog-archive-content-processes-item-author-image">
+													<img width="20" height="20" src="images/gaidamaka-1-20x20.webp" class="attachment-user_avatar_archive size-user_avatar_archive wp-post-image" alt="" decoding="async" srcset="images/gaidamaka-1-20x20.webp 20w, images/gaidamaka-1-90x90.webp 90w, images/gaidamaka-1.webp 100w" sizes="(max-width: 20px) 100vw, 20px">													</figure>
+											</li>
+																																		<li class="blog-archive-content-processes-item-authors-item">
+												<figure class="blog-archive-content-processes-item-author-image">
+													<img width="20" height="20" src="images/ustinova-20x20.webp" class="attachment-user_avatar_archive size-user_avatar_archive wp-post-image" alt="" decoding="async" srcset="images/ustinova-20x20.webp 20w, images/ustinova-90x90.webp 90w, images/ustinova.webp 100w" sizes="(max-width: 20px) 100vw, 20px">													</figure>
+											</li>
+																				</ul>
+																														<p class="blog-archive-content-processes-item-author-text-mobile">
+											By Head of PMO Tatiana Gaydamaka, Market researcher Yevheniia Ustynova											</p>
+																														<p class="blog-archive-content-processes-item-time">
+											13 min read
+										</p>
+																		</div>
+							</a>
+						</div>
+										</div>
+				<div class="blog-archive-content-processes-list-mobile-nav blog-mobile-slider-navigation"></div>
+			</div>
+		</div>
+			<div class="blog-archive-content-fintech-video-container">
+	<div class="blog-archive-content-fintech-video-title-container">
+		<h2 class="blog-archive-content-fintech-video-title">
+			Videos			</h2>
+		<div class="blog-archive-content-fintech-video-pagination">
+			<div class="blog-archive-content-fintech-video-pagination-prev"></div>
+			<div class="blog-archive-content-fintech-video-pagination-next"></div>
+		</div>
+	</div>
+	<div class="blog-archive-content-fintech-video-list swiper">
+		<div class="swiper-wrapper">
+													<div class="blog-archive-content-fintech-video-item swiper-slide">
+					<a href="https://www.youtube.com/embed/JqPpq2WtL6M" data-fslightbox="video" class="blog-archive-content-fintech-video-item-image-container" rel="nofollow">
+						<span class="blog-archive-content-fintech-video-item-play-button"></span>
+						<figure>
+							<img width="1920" height="1080" src="images/visual_programming_languages-1.webp" class="attachment-full size-full wp-post-image" alt="" decoding="async" srcset="images/visual_programming_languages-1.webp 1920w, images/visual_programming_languages-1-300x169.webp 300w, images/visual_programming_languages-1-1024x576.webp 1024w, images/visual_programming_languages-1-768x432.webp 768w, images/visual_programming_languages-1-1536x864.webp 1536w, images/visual_programming_languages-1-336x189.webp 336w, images/visual_programming_languages-1-288x162.webp 288w, images/visual_programming_languages-1-356x200.webp 356w, images/visual_programming_languages-1-328x185.webp 328w, images/visual_programming_languages-1-120x68.webp 120w, images/visual_programming_languages-1-444x250.webp 444w, images/visual_programming_languages-1-368x207.webp 368w, images/visual_programming_languages-1-260x146.webp 260w, images/visual_programming_languages-1-612x344.webp 612w, images/visual_programming_languages-1-711x400.webp 711w, images/visual_programming_languages-1-177x100.webp 177w, images/visual_programming_languages-1-20x11.webp 20w, images/visual_programming_languages-1-100x56.webp 100w" sizes="(max-width: 1920px) 100vw, 1920px">							</figure>
+					</a>
+					<a href="https://cloudhawktech.com/blog/visual-programming-languages/" class="blog-archive-content-fintech-video-item-link">
+						<h3 class="blog-archive-content-fintech-video-item-title">Are visual programming languages good for software development?</h3>
+														<p class="blog-archive-content-fintech-video-item-read">
+								2 min watch
+							</p>
+												</a>
+				</div>
+													<div class="blog-archive-content-fintech-video-item swiper-slide">
+					<a href="https://www.youtube.com/embed/kIyJoWtwFdM" data-fslightbox="video" class="blog-archive-content-fintech-video-item-image-container" rel="nofollow">
+						<span class="blog-archive-content-fintech-video-item-play-button"></span>
+						<figure>
+							<img width="1920" height="1080" src="images/microservice_architecture-1.webp" class="attachment-full size-full wp-post-image" alt="" decoding="async" srcset="images/microservice_architecture-1.webp 1920w, images/microservice_architecture-1-300x169.webp 300w, images/microservice_architecture-1-1024x576.webp 1024w, images/microservice_architecture-1-768x432.webp 768w, images/microservice_architecture-1-1536x864.webp 1536w, images/microservice_architecture-1-336x189.webp 336w, images/microservice_architecture-1-288x162.webp 288w, images/microservice_architecture-1-356x200.webp 356w, images/microservice_architecture-1-328x185.webp 328w, images/microservice_architecture-1-120x68.webp 120w, images/microservice_architecture-1-444x250.webp 444w, images/microservice_architecture-1-368x207.webp 368w, images/microservice_architecture-1-260x146.webp 260w, images/microservice_architecture-1-612x344.webp 612w, images/microservice_architecture-1-711x400.webp 711w, images/microservice_architecture-1-177x100.webp 177w, images/microservice_architecture-1-20x11.webp 20w, images/microservice_architecture-1-100x56.webp 100w" sizes="(max-width: 1920px) 100vw, 1920px">							</figure>
+					</a>
+					<a href="https://cloudhawktech.com/blog/what-is-microservice-architecture/" class="blog-archive-content-fintech-video-item-link">
+						<h3 class="blog-archive-content-fintech-video-item-title">Best practices for building and testing event-driven microservice architecture</h3>
+														<p class="blog-archive-content-fintech-video-item-read">
+								2 min watch
+							</p>
+												</a>
+				</div>
+													<div class="blog-archive-content-fintech-video-item swiper-slide">
+					<a href="https://www.youtube.com/embed/oZQCAEu8mzA" data-fslightbox="video" class="blog-archive-content-fintech-video-item-image-container" rel="nofollow">
+						<span class="blog-archive-content-fintech-video-item-play-button"></span>
+						<figure>
+							<img width="1920" height="1080" src="images/rust-1.webp" class="attachment-full size-full wp-post-image" alt="" decoding="async" srcset="images/rust-1.webp 1920w, images/rust-1-300x169.webp 300w, images/rust-1-1024x576.webp 1024w, images/rust-1-768x432.webp 768w, images/rust-1-1536x864.webp 1536w, images/rust-1-336x189.webp 336w, images/rust-1-288x162.webp 288w, images/rust-1-356x200.webp 356w, images/rust-1-328x185.webp 328w, images/rust-1-120x68.webp 120w, images/rust-1-444x250.webp 444w, images/rust-1-368x207.webp 368w, images/rust-1-260x146.webp 260w, images/rust-1-612x344.webp 612w, images/rust-1-711x400.webp 711w, images/rust-1-177x100.webp 177w, images/rust-1-20x11.webp 20w, images/rust-1-100x56.webp 100w" sizes="(max-width: 1920px) 100vw, 1920px">							</figure>
+					</a>
+					<a href="https://cloudhawktech.com/blog/rust-development-challenges-and-cases/" class="blog-archive-content-fintech-video-item-link">
+						<h3 class="blog-archive-content-fintech-video-item-title">Rust development challenges and cases</h3>
+														<p class="blog-archive-content-fintech-video-item-read">
+								3 min  watch
+							</p>
+												</a>
+				</div>
+						</div>
+	</div>
+	<div class="blog-archive-content-fintech-video-list-mobile-nav"></div>
+</div>
+</div>
+	<div class="blog-archive-content-bottom-container">
+	<h2 class="blog-archive-content-feature-posts-title">Latest Articles</h2>
+	<div class="blog-archive-sort-container">
+		<div class="blog-archive-sort-items-count">
+			<p class="blog-archive-sort-items-count-text">Result: <span id="search_posts_count">189</span> items</p>
+		</div>
+		<div class="blog-archive-sort-by-container">
+			<p class="blog-archive-sort-by-title">Sort by:</p>
+			<p class="blog-archive-sort-by-list-title">Newest</p>
+			<ul class="blog-archive-sort-by-list archive-blog-sort">
+										<li class="blog-archive-sort-by-item">
+						<p class="blog-archive-sort-by-item-title " data-orderby="views_count" data-order="DESC">
+							Most popular							</p>
+					</li>
+										<li class="blog-archive-sort-by-item">
+						<p class="blog-archive-sort-by-item-title " data-orderby="featured" data-order="DESC">
+							Featured							</p>
+					</li>
+										<li class="blog-archive-sort-by-item">
+						<p class="blog-archive-sort-by-item-title active" data-orderby="date" data-order="DESC">
+							Newest							</p>
+					</li>
+										<li class="blog-archive-sort-by-item">
+						<p class="blog-archive-sort-by-item-title " data-orderby="date" data-order="ASC">
+							Latest							</p>
+					</li>
+								</ul>
+		</div>
+	</div>
+	<div id="all_blog_posts">
+		
+<div class="blog-archive-content-container">
+	<div class="blog-archive-items-list-container">
+					<div class="blog-archive-items-list">
+													<div class="blog-archive-items-list-item">
+					<a href="https://cloudhawktech.com/blog/iot-enabled-chronic-disease-management/" class="blog-archive-items-list-item-link">
+						<div class="blog-archive-items-list-item-container">
+							<div class="blog-archive-items-list-item-content-container">
+								<div class="blog-archive-items-list-item-top-mobile">
+																				<p class="blog-archive-items-list-item-cat">
+											How to											</p>
+																														<p class="blog-archive-items-list-item-time">
+											7 min read
+										</p>
+																		</div>
+								<h3 class="blog-archive-items-list-item-title">
+									How medical IoT devices address key challenges in chronic disease management: IoT-optimized remote patient monitoring and its benefits									</h3>
+																		<p class="blog-archive-items-list-item-text">
+										Market researcher Yuliia Panasenko, Head of IoT Unit at Cloud Hawk Denys Hukov										</p>
+																	<div class="blog-archive-items-list-item-bottom-content">
+																				<p class="blog-archive-items-list-item-cat">
+											How to											</p>
+																														<p class="blog-archive-items-list-item-time">
+											7 min read
+										</p>
+																		</div>
+							</div>
+							<div class="blog-archive-items-list-item-image-container">
+								<figure>
+									<img width="660" height="332" src="images/How-healthcare-providers-can-help-chronic-disease-patients-regain-control-over-their-lives_article-preview.png" class="attachment-full size-full" alt="" decoding="async" srcset="images/How-healthcare-providers-can-help-chronic-disease-patients-regain-control-over-their-lives_article-preview.png 660w, images/How-healthcare-providers-can-help-chronic-disease-patients-regain-control-over-their-lives_article-preview-300x151.png 300w, images/How-healthcare-providers-can-help-chronic-disease-patients-regain-control-over-their-lives_article-preview-336x169.png 336w, images/How-healthcare-providers-can-help-chronic-disease-patients-regain-control-over-their-lives_article-preview-288x145.png 288w, images/How-healthcare-providers-can-help-chronic-disease-patients-regain-control-over-their-lives_article-preview-368x185.png 368w, images/How-healthcare-providers-can-help-chronic-disease-patients-regain-control-over-their-lives_article-preview-328x165.png 328w, images/How-healthcare-providers-can-help-chronic-disease-patients-regain-control-over-their-lives_article-preview-120x60.png 120w, images/How-healthcare-providers-can-help-chronic-disease-patients-regain-control-over-their-lives_article-preview-497x250.png 497w, images/How-healthcare-providers-can-help-chronic-disease-patients-regain-control-over-their-lives_article-preview-260x131.png 260w, images/How-healthcare-providers-can-help-chronic-disease-patients-regain-control-over-their-lives_article-preview-177x89.png 177w, images/How-healthcare-providers-can-help-chronic-disease-patients-regain-control-over-their-lives_article-preview-20x10.png 20w, images/How-healthcare-providers-can-help-chronic-disease-patients-regain-control-over-their-lives_article-preview-100x50.png 100w" sizes="(max-width: 660px) 100vw, 660px">									</figure>
+							</div>
+						</div>
+					</a>
+				</div>
+																								<div class="blog-archive-items-list-item">
+					<a href="https://cloudhawktech.com/blog/metadata-management-best-practices/" class="blog-archive-items-list-item-link">
+						<div class="blog-archive-items-list-item-container">
+							<div class="blog-archive-items-list-item-content-container">
+								<div class="blog-archive-items-list-item-top-mobile">
+																				<p class="blog-archive-items-list-item-cat">
+											How to											</p>
+																														<p class="blog-archive-items-list-item-time">
+											8 read
+										</p>
+																		</div>
+								<h3 class="blog-archive-items-list-item-title">
+									7 best practices in metadata management for IT leaders and decision makers									</h3>
+																		<p class="blog-archive-items-list-item-text">
+										Market researcher Anna Huzei, Lead of BI &amp; Data Management at Cloud Hawk Andrii Panchenko										</p>
+																	<div class="blog-archive-items-list-item-bottom-content">
+																				<p class="blog-archive-items-list-item-cat">
+											How to											</p>
+																														<p class="blog-archive-items-list-item-time">
+											8 read
+										</p>
+																		</div>
+							</div>
+							<div class="blog-archive-items-list-item-image-container">
+								<figure>
+									<img width="1600" height="560" src="images/Metadata-management-hero-image.png" class="attachment-full size-full" alt="" decoding="async" srcset="images/Metadata-management-hero-image.png 1600w, images/Metadata-management-hero-image-300x105.png 300w, images/Metadata-management-hero-image-1024x358.png 1024w, images/Metadata-management-hero-image-768x269.png 768w, images/Metadata-management-hero-image-1536x538.png 1536w, images/Metadata-management-hero-image-336x118.png 336w, images/Metadata-management-hero-image-288x101.png 288w, images/Metadata-management-hero-image-368x129.png 368w, images/Metadata-management-hero-image-328x115.png 328w, images/Metadata-management-hero-image-120x42.png 120w, images/Metadata-management-hero-image-688x241.png 688w, images/Metadata-management-hero-image-260x91.png 260w, images/Metadata-management-hero-image-732x256.png 732w, images/Metadata-management-hero-image-177x62.png 177w, images/Metadata-management-hero-image-20x7.png 20w, images/Metadata-management-hero-image-100x35.png 100w" sizes="(max-width: 1600px) 100vw, 1600px">									</figure>
+							</div>
+						</div>
+					</a>
+				</div>
+																								<div class="blog-archive-items-list-item">
+					<a href="https://cloudhawktech.com/blog/medical-device-software-development/" class="blog-archive-items-list-item-link">
+						<div class="blog-archive-items-list-item-container">
+							<div class="blog-archive-items-list-item-content-container">
+								<div class="blog-archive-items-list-item-top-mobile">
+																				<p class="blog-archive-items-list-item-cat">
+											How to											</p>
+																														<p class="blog-archive-items-list-item-time">
+											10 min read
+										</p>
+																		</div>
+								<h3 class="blog-archive-items-list-item-title">
+									A proven approach to medical device software development: How to build a feasible software prototype, test it, and successfully launch your product									</h3>
+																		<p class="blog-archive-items-list-item-text">
+										Market researcher Nataliia Shcherban, Head of IoT Unit at Cloud Hawk Denys Hukov										</p>
+																	<div class="blog-archive-items-list-item-bottom-content">
+																				<p class="blog-archive-items-list-item-cat">
+											How to											</p>
+																														<p class="blog-archive-items-list-item-time">
+											10 min read
+										</p>
+																		</div>
+							</div>
+							<div class="blog-archive-items-list-item-image-container">
+								<figure>
+									<img width="660" height="332" src="images/Medical-device-software-development_article-preview.png" class="attachment-full size-full" alt="" decoding="async" srcset="images/Medical-device-software-development_article-preview.png 660w, images/Medical-device-software-development_article-preview-300x151.png 300w, images/Medical-device-software-development_article-preview-336x169.png 336w, images/Medical-device-software-development_article-preview-288x145.png 288w, images/Medical-device-software-development_article-preview-368x185.png 368w, images/Medical-device-software-development_article-preview-328x165.png 328w, images/Medical-device-software-development_article-preview-120x60.png 120w, images/Medical-device-software-development_article-preview-497x250.png 497w, images/Medical-device-software-development_article-preview-260x131.png 260w, images/Medical-device-software-development_article-preview-177x89.png 177w, images/Medical-device-software-development_article-preview-20x10.png 20w, images/Medical-device-software-development_article-preview-100x50.png 100w" sizes="(max-width: 660px) 100vw, 660px">									</figure>
+							</div>
+						</div>
+					</a>
+				</div>
+																								<div class="blog-archive-items-list-item">
+					<a href="https://cloudhawktech.com/blog/wearable-technology-in-healthcare/" class="blog-archive-items-list-item-link">
+						<div class="blog-archive-items-list-item-container">
+							<div class="blog-archive-items-list-item-content-container">
+								<div class="blog-archive-items-list-item-top-mobile">
+																				<p class="blog-archive-items-list-item-cat">
+											How to											</p>
+																														<p class="blog-archive-items-list-item-time">
+											7 read
+										</p>
+																		</div>
+								<h3 class="blog-archive-items-list-item-title">
+									Wearable technology in healthcare: a comprehensive integration guide for hospitals and clinics									</h3>
+																		<p class="blog-archive-items-list-item-text">
+										Market researcher Nataliia Shcherban, Head of IoT Unit at Cloud Hawk Denys Hukov										</p>
+																	<div class="blog-archive-items-list-item-bottom-content">
+																				<p class="blog-archive-items-list-item-cat">
+											How to											</p>
+																														<p class="blog-archive-items-list-item-time">
+											7 read
+										</p>
+																		</div>
+							</div>
+							<div class="blog-archive-items-list-item-image-container">
+								<figure>
+									<img width="1600" height="560" src="images/Wearable-technology-in-healthcare_-a-comprehensive-integration-guide-for-hospitals-and-clinics-wo-text.png" class="attachment-full size-full" alt="" decoding="async" srcset="images/Wearable-technology-in-healthcare_-a-comprehensive-integration-guide-for-hospitals-and-clinics-wo-text.png 1600w, images/Wearable-technology-in-healthcare_-a-comprehensive-integration-guide-for-hospitals-and-clinics-wo-text-300x105.png 300w, images/Wearable-technology-in-healthcare_-a-comprehensive-integration-guide-for-hospitals-and-clinics-wo-text-1024x358.png 1024w, images/Wearable-technology-in-healthcare_-a-comprehensive-integration-guide-for-hospitals-and-clinics-wo-text-768x269.png 768w, images/Wearable-technology-in-healthcare_-a-comprehensive-integration-guide-for-hospitals-and-clinics-wo-text-1536x538.png 1536w, images/Wearable-technology-in-healthcare_-a-comprehensive-integration-guide-for-hospitals-and-clinics-wo-text-336x118.png 336w, images/Wearable-technology-in-healthcare_-a-comprehensive-integration-guide-for-hospitals-and-clinics-wo-text-288x101.png 288w, images/Wearable-technology-in-healthcare_-a-comprehensive-integration-guide-for-hospitals-and-clinics-wo-text-368x129.png 368w, images/Wearable-technology-in-healthcare_-a-comprehensive-integration-guide-for-hospitals-and-clinics-wo-text-328x115.png 328w, images/Wearable-technology-in-healthcare_-a-comprehensive-integration-guide-for-hospitals-and-clinics-wo-text-120x42.png 120w, images/Wearable-technology-in-healthcare_-a-comprehensive-integration-guide-for-hospitals-and-clinics-wo-text-688x241.png 688w, images/Wearable-technology-in-healthcare_-a-comprehensive-integration-guide-for-hospitals-and-clinics-wo-text-260x91.png 260w, images/Wearable-technology-in-healthcare_-a-comprehensive-integration-guide-for-hospitals-and-clinics-wo-text-732x256.png 732w, images/Wearable-technology-in-healthcare_-a-comprehensive-integration-guide-for-hospitals-and-clinics-wo-text-177x62.png 177w, images/Wearable-technology-in-healthcare_-a-comprehensive-integration-guide-for-hospitals-and-clinics-wo-text-20x7.png 20w, images/Wearable-technology-in-healthcare_-a-comprehensive-integration-guide-for-hospitals-and-clinics-wo-text-100x35.png 100w" sizes="(max-width: 1600px) 100vw, 1600px">									</figure>
+							</div>
+						</div>
+					</a>
+				</div>
+																								<div class="blog-archive-items-list-item">
+					<a href="https://cloudhawktech.com/blog/remote-patient-monitoring-devices/" class="blog-archive-items-list-item-link">
+						<div class="blog-archive-items-list-item-container">
+							<div class="blog-archive-items-list-item-content-container">
+								<div class="blog-archive-items-list-item-top-mobile">
+																				<p class="blog-archive-items-list-item-cat">
+											How to											</p>
+																														<p class="blog-archive-items-list-item-time">
+											8 read
+										</p>
+																		</div>
+								<h3 class="blog-archive-items-list-item-title">
+									Ways in which remote patient monitoring devices assist in fostering patient trust and positive business image									</h3>
+																		<p class="blog-archive-items-list-item-text">
+										Market researcher Nataliia Shcherban, Head of IoT Unit at Cloud Hawk Denys Hukov										</p>
+																	<div class="blog-archive-items-list-item-bottom-content">
+																				<p class="blog-archive-items-list-item-cat">
+											How to											</p>
+																														<p class="blog-archive-items-list-item-time">
+											8 read
+										</p>
+																		</div>
+							</div>
+							<div class="blog-archive-items-list-item-image-container">
+								<figure>
+									<img width="1600" height="560" src="images/Remote-patient-monitoring-devices-as-a-crucial-component-of-patient-centric-care-1.png" class="attachment-full size-full" alt="" decoding="async" srcset="images/Remote-patient-monitoring-devices-as-a-crucial-component-of-patient-centric-care-1.png 1600w, images/Remote-patient-monitoring-devices-as-a-crucial-component-of-patient-centric-care-1-300x105.png 300w, images/Remote-patient-monitoring-devices-as-a-crucial-component-of-patient-centric-care-1-1024x358.png 1024w, images/Remote-patient-monitoring-devices-as-a-crucial-component-of-patient-centric-care-1-768x269.png 768w, images/Remote-patient-monitoring-devices-as-a-crucial-component-of-patient-centric-care-1-1536x538.png 1536w, images/Remote-patient-monitoring-devices-as-a-crucial-component-of-patient-centric-care-1-336x118.png 336w, images/Remote-patient-monitoring-devices-as-a-crucial-component-of-patient-centric-care-1-288x101.png 288w, images/Remote-patient-monitoring-devices-as-a-crucial-component-of-patient-centric-care-1-368x129.png 368w, images/Remote-patient-monitoring-devices-as-a-crucial-component-of-patient-centric-care-1-328x115.png 328w, images/Remote-patient-monitoring-devices-as-a-crucial-component-of-patient-centric-care-1-120x42.png 120w, images/Remote-patient-monitoring-devices-as-a-crucial-component-of-patient-centric-care-1-688x241.png 688w, images/Remote-patient-monitoring-devices-as-a-crucial-component-of-patient-centric-care-1-260x91.png 260w, images/Remote-patient-monitoring-devices-as-a-crucial-component-of-patient-centric-care-1-732x256.png 732w, images/Remote-patient-monitoring-devices-as-a-crucial-component-of-patient-centric-care-1-177x62.png 177w, images/Remote-patient-monitoring-devices-as-a-crucial-component-of-patient-centric-care-1-20x7.png 20w, images/Remote-patient-monitoring-devices-as-a-crucial-component-of-patient-centric-care-1-100x35.png 100w" sizes="(max-width: 1600px) 100vw, 1600px">									</figure>
+							</div>
+						</div>
+					</a>
+				</div>
+																	</div>
+		<div class="blog-archive-items-pagination-block" data-taxonomy="" data-term_id="">
+			<div class="pagination"><ul class="pagination-list"><li class="pagination-item prev disabled"><img src="images/pagination-arrow.svg" alt="Pagination Arrow prev"></li><li class="current pagination-item"><a href="#page1" data-page_num="1">1</a></li><li><a href="#page2" data-page_num="2">2</a></li><li><a href="#page3" data-page_num="3">3</a></li><li class="dots pagination-item">...</li><li><a href="#page36" data-page_num="36">36</a></li><li><a href="#page37" data-page_num="37">37</a></li><li><a href="#page38" data-page_num="38">38</a></li><li class="pagination-item next enabled"><a href="#page2" data-page_num="2"><img src="images/pagination-arrow.svg" alt="Pagination Arrow next"></a></li></ul></div>			</div>
+	</div>
+</div>
+		</div>
+</div>
+		</div>
+</section>
+	<section class="cta-orange-bg-full-width blog-orange-cta">
+	<div class="cta-orange-bg-full-width-container">
+		<div class="">
+								<h3 class="cta-orange-bg-full-width-title">
+					Got questions for us?					</h3>
+												<p class="cta-orange-bg-full-width-text">
+					Feel free to request any kind of information you need for your business success					</p>
+						</div>
+									<a class="cta-orange-bg-full-width-link" href="/contacts/">
+				Get in touch				</a>
+				</div>
+</section>
+
+</main>
+</Layout>
+</div><script is:inline src="/js/hooks.min.js" id="wp-hooks-js"></script>
+<script is:inline src="/js/i18n.min.js" id="wp-i18n-js"></script>
+<script is:inline id="wp-i18n-js-after">
+	wp.i18n.setLocaleData({ 'text direction\u0004ltr': ['ltr'] });
+</script>
+<script is:inline src="/js/index.js" id="swv-js"></script>
+<script is:inline id="contact-form-7-js-extra">
+	var wpcf7 = { "api": { "root": "https:\/\/cloudhawktech.com\/wp-json\/", "namespace": "contact-form-7\/v1" } };
+</script>
+<script is:inline src="/js/index_1.js" id="contact-form-7-js"></script>
+<script is:inline src="/js/hero_section_main.js" id="block-acf-hero-section-main-js"></script>
+<script is:inline src="/js/wpcf7-recaptcha-controls.js" id="wpcf7-recaptcha-controls-js"></script>
+<script is:inline id="google-recaptcha-js-extra">
+	var wpcf7iqfix = { "recaptcha_empty": "Please verify that you are not a robot.", "response_err": "wpcf7-recaptcha: Could not verify reCaptcha response." };
+</script>
+<script is:inline src="/js/api.js" id="google-recaptcha-js"></script>
+
+
+</body></html>

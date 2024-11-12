@@ -1,0 +1,2895 @@
+---
+import Layout from "../layouts/_layout.astro"
+const handleSubmit = () => {
+    const form = document.getElementById('contact-form') as HTMLFormElement; // Cast to HTMLFormElement
+    const formData = new FormData(form);
+    
+    fetch('/api/contact', {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => {
+        if (response.ok) {
+            alert('Message sent successfully!');
+        } else {
+            alert('There was an error sending your message.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('There was an error sending your message.');
+    });
+};
+
+const response = await fetch("http://cloudhawktech.local/graphql", {
+  method: 'POST',
+ 
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    query: `query MyQuery {
+  homeSections {
+    nodes {
+      homepageServices {
+        csd {
+          fieldGroupName
+          heading
+          readmore {
+            url
+          }
+          servicepoint {
+            li1
+            li2
+            li3
+            li4
+            li5
+            li6
+          }
+        }
+        dtaservice {
+          heading
+          readmore {
+            url
+          }
+          servicepoint {
+            li1
+            li2
+            li3
+            li4
+            li5
+          }
+        }
+        dtService {
+          heading
+          readmore {
+            url
+          }
+          servicepoint {
+            li5
+            li4
+            li3
+            li2
+            li1
+          }
+        }
+        itcService {
+          heading
+          servicepoint {
+            li7
+            li6
+            li4
+            li3
+            li2
+            li1
+            li
+          }
+          readmore {
+            url
+          }
+        }
+      }
+    }
+  }
+}
+    `,
+  }),
+});
+
+const json = await response.json();
+const nodes = json.data.homeSections.nodes;
+
+// Assuming nodes is an array and each node has homepageServices
+const homepageServices = nodes.length > 0 ? nodes[0].homepageServices : null;
+const csd = homepageServices ? homepageServices.csd : null;
+const dta = homepageServices ? homepageServices.dtaservice : null;
+const itc = homepageServices ? homepageServices.itcService : null;
+const dt = homepageServices ? homepageServices.dtService : null;
+// Changed here
+console.log("Response data:", JSON.stringify(json.data));
+---
+
+
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Software development company | Cloud Hawk</title>
+
+	<style id="wp-emoji-styles-inline-css">
+		img.wp-smiley,
+		img.emoji {
+			display: inline !important;
+			border: none !important;
+			box-shadow: none !important;
+			height: 1em !important;
+			width: 1em !important;
+			margin: 0 0.07em !important;
+			vertical-align: -0.1em !important;
+			background: none !important;
+			padding: 0 !important;
+		}
+	</style>
+	<style id="classic-theme-styles-inline-css">
+		/*! This file is auto-generated */
+		.wp-block-button__link {
+			color: #fff;
+			background-color: #32373c;
+			border-radius: 9999px;
+			box-shadow: none;
+			text-decoration: none;
+			padding: calc(.667em + 2px) calc(1.333em + 2px);
+			font-size: 1.125em
+		}
+
+		.wp-block-file__button {
+			background: #32373c;
+			color: #fff;
+			text-decoration: none
+		}
+	</style>
+
+	<style id="global-styles-inline-css">
+		:root {
+			--wp--preset--aspect-ratio--square: 1;
+			--wp--preset--aspect-ratio--4-3: 4/3;
+			--wp--preset--aspect-ratio--3-4: 3/4;
+			--wp--preset--aspect-ratio--3-2: 3/2;
+			--wp--preset--aspect-ratio--2-3: 2/3;
+			--wp--preset--aspect-ratio--16-9: 16/9;
+			--wp--preset--aspect-ratio--9-16: 9/16;
+			--wp--preset--color--black: #000000;
+			--wp--preset--color--cyan-bluish-gray: #abb8c3;
+			--wp--preset--color--white: #ffffff;
+			--wp--preset--color--pale-pink: #f78da7;
+			--wp--preset--color--vivid-red: #cf2e2e;
+			--wp--preset--color--luminous-vivid-orange: #ff6900;
+			--wp--preset--color--luminous-vivid-amber: #fcb900;
+			--wp--preset--color--light-green-cyan: #7bdcb5;
+			--wp--preset--color--vivid-green-cyan: #00d084;
+			--wp--preset--color--pale-cyan-blue: #8ed1fc;
+			--wp--preset--color--vivid-cyan-blue: #0693e3;
+			--wp--preset--color--vivid-purple: #9b51e0;
+			--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg, rgba(6, 147, 227, 1) 0%, rgb(155, 81, 224) 100%);
+			--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg, rgb(122, 220, 180) 0%, rgb(0, 208, 130) 100%);
+			--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg, rgba(252, 185, 0, 1) 0%, rgba(255, 105, 0, 1) 100%);
+			--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg, rgba(255, 105, 0, 1) 0%, rgb(207, 46, 46) 100%);
+			--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg, rgb(238, 238, 238) 0%, rgb(169, 184, 195) 100%);
+			--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg, rgb(74, 234, 220) 0%, rgb(151, 120, 209) 20%, rgb(207, 42, 186) 40%, rgb(238, 44, 130) 60%, rgb(251, 105, 98) 80%, rgb(254, 248, 76) 100%);
+			--wp--preset--gradient--blush-light-purple: linear-gradient(135deg, rgb(255, 206, 236) 0%, rgb(152, 150, 240) 100%);
+			--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg, rgb(254, 205, 165) 0%, rgb(254, 45, 45) 50%, rgb(107, 0, 62) 100%);
+			--wp--preset--gradient--luminous-dusk: linear-gradient(135deg, rgb(255, 203, 112) 0%, rgb(199, 81, 192) 50%, rgb(65, 88, 208) 100%);
+			--wp--preset--gradient--pale-ocean: linear-gradient(135deg, rgb(255, 245, 203) 0%, rgb(182, 227, 212) 50%, rgb(51, 167, 181) 100%);
+			--wp--preset--gradient--electric-grass: linear-gradient(135deg, rgb(202, 248, 128) 0%, rgb(113, 206, 126) 100%);
+			--wp--preset--gradient--midnight: linear-gradient(135deg, rgb(2, 3, 129) 0%, rgb(40, 116, 252) 100%);
+			--wp--preset--font-size--small: 13px;
+			--wp--preset--font-size--medium: 20px;
+			--wp--preset--font-size--large: 36px;
+			--wp--preset--font-size--x-large: 42px;
+			--wp--preset--spacing--20: 0.44rem;
+			--wp--preset--spacing--30: 0.67rem;
+			--wp--preset--spacing--40: 1rem;
+			--wp--preset--spacing--50: 1.5rem;
+			--wp--preset--spacing--60: 2.25rem;
+			--wp--preset--spacing--70: 3.38rem;
+			--wp--preset--spacing--80: 5.06rem;
+			--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);
+			--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);
+			--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);
+			--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);
+			--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);
+		}
+
+		:where(.is-layout-flex) {
+			gap: 0.5em;
+		}
+
+		:where(.is-layout-grid) {
+			gap: 0.5em;
+		}
+
+		body .is-layout-flex {
+			display: flex;
+		}
+
+		.is-layout-flex {
+			flex-wrap: wrap;
+			align-items: center;
+		}
+
+		.is-layout-flex> :is(*, div) {
+			margin: 0;
+		}
+
+		body .is-layout-grid {
+			display: grid;
+		}
+
+		.is-layout-grid> :is(*, div) {
+			margin: 0;
+		}
+
+		:where(.wp-block-columns.is-layout-flex) {
+			gap: 2em;
+		}
+
+		:where(.wp-block-columns.is-layout-grid) {
+			gap: 2em;
+		}
+
+		:where(.wp-block-post-template.is-layout-flex) {
+			gap: 1.25em;
+		}
+
+		:where(.wp-block-post-template.is-layout-grid) {
+			gap: 1.25em;
+		}
+
+		.has-black-color {
+			color: var(--wp--preset--color--black) !important;
+		}
+
+		.has-cyan-bluish-gray-color {
+			color: var(--wp--preset--color--cyan-bluish-gray) !important;
+		}
+
+		.has-white-color {
+			color: var(--wp--preset--color--white) !important;
+		}
+
+		.has-pale-pink-color {
+			color: var(--wp--preset--color--pale-pink) !important;
+		}
+
+		.has-vivid-red-color {
+			color: var(--wp--preset--color--vivid-red) !important;
+		}
+
+		.has-luminous-vivid-orange-color {
+			color: var(--wp--preset--color--luminous-vivid-orange) !important;
+		}
+
+		.has-luminous-vivid-amber-color {
+			color: var(--wp--preset--color--luminous-vivid-amber) !important;
+		}
+
+		.has-light-green-cyan-color {
+			color: var(--wp--preset--color--light-green-cyan) !important;
+		}
+
+		.has-vivid-green-cyan-color {
+			color: var(--wp--preset--color--vivid-green-cyan) !important;
+		}
+
+		.has-pale-cyan-blue-color {
+			color: var(--wp--preset--color--pale-cyan-blue) !important;
+		}
+
+		.has-vivid-cyan-blue-color {
+			color: var(--wp--preset--color--vivid-cyan-blue) !important;
+		}
+
+		.has-vivid-purple-color {
+			color: var(--wp--preset--color--vivid-purple) !important;
+		}
+
+		.has-black-background-color {
+			background-color: var(--wp--preset--color--black) !important;
+		}
+
+		.has-cyan-bluish-gray-background-color {
+			background-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+		}
+
+		.has-white-background-color {
+			background-color: var(--wp--preset--color--white) !important;
+		}
+
+		.has-pale-pink-background-color {
+			background-color: var(--wp--preset--color--pale-pink) !important;
+		}
+
+		.has-vivid-red-background-color {
+			background-color: var(--wp--preset--color--vivid-red) !important;
+		}
+
+		.has-luminous-vivid-orange-background-color {
+			background-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+		}
+
+		.has-luminous-vivid-amber-background-color {
+			background-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+		}
+
+		.has-light-green-cyan-background-color {
+			background-color: var(--wp--preset--color--light-green-cyan) !important;
+		}
+
+		.has-vivid-green-cyan-background-color {
+			background-color: var(--wp--preset--color--vivid-green-cyan) !important;
+		}
+
+		.has-pale-cyan-blue-background-color {
+			background-color: var(--wp--preset--color--pale-cyan-blue) !important;
+		}
+
+		.has-vivid-cyan-blue-background-color {
+			background-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+		}
+
+		.has-vivid-purple-background-color {
+			background-color: var(--wp--preset--color--vivid-purple) !important;
+		}
+
+		.has-black-border-color {
+			border-color: var(--wp--preset--color--black) !important;
+		}
+
+		.has-cyan-bluish-gray-border-color {
+			border-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+		}
+
+		.has-white-border-color {
+			border-color: var(--wp--preset--color--white) !important;
+		}
+
+		.has-pale-pink-border-color {
+			border-color: var(--wp--preset--color--pale-pink) !important;
+		}
+
+		.has-vivid-red-border-color {
+			border-color: var(--wp--preset--color--vivid-red) !important;
+		}
+
+		.has-luminous-vivid-orange-border-color {
+			border-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+		}
+
+		.has-luminous-vivid-amber-border-color {
+			border-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+		}
+
+		.has-light-green-cyan-border-color {
+			border-color: var(--wp--preset--color--light-green-cyan) !important;
+		}
+
+		.has-vivid-green-cyan-border-color {
+			border-color: var(--wp--preset--color--vivid-green-cyan) !important;
+		}
+
+		.has-pale-cyan-blue-border-color {
+			border-color: var(--wp--preset--color--pale-cyan-blue) !important;
+		}
+
+		.has-vivid-cyan-blue-border-color {
+			border-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+		}
+
+		.has-vivid-purple-border-color {
+			border-color: var(--wp--preset--color--vivid-purple) !important;
+		}
+
+		.has-vivid-cyan-blue-to-vivid-purple-gradient-background {
+			background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;
+		}
+
+		.has-light-green-cyan-to-vivid-green-cyan-gradient-background {
+			background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;
+		}
+
+		.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background {
+			background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;
+		}
+
+		.has-luminous-vivid-orange-to-vivid-red-gradient-background {
+			background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;
+		}
+
+		.has-very-light-gray-to-cyan-bluish-gray-gradient-background {
+			background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;
+		}
+
+		.has-cool-to-warm-spectrum-gradient-background {
+			background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;
+		}
+
+		.has-blush-light-purple-gradient-background {
+			background: var(--wp--preset--gradient--blush-light-purple) !important;
+		}
+
+		.has-blush-bordeaux-gradient-background {
+			background: var(--wp--preset--gradient--blush-bordeaux) !important;
+		}
+
+		.has-luminous-dusk-gradient-background {
+			background: var(--wp--preset--gradient--luminous-dusk) !important;
+		}
+
+		.has-pale-ocean-gradient-background {
+			background: var(--wp--preset--gradient--pale-ocean) !important;
+		}
+
+		.has-electric-grass-gradient-background {
+			background: var(--wp--preset--gradient--electric-grass) !important;
+		}
+
+		.has-midnight-gradient-background {
+			background: var(--wp--preset--gradient--midnight) !important;
+		}
+
+		.has-small-font-size {
+			font-size: var(--wp--preset--font-size--small) !important;
+		}
+
+		.has-medium-font-size {
+			font-size: var(--wp--preset--font-size--medium) !important;
+		}
+
+		.has-large-font-size {
+			font-size: var(--wp--preset--font-size--large) !important;
+		}
+
+		.has-x-large-font-size {
+			font-size: var(--wp--preset--font-size--x-large) !important;
+		}
+
+		:where(.wp-block-post-template.is-layout-flex) {
+			gap: 1.25em;
+		}
+
+		:where(.wp-block-post-template.is-layout-grid) {
+			gap: 1.25em;
+		}
+
+		:where(.wp-block-columns.is-layout-flex) {
+			gap: 2em;
+		}
+
+		:where(.wp-block-columns.is-layout-grid) {
+			gap: 2em;
+		}
+
+		:root :where(.wp-block-pullquote) {
+			font-size: 1.5em;
+			line-height: 1.6;
+		}
+	</style>
+	<link rel="stylesheet" id="contact-form-7-css" href="/css/styles.css" media="all">
+	<style id="contact-form-7-inline-css">
+		.wpcf7 .wpcf7-recaptcha iframe {
+			margin-bottom: 0;
+		}
+
+		.wpcf7 .wpcf7-recaptcha[data-align="center"]>div {
+			margin: 0 auto;
+		}
+
+		.wpcf7 .wpcf7-recaptcha[data-align="right"]>div {
+			margin: 0 0 0 auto;
+		}
+	</style>
+	<link rel="stylesheet" id="Cloud Hawk-style-main-css" href="/css/style.min.css" media="all">
+
+<script is:inline src="/js/scripts.min.js" id="yalantis-scripts-main-js" defer="" data-wp-strategy="defer"></script>
+
+	<script is:inline src="/js/jquery.js" id="jquery-js"></script>
+	<script is:inline src="/js/scripts.min.js"></script>
+	<script is:inline src="/js/custom_scripts.js"></script>
+	<script is:inline src="/js/particleslider.js"></script>
+	
+	<style type="text/css">
+		div.nsl-container[data-align="left"] {
+			text-align: left;
+		}
+
+		div.nsl-container[data-align="center"] {
+			text-align: center;
+		}
+
+		div.nsl-container[data-align="right"] {
+			text-align: right;
+		}
+
+
+		div.nsl-container div.nsl-container-buttons a[data-plugin="nsl"] {
+			text-decoration: none;
+			box-shadow: none;
+			border: 0;
+		}
+
+		div.nsl-container .nsl-container-buttons {
+			display: flex;
+			padding: 5px 0;
+		}
+
+		div.nsl-container.nsl-container-block .nsl-container-buttons {
+			display: inline-grid;
+			grid-template-columns: minmax(145px, auto);
+		}
+
+		div.nsl-container-block-fullwidth .nsl-container-buttons {
+			flex-flow: column;
+			align-items: center;
+		}
+
+		div.nsl-container-block-fullwidth .nsl-container-buttons a,
+		div.nsl-container-block .nsl-container-buttons a {
+			flex: 1 1 auto;
+			display: block;
+			margin: 5px 0;
+			width: 100%;
+		}
+
+		div.nsl-container-inline {
+			margin: -5px;
+			text-align: left;
+		}
+
+		div.nsl-container-inline .nsl-container-buttons {
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+
+		div.nsl-container-inline .nsl-container-buttons a {
+			margin: 5px;
+			display: inline-block;
+		}
+
+		div.nsl-container-grid .nsl-container-buttons {
+			flex-flow: row;
+			align-items: center;
+			flex-wrap: wrap;
+		}
+
+		div.nsl-container-grid .nsl-container-buttons a {
+			flex: 1 1 auto;
+			display: block;
+			margin: 5px;
+			max-width: 280px;
+			width: 100%;
+		}
+
+		@media only screen and (min-width: 650px) {
+			div.nsl-container-grid .nsl-container-buttons a {
+				width: auto;
+			}
+		}
+
+		div.nsl-container .nsl-button {
+			cursor: pointer;
+			vertical-align: top;
+			border-radius: 4px;
+		}
+
+		div.nsl-container .nsl-button-default {
+			color: #fff;
+			display: flex;
+		}
+
+		div.nsl-container .nsl-button-icon {
+			display: inline-block;
+		}
+
+		div.nsl-container .nsl-button-svg-container {
+			flex: 0 0 auto;
+			padding: 8px;
+			display: flex;
+			align-items: center;
+		}
+
+		div.nsl-container svg {
+			height: 24px;
+			width: 24px;
+			vertical-align: top;
+		}
+
+		div.nsl-container .nsl-button-default div.nsl-button-label-container {
+			margin: 0 24px 0 12px;
+			padding: 10px 0;
+			font-family: Helvetica, Arial, sans-serif;
+			font-size: 16px;
+			line-height: 20px;
+			letter-spacing: .25px;
+			overflow: hidden;
+			text-align: center;
+			text-overflow: clip;
+			white-space: nowrap;
+			flex: 1 1 auto;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			text-transform: none;
+			display: inline-block;
+		}
+
+		div.nsl-container .nsl-button-google[data-skin="dark"] .nsl-button-svg-container {
+			margin: 1px;
+			padding: 7px;
+			border-radius: 3px;
+			background: #fff;
+		}
+
+		div.nsl-container .nsl-button-google[data-skin="light"] {
+			border-radius: 1px;
+			box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .25);
+			color: RGBA(0, 0, 0, 0.54);
+		}
+
+		div.nsl-container .nsl-button-apple .nsl-button-svg-container {
+			padding: 0 6px;
+		}
+
+		div.nsl-container .nsl-button-apple .nsl-button-svg-container svg {
+			height: 40px;
+			width: auto;
+		}
+
+		div.nsl-container .nsl-button-apple[data-skin="light"] {
+			color: #000;
+			box-shadow: 0 0 0 1px #000;
+		}
+
+		div.nsl-container .nsl-button-facebook[data-skin="white"] {
+			color: #000;
+			box-shadow: inset 0 0 0 1px #000;
+		}
+
+		div.nsl-container .nsl-button-facebook[data-skin="light"] {
+			color: #1877F2;
+			box-shadow: inset 0 0 0 1px #1877F2;
+		}
+
+		div.nsl-container .nsl-button-spotify[data-skin="white"] {
+			color: #191414;
+			box-shadow: inset 0 0 0 1px #191414;
+		}
+
+		div.nsl-container .nsl-button-apple div.nsl-button-label-container {
+			font-size: 17px;
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		div.nsl-container .nsl-button-slack div.nsl-button-label-container {
+			font-size: 17px;
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		div.nsl-container .nsl-button-slack[data-skin="light"] {
+			color: #000000;
+			box-shadow: inset 0 0 0 1px #DDDDDD;
+		}
+
+		div.nsl-container .nsl-button-tiktok[data-skin="light"] {
+			color: #161823;
+			box-shadow: 0 0 0 1px rgba(22, 24, 35, 0.12);
+		}
+
+
+		div.nsl-container .nsl-button-kakao {
+			color: rgba(0, 0, 0, 0.85);
+		}
+
+		.nsl-clear {
+			clear: both;
+		}
+
+		.nsl-container {
+			clear: both;
+		}
+
+		.nsl-disabled-provider .nsl-button {
+			filter: grayscale(1);
+			opacity: 0.8;
+		}
+
+		/*Button align start*/
+
+		div.nsl-container-inline[data-align="left"] .nsl-container-buttons {
+			justify-content: flex-start;
+		}
+
+		div.nsl-container-inline[data-align="center"] .nsl-container-buttons {
+			justify-content: center;
+		}
+
+		div.nsl-container-inline[data-align="right"] .nsl-container-buttons {
+			justify-content: flex-end;
+		}
+
+
+		div.nsl-container-grid[data-align="left"] .nsl-container-buttons {
+			justify-content: flex-start;
+		}
+
+		div.nsl-container-grid[data-align="center"] .nsl-container-buttons {
+			justify-content: center;
+		}
+
+		div.nsl-container-grid[data-align="right"] .nsl-container-buttons {
+			justify-content: flex-end;
+		}
+
+		div.nsl-container-grid[data-align="space-around"] .nsl-container-buttons {
+			justify-content: space-around;
+		}
+
+		div.nsl-container-grid[data-align="space-between"] .nsl-container-buttons {
+			justify-content: space-between;
+		}
+
+		/* Button align end*/
+
+		/* Redirect */
+
+		#nsl-redirect-overlay {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			position: fixed;
+			z-index: 1000000;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			backdrop-filter: blur(1px);
+			background-color: RGBA(0, 0, 0, .32);
+			;
+		}
+
+		#nsl-redirect-overlay-container {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			background-color: white;
+			padding: 30px;
+			border-radius: 10px;
+		}
+
+		#nsl-redirect-overlay-spinner {
+			content: '';
+			display: block;
+			margin: 20px;
+			border: 9px solid RGBA(0, 0, 0, .6);
+			border-top: 9px solid #fff;
+			border-radius: 50%;
+			box-shadow: inset 0 0 0 1px RGBA(0, 0, 0, .6), 0 0 0 1px RGBA(0, 0, 0, .6);
+			width: 40px;
+			height: 40px;
+			animation: nsl-loader-spin 2s linear infinite;
+		}
+
+		@keyframes nsl-loader-spin {
+			0% {
+				transform: rotate(0deg)
+			}
+
+			to {
+				transform: rotate(360deg)
+			}
+		}
+
+		#nsl-redirect-overlay-title {
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+			font-size: 18px;
+			font-weight: bold;
+			color: #3C434A;
+		}
+
+		#nsl-redirect-overlay-text {
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+			text-align: center;
+			font-size: 14px;
+			color: #3C434A;
+		}
+
+		/* Redirect END*/
+	</style>
+	
+	<style type="text/css">
+		/* Notice fallback */
+		#nsl-notices-fallback {
+			position: fixed;
+			right: 10px;
+			top: 10px;
+			z-index: 10000;
+		}
+
+		.admin-bar #nsl-notices-fallback {
+			top: 42px;
+		}
+
+		#nsl-notices-fallback>div {
+			position: relative;
+			background: #fff;
+			border-left: 4px solid #fff;
+			box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+			margin: 5px 15px 2px;
+			padding: 1px 20px;
+		}
+
+		#nsl-notices-fallback>div.error {
+			display: block;
+			border-left-color: #dc3232;
+		}
+
+		#nsl-notices-fallback>div.updated {
+			display: block;
+			border-left-color: #46b450;
+		}
+
+		#nsl-notices-fallback p {
+			margin: .5em 0;
+			padding: 2px;
+		}
+
+		#nsl-notices-fallback>div:after {
+			position: absolute;
+			right: 5px;
+			top: 5px;
+			content: '\00d7';
+			display: block;
+			height: 16px;
+			width: 16px;
+			line-height: 16px;
+			text-align: center;
+			font-size: 20px;
+			cursor: pointer;
+		}
+	</style>
+	
+	<style id="wp-custom-css">
+		.cky-footer-wrapper div:last-child {
+			display: none !important;
+		}
+
+		.cky-consent-bar .cky-banner-btn-close img {
+			width: 0 !important;
+			height: 0 !important;
+		}
+
+		button.cky-btn.cky-btn-reject:hover,
+		button.cky-btn.cky-btn-accept:hover {
+			background-color: #E15700 !important;
+			opacity: 1 !important;
+			border-color: #E15700 !important;
+		}
+
+		button.cky-btn.cky-btn-preferences {
+			border: 1px solid #FF6300 !important;
+		}
+
+		button.cky-btn.cky-btn-preferences:hover,
+		button.cky-btn.cky-btn-customize:hover {
+			color: #FFFFFF !important;
+			background-color: #FF6300 !important;
+			opacity: 1 !important;
+		}
+
+		.cky-consent-container .cky-consent-bar {
+			background-color: #202227 !important;
+			box-shadow: none !important;
+			border: 0 !important;
+			padding: 16px !important;
+		}
+
+		@media (min-width:1200px) {
+			.cky-consent-container .cky-consent-bar {
+				padding: 32px !important;
+			}
+		}
+
+		.cky-btn {
+			border-radius: 24px !important;
+			font-family: 'Brandon Text' !important;
+			font-style: normal;
+			font-weight: 400 !important;
+			font-size: 16px !important;
+			line-height: 24px !important;
+			letter-spacing: 1px !important;
+			text-transform: uppercase !important;
+			transition: all 0.25s !important;
+		}
+
+		.cky-show-desc-btn {
+			color: #FF6300 !important;
+		}
+
+		.cky-preference-title {
+			font-family: 'Radikal' !important;
+			font-weight: 400;
+			font-size: 22px !important;
+			line-height: 26px !important;
+			letter-spacing: 1px;
+			color: #FFFFFF;
+		}
+
+		@media (min-width:768px) {
+			.cky-preference-title {
+				font-size: 24px !important;
+				line-height: 36px !important;
+			}
+		}
+
+		.cky-preference-content-wrapper p,
+		.cky-accordion-header-des {
+			font-family: 'Brandon Text' !important;
+			font-style: normal;
+			font-weight: 400 !important;
+			font-size: 16px !important;
+			line-height: 24px !important;
+		}
+
+		.cky-accordion-btn {
+			font-family: 'Radikal' !important;
+			font-weight: 500 !important;
+			font-size: 16px !important;
+			line-height: 24px !important;
+			letter-spacing: 1px !important;
+			text-transform: uppercase !important;
+		}
+	</style>
+
+</head>
+
+<body class="home page-template-default page page-id-216  release-6.11">
+	<div id="page" class="front-page ">
+		
+		
+		<Layout>			
+
+		<main>
+			<section class="home-first-screen" data-header="header-transparent-white" id="">
+				<div class="particle-slide" id="particle-slider">
+					<div class="slides">
+						<div id="first-slide" class="slide"
+							data-src="/images/s.svg">
+						</div>
+					</div>
+					<canvas class="draw"></canvas>
+				</div>
+				<div class="home-first-screen-container">
+					<div class="container">
+						<div class="home-first-screen-content-wrapper">
+							<div class="home-first-screen-title-container">
+								<h1 class="home-first-screen-title">
+									<span>Software development</span> company that delivers for
+								</h1>
+							</div>
+							<div class="home-first-screen-logos-container">
+								<ul class="home-first-screen-logos-list">
+									<a class="home-first-screen-logos-item logo-grayscale" href="/works/kpmg/"
+										target="_blank">
+										<figure>
+											<img decoding="async" width="124" height="50"
+												src="images/KPMG_logo-color.svg" class="attachment-full size-full"
+												alt="">
+										</figure>
+									</a>
+									<a class="home-first-screen-logos-item logo-grayscale"
+										href="/blog/Cloud Hawk-bosch-home-connect/" target="_blank">
+										<figure>
+											<img decoding="async" width="217" height="50"
+												src="images/Home-Connect_for-bosch_logo-color.svg"
+												class="attachment-full size-full" alt="">
+										</figure>
+									</a>
+									<a class="home-first-screen-logos-item logo-grayscale"
+										href="/blog/toyota-and-Cloud Hawk-collaboration/" target="_blank">
+										<figure>
+											<img decoding="async" width="336" height="50"
+												src="images/Toyota_logo-color.svg" class="attachment-full size-full"
+												alt="">
+										</figure>
+									</a>
+								</ul>
+							</div>
+							<div class="home-first-screen-link-container">
+								<a class="home-first-screen-link" href="/contacts/">
+									Contact us </a>
+							</div>
+							<div class="home-first-screen-content-mobile-main-logo">
+								<div class="logoFrame"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+			<section class="services" data-header="header-black" id="">
+				<div class="services-container">
+					<div class="container">
+						<ul class="services-list">
+							{csd ? (
+							<li class="services-item">
+								<a class="services-item-link" href={csd.readmore?.url || '#'}>
+									<div class="services-item-bg"></div>
+									<div class="">
+										<h3 class="services-item-title">{csd.heading}</h3>
+										<ul class="services-item-benefits-list">
+                {/* Accessing service points dynamically */}
+                {Object.entries(csd.servicepoint).map(([_, value]) => (
+                  // Using standard HTML syntax without key
+                  <li class="services-item-benefits-item">
+                    <p class="services-item-benefits-title">{value}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <span class="services-item-benefits-link">Read more</span>
+          </a>
+        </li>
+      ) : (
+        <p>No custom software development services found.</p>
+      )}
+								{dta ? (
+									<li class="services-item">
+										<a class="services-item-link" href={dta.readmore?.url || '#'}>
+											<div class="services-item-bg"></div>
+											<div class="">
+												<h3 class="services-item-title">{dta.heading}</h3>
+												<ul class="services-item-benefits-list">
+						{/* Accessing service points dynamically */}
+						{Object.entries(dta.servicepoint).map(([_, value]) => (
+						  // Using standard HTML syntax without key
+						  <li class="services-item-benefits-item">
+							<p class="services-item-benefits-title">{value}</p>
+						  </li>
+						))}
+					  </ul>
+					</div>
+					<span class="services-item-benefits-link">Read more</span>
+				  </a>
+				</li>
+			  ) : (
+				<p>No Development team augmentation services found.</p>
+			  )}
+							{itc ? (
+								<li class="services-item">
+									<a class="services-item-link" href={itc.readmore?.url || '#'}>
+										<div class="services-item-bg"></div>
+										<div class="">
+											<h3 class="services-item-title">{itc.heading}</h3>
+											<ul class="services-item-benefits-list">
+					{/* Accessing service points dynamically */}
+					{Object.entries(itc.servicepoint).map(([_, value]) => (
+					  // Using standard HTML syntax without key
+					  <li class="services-item-benefits-item">
+						<p class="services-item-benefits-title">{value}</p>
+					  </li>
+					))}
+				  </ul>
+				</div>
+				<span class="services-item-benefits-link">Read more</span>
+			  </a>
+			</li>
+		  ) : (
+			<p>No IT consulting and digital advisory Services found.</p>
+		  )}
+							{dt ? (
+								<li class="services-item">
+									<a class="services-item-link" href={dt.readmore?.url || '#'}>
+										<div class="services-item-bg"></div>
+										<div class="">
+											<h3 class="services-item-title">{dt.heading}</h3>
+											<ul class="services-item-benefits-list">
+					{/* Accessing service points dynamically */}
+					{Object.entries(dt.servicepoint).map(([_, value]) => (
+					  // Using standard HTML syntax without key
+					  <li class="services-item-benefits-item">
+						<p class="services-item-benefits-title">{value}</p>
+					  </li>
+					))}
+				  </ul>
+				</div>
+				<span class="services-item-benefits-link">Read more</span>
+			  </a>
+			</li>
+		  ) : (
+			<p>No Digital transformation  services found.</p>
+		  )}
+						</ul>
+					</div>
+				</div>
+			</section>
+
+
+			<section class="video-reviews" data-header="header-black" id="">
+				<div class="container">
+					<div class="video-reviews-container">
+						<div class="video-reviews-title-container">
+							<h2 class="video-reviews-title">
+								Testimonials </h2>
+				
+						<div class="count-reviews-mobile-video"></div>
+						<div class="video-reviews-pagination"></div>
+						<div class="video-reviews-list swiper">
+							<div class="swiper-wrapper">
+								<div class="video-reviews-item swiper-slide">
+									<div class="video-reviews-item-container">
+										<!-- <div class="video-reviews-item-image-container">
+											<a class="video-reviews-item-link"
+												href="https://www.youtube.com/embed/WbkByunCTfU" data-fslightbox="video"
+												rel="nofollow">
+												<div class="video-reviews-item-image">
+													<figure class="video-reviews-item-image-mobile">
+														<img loading="lazy" decoding="async" width="336" height="208"
+															src="images/previews-testimonials-1-1.webp"
+															class="attachment-full size-full wp-post-image" alt=""
+															srcset="images/previews-testimonials-1-1.webp 336w, images/previews-testimonials-1-1-300x186.webp 300w, images/previews-testimonials-1-1-288x178.webp 288w, images/previews-testimonials-1-1-323x200.webp 323w, images/previews-testimonials-1-1-328x203.webp 328w, images/previews-testimonials-1-1-120x74.webp 120w, images/previews-testimonials-1-1-260x161.webp 260w, images/previews-testimonials-1-1-162x100.webp 162w, images/previews-testimonials-1-1-20x12.webp 20w, images/previews-testimonials-1-1-100x62.webp 100w"
+															sizes="(max-width: 336px) 100vw, 336px">
+													</figure>
+													<figure class="video-reviews-item-image-laptop">
+														<img loading="lazy" decoding="async" width="336" height="208"
+															src="images/previews-testimonials-1-1.webp"
+															class="attachment-full size-full wp-post-image" alt=""
+															srcset="images/previews-testimonials-1-1.webp 336w, images/previews-testimonials-1-1-300x186.webp 300w, images/previews-testimonials-1-1-288x178.webp 288w, images/previews-testimonials-1-1-323x200.webp 323w, images/previews-testimonials-1-1-328x203.webp 328w, images/previews-testimonials-1-1-120x74.webp 120w, images/previews-testimonials-1-1-260x161.webp 260w, images/previews-testimonials-1-1-162x100.webp 162w, images/previews-testimonials-1-1-20x12.webp 20w, images/previews-testimonials-1-1-100x62.webp 100w"
+															sizes="(max-width: 336px) 100vw, 336px">
+													</figure>
+												</div>
+												<div class="video-reviews-item-image-text-container">
+													<span class="video-reviews-item-play-button"></span>
+													<div class="video-reviews-item-image-text-container">
+														<h4 class="video-reviews-item-image-title">
+															Simon Jones </h4>
+														<span class="video-reviews-item-image-subtitle">
+															CIO in Healthcare </span>
+													</div>
+												</div>
+											</a>
+										</div> -->
+										<div class="video-reviews-item-text-container">
+											<div class="video-reviews-item-text">
+												<p><span style="font-weight: 400;">Cloud Hawk has been a great fit for us
+														because of their experience, responsiveness, value, and time to
+														market. From the very start, they’ve been able to staff an
+														effective development team in no time and perform as
+														expected.&nbsp;</span></p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="video-reviews-item swiper-slide">
+									<div class="video-reviews-item-container">
+										<!-- �<div class="video-reviews-item-image-container">
+											<a class="video-reviews-item-link"
+												href="https://www.youtube.com/embed/E1wUSIHdO9g" data-fslightbox="video"
+												rel="nofollow">
+												<div class="video-reviews-item-image">
+													<figure class="video-reviews-item-image-mobile">
+														<img loading="lazy" decoding="async" width="336" height="208"
+															src="images/picture-and-info-1.webp"
+															class="attachment-full size-full wp-post-image" alt=""
+															srcset="images/picture-and-info-1.webp 336w, images/picture-and-info-1-300x186_1.webp 300w, images/picture-and-info-1-288x178.webp 288w, images/picture-and-info-1-323x200_1.webp 323w, images/picture-and-info-1-328x203_1.webp 328w, images/picture-and-info-1-120x74_1.webp 120w, images/picture-and-info-1-260x161.webp 260w, images/picture-and-info-1-162x100.webp 162w, images/picture-and-info-1-20x12.webp 20w, images/picture-and-info-1-100x62_1.webp 100w"
+															sizes="(max-width: 336px) 100vw, 336px">
+													</figure>
+													<figure class="video-reviews-item-image-laptop">
+														<img loading="lazy" decoding="async" width="336" height="208"
+															src="images/picture-and-info-1.webp"
+															class="attachment-full size-full wp-post-image" alt=""
+															srcset="images/picture-and-info-1.webp 336w, images/picture-and-info-1-300x186_1.webp 300w, images/picture-and-info-1-288x178.webp 288w, images/picture-and-info-1-323x200_1.webp 323w, images/picture-and-info-1-328x203_1.webp 328w, images/picture-and-info-1-120x74_1.webp 120w, images/picture-and-info-1-260x161.webp 260w, images/picture-and-info-1-162x100.webp 162w, images/picture-and-info-1-20x12.webp 20w, images/picture-and-info-1-100x62_1.webp 100w"
+															sizes="(max-width: 336px) 100vw, 336px">
+													</figure>
+												</div>
+												<div class="video-reviews-item-image-text-container">
+													<span class="video-reviews-item-play-button"></span>
+													<div class="video-reviews-item-image-text-container">
+														<h4 class="video-reviews-item-image-title">
+															Roy </h4>
+														<span class="video-reviews-item-image-subtitle">
+															Partner at RAKwireless </span>
+													</div>
+												</div>
+											</a>
+										</div> -->
+										<div class="video-reviews-item-text-container">
+											<div class="video-reviews-item-text">
+												<p><span style="font-weight: 400;">What triggered us was their remote
+														collaboration practices as well as their experience in the IoT
+														industry. Their strong technical experience helped us scale our
+														platform and deliver great performance to our
+														customers.&nbsp;</span></p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="video-reviews-item swiper-slide">
+									<div class="video-reviews-item-container">
+										<!-- <div class="video-reviews-item-image-container">
+											<a class="video-reviews-item-link"
+												href="https://www.youtube.com/embed/VMP9nv1NMJs" data-fslightbox="video"
+												rel="nofollow">
+												<div class="video-reviews-item-image">
+													<figure class="video-reviews-item-image-mobile">
+														<img loading="lazy" decoding="async" width="336" height="208"
+															src="images/picture-and-info-1_1.webp"
+															class="attachment-full size-full wp-post-image" alt=""
+															srcset="images/picture-and-info-1_1.webp 336w, images/picture-and-info-1-300x186.webp 300w, images/picture-and-info-1-288x178_1.webp 288w, images/picture-and-info-1-323x200.webp 323w, images/picture-and-info-1-328x203.webp 328w, images/picture-and-info-1-120x74.webp 120w, images/picture-and-info-1-260x161_1.webp 260w, images/picture-and-info-1-162x100_1.webp 162w, images/picture-and-info-1-20x12_1.webp 20w, images/picture-and-info-1-100x62.webp 100w"
+															sizes="(max-width: 336px) 100vw, 336px">
+													</figure>
+													<figure class="video-reviews-item-image-laptop">
+														<img loading="lazy" decoding="async" width="336" height="208"
+															src="images/picture-and-info-1_1.webp"
+															class="attachment-full size-full wp-post-image" alt=""
+															srcset="images/picture-and-info-1_1.webp 336w, images/picture-and-info-1-300x186.webp 300w, images/picture-and-info-1-288x178_1.webp 288w, images/picture-and-info-1-323x200.webp 323w, images/picture-and-info-1-328x203.webp 328w, images/picture-and-info-1-120x74.webp 120w, images/picture-and-info-1-260x161_1.webp 260w, images/picture-and-info-1-162x100_1.webp 162w, images/picture-and-info-1-20x12_1.webp 20w, images/picture-and-info-1-100x62.webp 100w"
+															sizes="(max-width: 336px) 100vw, 336px">
+													</figure>
+												</div>
+												<div class="video-reviews-item-image-text-container">
+													<span class="video-reviews-item-play-button"></span>
+													<div class="video-reviews-item-image-text-container">
+														<h4 class="video-reviews-item-image-title">
+															Mark Boudreau </h4>
+														<span class="video-reviews-item-image-subtitle">
+															Founder and COO at Healthfully </span>
+													</div>
+												</div>
+											</a>
+										</div> -->
+										<div class="video-reviews-item-text-container">
+											<div class="video-reviews-item-text">
+												<p><span style="font-weight: 400;">Cloud Hawk has been a great fit for us
+														because of their experience, responsiveness, value, and time to
+														market. From the very start, they’ve been able to staff an
+														effective development team in no time and perform as
+														expected.�&nbsp;</span></p>
+												<p>�&nbsp;</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="video-reviews-item swiper-slide">
+									<div class="video-reviews-item-container">
+										<!-- <div class="video-reviews-item-image-container">
+											<a class="video-reviews-item-link"
+												href="https://www.youtube.com/watch?v=lm-IKPf4yVE"
+												data-fslightbox="video" rel="nofollow">
+												<div class="video-reviews-item-image">
+													<figure class="video-reviews-item-image-mobile">
+														<img loading="lazy" decoding="async" width="2560" height="1585"
+															src="images/previews_video_review_ken_yu_ceo_at_rakwireless-1.webp"
+															class="attachment-full size-full wp-post-image" alt=""
+															srcset="images/previews_video_review_ken_yu_ceo_at_rakwireless-1.webp 2560w, images/previews_video_review_ken_yu_ceo_at_rakwireless-1-300x186.webp 300w, images/previews_video_review_ken_yu_ceo_at_rakwireless-1-1024x634.webp 1024w, images/previews_video_review_ken_yu_ceo_at_rakwireless-1-768x476.webp 768w, images/previews_video_review_ken_yu_ceo_at_rakwireless-1-1536x951.webp 1536w, images/previews_video_review_ken_yu_ceo_at_rakwireless-1-2048x1268.webp 2048w, images/previews_video_review_ken_yu_ceo_at_rakwireless-1-336x208.webp 336w, images/previews_video_review_ken_yu_ceo_at_rakwireless-1-288x178.webp 288w, images/previews_video_review_ken_yu_ceo_at_rakwireless-1-323x200.webp 323w, images/previews_video_review_ken_yu_ceo_at_rakwireless-1-328x203.webp 328w, images/previews_video_review_ken_yu_ceo_at_rakwireless-1-120x74.webp 120w, images/previews_video_review_ken_yu_ceo_at_rakwireless-1-404x250.webp 404w, images/previews_video_review_ken_yu_ceo_at_rakwireless-1-368x228.webp 368w, images/previews_video_review_ken_yu_ceo_at_rakwireless-1-260x161.webp 260w, images/previews_video_review_ken_yu_ceo_at_rakwireless-1-646x400.webp 646w, images/previews_video_review_ken_yu_ceo_at_rakwireless-1-162x100.webp 162w, images/previews_video_review_ken_yu_ceo_at_rakwireless-1-20x12.webp 20w, images/previews_video_review_ken_yu_ceo_at_rakwireless-1-100x62.webp 100w, images/previews_video_review_ken_yu_ceo_at_rakwireless-1-556x344.webp 556w"
+															sizes="(max-width: 2560px) 100vw, 2560px">
+													</figure>
+													<figure class="video-reviews-item-image-laptop">
+														<img loading="lazy" decoding="async" width="2560" height="1585"
+															src="images/previews_video_review_ken_yu_ceo_at_rakwireless-1.webp"
+															class="attachment-full size-full wp-post-image" alt=""
+															srcset="images/previews_video_review_ken_yu_ceo_at_rakwireless-1.webp 2560w, images/previews_video_review_ken_yu_ceo_at_rakwireless-1-300x186.webp 300w, images/previews_video_review_ken_yu_ceo_at_rakwireless-1-1024x634.webp 1024w, images/previews_video_review_ken_yu_ceo_at_rakwireless-1-768x476.webp 768w, images/previews_video_review_ken_yu_ceo_at_rakwireless-1-1536x951.webp 1536w, images/previews_video_review_ken_yu_ceo_at_rakwireless-1-2048x1268.webp 2048w, images/previews_video_review_ken_yu_ceo_at_rakwireless-1-336x208.webp 336w, images/previews_video_review_ken_yu_ceo_at_rakwireless-1-288x178.webp 288w, images/previews_video_review_ken_yu_ceo_at_rakwireless-1-323x200.webp 323w, images/previews_video_review_ken_yu_ceo_at_rakwireless-1-328x203.webp 328w, images/previews_video_review_ken_yu_ceo_at_rakwireless-1-120x74.webp 120w, images/previews_video_review_ken_yu_ceo_at_rakwireless-1-404x250.webp 404w, images/previews_video_review_ken_yu_ceo_at_rakwireless-1-368x228.webp 368w, images/previews_video_review_ken_yu_ceo_at_rakwireless-1-260x161.webp 260w, images/previews_video_review_ken_yu_ceo_at_rakwireless-1-646x400.webp 646w, images/previews_video_review_ken_yu_ceo_at_rakwireless-1-162x100.webp 162w, images/previews_video_review_ken_yu_ceo_at_rakwireless-1-20x12.webp 20w, images/previews_video_review_ken_yu_ceo_at_rakwireless-1-100x62.webp 100w, images/previews_video_review_ken_yu_ceo_at_rakwireless-1-556x344.webp 556w"
+															sizes="(max-width: 2560px) 100vw, 2560px">
+													</figure>
+												</div>
+												<div class="video-reviews-item-image-text-container">
+													<span class="video-reviews-item-play-button"></span>
+													<div class="video-reviews-item-image-text-container">
+														<h4 class="video-reviews-item-image-title">
+															Ken Yu </h4>
+														<span class="video-reviews-item-image-subtitle">
+															CEO at RAKwireless </span>
+													</div>
+												</div>
+											</a>
+										</div> -->
+										<div class="video-reviews-item-text-container">
+											<div class="video-reviews-item-text">
+												<p>Established development flows and good communication skills made
+													collaboration with Cloud Hawk very smooth. We appreciate their
+													professionalism and dedication. If you are looking for a solid
+													technical partner and a well-processed software outsourcing company
+													for your project, I’d recommend Cloud Hawk.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="video-reviews-item swiper-slide">
+									<div class="video-reviews-item-container">
+										<!-- <div class="video-reviews-item-image-container">
+											<a class="video-reviews-item-link"
+												href="https://www.youtube.com/embed/Pyq2CuakUDA" data-fslightbox="video"
+												rel="nofollow">
+												<div class="video-reviews-item-image">
+													<figure class="video-reviews-item-image-mobile">
+														<img loading="lazy" decoding="async" width="336" height="208"
+															src="images/admin-ajax-2.webp"
+															class="attachment-full size-full wp-post-image" alt=""
+															srcset="images/admin-ajax-2.webp 336w, images/admin-ajax-2-300x186.webp 300w, images/admin-ajax-2-288x178.webp 288w, images/admin-ajax-2-323x200.webp 323w, images/admin-ajax-2-328x203.webp 328w, images/admin-ajax-2-120x74.webp 120w, images/admin-ajax-2-260x161.webp 260w, images/admin-ajax-2-162x100.webp 162w, images/admin-ajax-2-20x12.webp 20w, images/admin-ajax-2-100x62.webp 100w"
+															sizes="(max-width: 336px) 100vw, 336px">
+													</figure>
+													<figure class="video-reviews-item-image-laptop">
+														<img loading="lazy" decoding="async" width="336" height="208"
+															src="images/admin-ajax-2.webp"
+															class="attachment-full size-full wp-post-image" alt=""
+															srcset="images/admin-ajax-2.webp 336w, images/admin-ajax-2-300x186.webp 300w, images/admin-ajax-2-288x178.webp 288w, images/admin-ajax-2-323x200.webp 323w, images/admin-ajax-2-328x203.webp 328w, images/admin-ajax-2-120x74.webp 120w, images/admin-ajax-2-260x161.webp 260w, images/admin-ajax-2-162x100.webp 162w, images/admin-ajax-2-20x12.webp 20w, images/admin-ajax-2-100x62.webp 100w"
+															sizes="(max-width: 336px) 100vw, 336px">
+													</figure>
+												</div>
+												<div class="video-reviews-item-image-text-container">
+													<span class="video-reviews-item-play-button"></span>
+													<div class="video-reviews-item-image-text-container">
+														<h4 class="video-reviews-item-image-title">
+															Sergei Lishchenko </h4>
+														<span class="video-reviews-item-image-subtitle">
+															Director of Digital Experience </span>
+													</div>
+												</div>
+											</a>
+										</div> -->
+										<div class="video-reviews-item-text-container">
+											<div class="video-reviews-item-text">
+												<p><span style="font-weight: 400;">They have very good organization and
+														project management expertise. We’re not just getting the
+														developers, we’re getting a whole support structure. Also,
+														Cloud Hawk cares about their employee satisfaction. And with
+														satisfied employees, we get much better output.�&nbsp;</span>
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="video-reviews-item swiper-slide">
+									<div class="video-reviews-item-container">
+										<!-- <div class="video-reviews-item-image-container">
+											<a class="video-reviews-item-link"
+												href="https://www.youtube.com/embed/vbiryyWxN0k" data-fslightbox="video"
+												rel="nofollow">
+												<div class="video-reviews-item-image">
+													<figure class="video-reviews-item-image-mobile">
+														<img loading="lazy" decoding="async" width="336" height="208"
+															src="images/picture-and-info-4-1-1.webp"
+															class="attachment-full size-full wp-post-image" alt=""
+															srcset="images/picture-and-info-4-1-1.webp 336w, images/picture-and-info-4-1-1-300x186.webp 300w, images/picture-and-info-4-1-1-288x178.webp 288w, images/picture-and-info-4-1-1-323x200.webp 323w, images/picture-and-info-4-1-1-328x203.webp 328w, images/picture-and-info-4-1-1-120x74.webp 120w, images/picture-and-info-4-1-1-260x161.webp 260w, images/picture-and-info-4-1-1-162x100.webp 162w, images/picture-and-info-4-1-1-20x12.webp 20w, images/picture-and-info-4-1-1-100x62.webp 100w"
+															sizes="(max-width: 336px) 100vw, 336px">
+													</figure>
+													<figure class="video-reviews-item-image-laptop">
+														<img loading="lazy" decoding="async" width="336" height="208"
+															src="images/picture-and-info-4-1-1.webp"
+															class="attachment-full size-full wp-post-image" alt=""
+															srcset="images/picture-and-info-4-1-1.webp 336w, images/picture-and-info-4-1-1-300x186.webp 300w, images/picture-and-info-4-1-1-288x178.webp 288w, images/picture-and-info-4-1-1-323x200.webp 323w, images/picture-and-info-4-1-1-328x203.webp 328w, images/picture-and-info-4-1-1-120x74.webp 120w, images/picture-and-info-4-1-1-260x161.webp 260w, images/picture-and-info-4-1-1-162x100.webp 162w, images/picture-and-info-4-1-1-20x12.webp 20w, images/picture-and-info-4-1-1-100x62.webp 100w"
+															sizes="(max-width: 336px) 100vw, 336px">
+													</figure>
+												</div>
+												<div class="video-reviews-item-image-text-container">
+													<span class="video-reviews-item-play-button"></span>
+													<div class="video-reviews-item-image-text-container">
+														<h4 class="video-reviews-item-image-title">
+															Ron Bullis </h4>
+														<span class="video-reviews-item-image-subtitle">
+															President and Founder at Lifeworks Advisors </span>
+													</div>
+												</div>
+											</a>
+										</div> -->
+										<div class="video-reviews-item-text-container">
+											<div class="video-reviews-item-text">
+												<p><span style="font-weight: 400;">One of the biggest values they bring
+														to the table is the way of thinking critically during the whole
+														development process. They’re not just building software, they’re
+														effectively solving your business problem.</span></p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="video-reviews-item swiper-slide">
+									<div class="video-reviews-item-container">
+										<!-- <div class="video-reviews-item-image-container">
+											<a class="video-reviews-item-link"
+												href="https://www.youtube.com/embed/6HHoy_OsPMM" data-fslightbox="video"
+												rel="nofollow">
+												<div class="video-reviews-item-image">
+													<figure class="video-reviews-item-image-mobile">
+														<img loading="lazy" decoding="async" width="336" height="208"
+															src="images/4-1.webp"
+															class="attachment-full size-full wp-post-image" alt=""
+															srcset="images/4-1.webp 336w, images/4-1-300x186.webp 300w, images/4-1-288x178.webp 288w, images/4-1-323x200.webp 323w, images/4-1-328x203.webp 328w, images/4-1-120x74.webp 120w, images/4-1-260x161.webp 260w, images/4-1-162x100.webp 162w, images/4-1-20x12.webp 20w, images/4-1-100x62.webp 100w"
+															sizes="(max-width: 336px) 100vw, 336px">
+													</figure>
+													<figure class="video-reviews-item-image-laptop">
+														<img loading="lazy" decoding="async" width="336" height="208"
+															src="images/4-1.webp"
+															class="attachment-full size-full wp-post-image" alt=""
+															srcset="images/4-1.webp 336w, images/4-1-300x186.webp 300w, images/4-1-288x178.webp 288w, images/4-1-323x200.webp 323w, images/4-1-328x203.webp 328w, images/4-1-120x74.webp 120w, images/4-1-260x161.webp 260w, images/4-1-162x100.webp 162w, images/4-1-20x12.webp 20w, images/4-1-100x62.webp 100w"
+															sizes="(max-width: 336px) 100vw, 336px">
+													</figure>
+												</div>
+												<div class="video-reviews-item-image-text-container">
+													<span class="video-reviews-item-play-button"></span>
+													<div class="video-reviews-item-image-text-container">
+														<h4 class="video-reviews-item-image-title">
+															Sérgio Miguel Vieira </h4>
+														<span class="video-reviews-item-image-subtitle">
+															Founder and CEO </span>
+													</div>
+												</div>
+											</a>
+										</div> -->
+										<div class="video-reviews-item-text-container">
+											<div class="video-reviews-item-text">
+												<p><span style="font-weight: 400;">What fascinated me the most is how
+														invested the Cloud Hawk development team is, and how they often
+														exceeded expectations in what we were trying to accomplish in
+														terms of timeframes.�&nbsp;</span></p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="video-reviews-item swiper-slide">
+									<div class="video-reviews-item-container">
+										<!-- <div class="video-reviews-item-image-container">
+											<a class="video-reviews-item-link"
+												href="https://www.youtube.com/embed/n0YdMmwFm3k" data-fslightbox="video"
+												rel="nofollow">
+												<div class="video-reviews-item-image">
+													<figure class="video-reviews-item-image-mobile">
+														<img loading="lazy" decoding="async" width="336" height="208"
+															src="images/picture-and-info1-1.webp"
+															class="attachment-full size-full wp-post-image" alt=""
+															srcset="images/picture-and-info1-1.webp 336w, images/picture-and-info1-1-300x186.webp 300w, images/picture-and-info1-1-288x178.webp 288w, images/picture-and-info1-1-323x200.webp 323w, images/picture-and-info1-1-328x203.webp 328w, images/picture-and-info1-1-120x74.webp 120w, images/picture-and-info1-1-260x161.webp 260w, images/picture-and-info1-1-162x100.webp 162w, images/picture-and-info1-1-20x12.webp 20w, images/picture-and-info1-1-100x62.webp 100w"
+															sizes="(max-width: 336px) 100vw, 336px">
+													</figure>
+													<figure class="video-reviews-item-image-laptop">
+														<img loading="lazy" decoding="async" width="336" height="208"
+															src="images/picture-and-info1-1.webp"
+															class="attachment-full size-full wp-post-image" alt=""
+															srcset="images/picture-and-info1-1.webp 336w, images/picture-and-info1-1-300x186.webp 300w, images/picture-and-info1-1-288x178.webp 288w, images/picture-and-info1-1-323x200.webp 323w, images/picture-and-info1-1-328x203.webp 328w, images/picture-and-info1-1-120x74.webp 120w, images/picture-and-info1-1-260x161.webp 260w, images/picture-and-info1-1-162x100.webp 162w, images/picture-and-info1-1-20x12.webp 20w, images/picture-and-info1-1-100x62.webp 100w"
+															sizes="(max-width: 336px) 100vw, 336px">
+													</figure>
+												</div>
+												<div class="video-reviews-item-image-text-container">
+													<span class="video-reviews-item-play-button"></span>
+													<div class="video-reviews-item-image-text-container">
+														<h4 class="video-reviews-item-image-title">
+															Alejandro Resendiz </h4>
+														<span class="video-reviews-item-image-subtitle">
+															General manager at 123 Sourcing </span>
+													</div>
+												</div>
+											</a>
+										</div> -->
+										<div class="video-reviews-item-text-container">
+											<div class="video-reviews-item-text">
+												<p><span style="font-weight: 400;">With the product built by Cloud Hawk,
+														we have a lot of possibilities for growth. They elaborated a
+														great user experience for our operators to work more efficiently
+														and properly deal with troubleshooting. And the architecture of
+														the product is scalable and ready for the future.</span></p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="video-reviews-item swiper-slide">
+									<div class="video-reviews-item-container">
+										<!-- <div class="video-reviews-item-image-container">
+											<a class="video-reviews-item-link"
+												href="https://www.youtube.com/embed/Mu9NbgmR8Bw" data-fslightbox="video"
+												rel="nofollow">
+												<div class="video-reviews-item-image">
+													<figure class="video-reviews-item-image-mobile">
+														<img loading="lazy" decoding="async" width="336" height="208"
+															src="images/picture-and-info2-1.webp"
+															class="attachment-full size-full wp-post-image" alt=""
+															srcset="images/picture-and-info2-1.webp 336w, images/picture-and-info2-1-300x186.webp 300w, images/picture-and-info2-1-288x178.webp 288w, images/picture-and-info2-1-323x200.webp 323w, images/picture-and-info2-1-328x203.webp 328w, images/picture-and-info2-1-120x74.webp 120w, images/picture-and-info2-1-260x161.webp 260w, images/picture-and-info2-1-162x100.webp 162w, images/picture-and-info2-1-20x12.webp 20w, images/picture-and-info2-1-100x62.webp 100w"
+															sizes="(max-width: 336px) 100vw, 336px">
+													</figure>
+													<figure class="video-reviews-item-image-laptop">
+														<img loading="lazy" decoding="async" width="336" height="208"
+															src="images/picture-and-info2-1.webp"
+															class="attachment-full size-full wp-post-image" alt=""
+															srcset="images/picture-and-info2-1.webp 336w, images/picture-and-info2-1-300x186.webp 300w, images/picture-and-info2-1-288x178.webp 288w, images/picture-and-info2-1-323x200.webp 323w, images/picture-and-info2-1-328x203.webp 328w, images/picture-and-info2-1-120x74.webp 120w, images/picture-and-info2-1-260x161.webp 260w, images/picture-and-info2-1-162x100.webp 162w, images/picture-and-info2-1-20x12.webp 20w, images/picture-and-info2-1-100x62.webp 100w"
+															sizes="(max-width: 336px) 100vw, 336px">
+													</figure>
+												</div>
+												<div class="video-reviews-item-image-text-container">
+													<span class="video-reviews-item-play-button"></span>
+													<div class="video-reviews-item-image-text-container">
+														<h4 class="video-reviews-item-image-title">
+															Andrew Gazdecki </h4>
+														<span class="video-reviews-item-image-subtitle">
+															CEO at MicroAcquire </span>
+													</div>
+												</div>
+											</a>
+										</div> -->
+										<div class="video-reviews-item-text-container">
+											<div class="video-reviews-item-text">
+												<p><span style="font-weight: 400;">Working with Cloud Hawk, you get their
+														breadth of experience building hundreds of projects. Their
+														expertise and knowledge were second to none. And that makes the
+														difference between a good product and a great product.</span>
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="video-reviews-swiper-navigation">
+							<div class="video-reviews-button-prev"></div>
+							<div class="video-reviews-button-next"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+			<section class="home-about-us" data-header="header-white" id="">
+				<div class="home-about-us-container">
+					<div class="container">
+						<h2 class="home-about-us-title">
+							<span>About</span> us
+						</h2>
+						<div class="home-about-us-content-wrapper">
+							<div class="home-about-us-content-about">
+								<p class="home-about-us-content-about-text">
+									Since 2018, Cloud Hawk has been helping companies in the FinTech, healthcare, real
+									estate, supply chain management, and other industries succeed with custom software
+									solutions. Driven by our clients’ business-specific needs and time and budget
+									constraints, our software development company builds and augments secure, stable,
+									scalable, and highly functional digital products to deliver maximum value and ensure
+									business sustainability. </p>
+								<ul class="home-about-us-content-about-list">
+									<li class="home-about-us-content-about-item">
+										<p class="home-about-us-content-about-item-title">6+</p>
+										<p class="home-about-us-content-about-item-text">
+											years of experience in software engineering and IT consulting </p>
+									</li>
+									<li class="home-about-us-content-about-item">
+										<p class="home-about-us-content-about-item-title">500+</p>
+										<p class="home-about-us-content-about-item-text">
+											software developers and other IT professionals on board </p>
+									</li>
+									<li class="home-about-us-content-about-item">
+										<p class="home-about-us-content-about-item-title">35+</p>
+										<p class="home-about-us-content-about-item-text">
+											active clients building and augmenting software with us </p>
+									</li>
+								</ul>
+							</div>
+							<div class="home-about-us-content-offices">
+								<div class="home-about-us-content-offices-container">
+									<p class="home-about-us-content-offices-title">Our Offices</p>
+									<ul class="home-about-us-content-offices-list">
+										<li class="home-about-us-content-offices-item">
+											<img loading="lazy" decoding="async" width="24" height="16"
+												src="images/UK.webp" class="attachment-full size-full" alt="">
+											<div class="home-about-us-content-offices-item-title-wrapper">
+												<p class="home-about-us-content-offices-item-title">
+													UK </p>
+												<p class="home-about-us-content-offices-item-text">
+													SO140DB Southampton, United Kingdom </p>
+											</div>
+											<p class="home-about-us-content-offices-item-text-mobile">
+												SO140DB Southampton, United Kingdom</p>
+										</li>
+										<li class="home-about-us-content-offices-item">
+											<img loading="lazy" decoding="async" width="24" height="16"
+												src="images/UAE.webp" class="attachment-full size-full" alt="">
+											<div class="home-about-us-content-offices-item-title-wrapper">
+												<p class="home-about-us-content-offices-item-title">
+													UAE </p>
+												<p class="home-about-us-content-offices-item-text">
+													Al.khaleej building Deira Dubai </p>
+											</div>
+											<p class="home-about-us-content-offices-item-text-mobile">
+												Al.khaleej building Deira Dubai </p>
+										</li>
+										 <!-- <li class="home-about-us-content-offices-item">
+											<img loading="lazy" decoding="async" width="24" height="16"
+												src="images/cyprus.svg" class="attachment-full size-full" alt="">
+											<div class="home-about-us-content-offices-item-title-wrapper">
+												<p class="home-about-us-content-offices-item-title">
+													Cyprus </p>
+												<p class="home-about-us-content-offices-item-text">
+													8 Athinon Street, Larnaca, 6023 </p>
+											</div>
+											<p class="home-about-us-content-offices-item-text-mobile">
+												8 Athinon Street, Larnaca, 6023 </p>
+										</li>  -->
+										<!-- <li class="home-about-us-content-offices-item">
+											<img loading="lazy" decoding="async" width="24" height="18"
+												src="images/estonia-1.svg" class="attachment-full size-full" alt="">
+											<div class="home-about-us-content-offices-item-title-wrapper">
+												<p class="home-about-us-content-offices-item-title">
+													Estonia </p>
+												<p class="home-about-us-content-offices-item-text">
+													12 Parda, Tallinn, 10151 </p>
+											</div>
+											<p class="home-about-us-content-offices-item-text-mobile">
+												12 Parda, Tallinn, 10151 </p>
+										</li> -->
+									</ul>
+								</div>
+							</div>
+						</div>
+						<ul class="home-about-us-logo-list">
+							<li class="home-about-us-logo-item">
+								<figure>
+									<img loading="lazy" decoding="async" width="126" height="100"
+										src="images/iso_27701_2019.svg" class="attachment-full size-full" alt="">
+								</figure>
+							</li>
+							<li class="home-about-us-logo-item">
+								<figure>
+									<img loading="lazy" decoding="async" width="127" height="100"
+										src="images/iso_9001_2015.svg" class="attachment-full size-full" alt="">
+								</figure>
+							</li>
+							<li class="home-about-us-logo-item">
+								<figure>
+									<img loading="lazy" decoding="async" width="126" height="100"
+										src="images/iso_27001_2013-1.svg" class="attachment-full size-full" alt="">
+								</figure>
+							</li>
+							<li class="home-about-us-logo-item">
+								<figure>
+									<img loading="lazy" decoding="async" width="100" height="100"
+										src="images/aws_partner_logo_white-1.svg" class="attachment-full size-full"
+										alt="">
+								</figure>
+							</li>
+							<li class="home-about-us-logo-item">
+								<figure>
+									<img loading="lazy" decoding="async" width="127" height="100"
+										src="images/clutch_staff_augmentation_company_ukr-1.svg"
+										class="attachment-full size-full" alt="">
+								</figure>
+							</li>
+							<li class="home-about-us-logo-item">
+								<figure>
+									<img loading="lazy" decoding="async" width="127" height="100"
+										src="images/top-software-development-companies-3.svg"
+										class="attachment-full size-full" alt="">
+								</figure>
+							</li>
+							<li class="home-about-us-logo-item">
+								<figure>
+									<img loading="lazy" decoding="async" width="126" height="100"
+										src="images/superbcompanies.com-original-3.svg"
+										class="attachment-full size-full" alt="">
+								</figure>
+							</li>
+							<li class="home-about-us-logo-item">
+								<figure>
+								</figure>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+
+			<section class="case-studies" data-header="header-black" id="">
+				<div class="container">
+					<div class="case-studies-title-container">
+						<h2 class="case-studies-title">
+							Case studies </h2>
+						<div class="case-studies-swiper-navigation">
+							<div class="case-studies-button-prev"></div>
+							<div class="case-studies-button-next"></div>
+						</div>
+					</div>
+					<div class="case-studies-container">
+						<div class="count-reviews-mobile-case"></div>
+						<div class="case-studies-pagination"></div>
+						<div class="case-studies-list swiper">
+							<div class="swiper-wrapper">
+								<div class="case-studies-item swiper-slide">
+									<a href="https://cloudhawktech.com/works/ehr-integration/"
+										class="case-studies-item-link">
+										<div class="case-studies-item-back"></div>
+										<h3 class="case-studies-item-title">
+											Healthcare SaaS solution </h3>
+										<ul class="case-studies-item-list">
+											<li class="case-studies-item-list-item">
+												<p class="case-studies-item-list-item-title">
+													Ensuring HIPAA compliance and product security </p>
+											</li>
+											<li class="case-studies-item-list-item">
+												<p class="case-studies-item-list-item-title">
+													Digitizing and automating healthcare operations </p>
+											</li>
+											<li class="case-studies-item-list-item">
+												<p class="case-studies-item-list-item-title">
+													Implementing telehealth functionality </p>
+											</li>
+										</ul>
+										<div class="case-studies-item-image-wrapper">
+											<div class="case-studies-item-image-small">
+												<img loading="lazy" decoding="async" width="143" height="45"
+													src="images/logo6.svg" class="attachment-full size-full" alt="">
+											</div>
+											<div class="case-studies-item-image-big">
+												<img loading="lazy" decoding="async" width="492" height="365"
+													src="images/healthfully_ehr_integration-2.webp"
+													class="attachment-full size-full" alt=""
+													srcset="images/healthfully_ehr_integration-2.webp 492w, images/healthfully_ehr_integration-2-300x223.webp 300w, images/healthfully_ehr_integration-2-280x208.webp 280w, images/healthfully_ehr_integration-2-270x200.webp 270w, images/healthfully_ehr_integration-2-328x243.webp 328w, images/healthfully_ehr_integration-2-120x90.webp 120w, images/healthfully_ehr_integration-2-337x250.webp 337w, images/healthfully_ehr_integration-2-368x273.webp 368w, images/healthfully_ehr_integration-2-260x193.webp 260w, images/healthfully_ehr_integration-2-135x100.webp 135w, images/healthfully_ehr_integration-2-20x15.webp 20w, images/healthfully_ehr_integration-2-100x74.webp 100w"
+													sizes="(max-width: 492px) 100vw, 492px">
+											</div>
+										</div>
+										<p class="case-studies-item-button">
+											See full case study
+										</p>
+									</a>
+								</div>
+								<div class="case-studies-item swiper-slide">
+									<a href="https://cloudhawktech.com/works/wealth-management-platform/"
+										class="case-studies-item-link">
+										<div class="case-studies-item-back"></div>
+										<h3 class="case-studies-item-title">
+											Wealth management platform </h3>
+										<ul class="case-studies-item-list">
+											<li class="case-studies-item-list-item">
+												<p class="case-studies-item-list-item-title">
+													Building a unified system for all financial operations </p>
+											</li>
+											<li class="case-studies-item-list-item">
+												<p class="case-studies-item-list-item-title">
+													Optimizing legacy code, the UI/UX, and the technology stack </p>
+											</li>
+											<li class="case-studies-item-list-item">
+												<p class="case-studies-item-list-item-title">
+													Automating business processes to reduce the employee burden </p>
+											</li>
+										</ul>
+										<div class="case-studies-item-image-wrapper">
+											<div class="case-studies-item-image-small">
+												<img loading="lazy" decoding="async" width="143" height="45"
+													src="images/logo-20-1.svg" class="attachment-full size-full" alt="">
+											</div>
+											<div class="case-studies-item-image-big">
+												<img loading="lazy" decoding="async" width="492" height="365"
+													src="images/lifeworks.webp" class="attachment-full size-full" alt=""
+													srcset="images/lifeworks.webp 492w, images/lifeworks-300x223.webp 300w, images/lifeworks-280x208.webp 280w, images/lifeworks-270x200.webp 270w, images/lifeworks-328x243.webp 328w, images/lifeworks-120x90.webp 120w, images/lifeworks-337x250.webp 337w, images/lifeworks-368x273.webp 368w, images/lifeworks-260x193.webp 260w, images/lifeworks-135x100.webp 135w, images/lifeworks-20x15.webp 20w, images/lifeworks-100x74.webp 100w"
+													sizes="(max-width: 492px) 100vw, 492px">
+											</div>
+										</div>
+										<p class="case-studies-item-button">
+											See full case study
+										</p>
+									</a>
+								</div>
+								<div class="case-studies-item swiper-slide">
+									<a href="https://cloudhawktech.com/works/truhoo/" class="case-studies-item-link">
+										<div class="case-studies-item-back"></div>
+										<h3 class="case-studies-item-title">
+											All-in-one real estate platform </h3>
+										<ul class="case-studies-item-list">
+											<li class="case-studies-item-list-item">
+												<p class="case-studies-item-list-item-title">
+													Building a cloud-based GDPR-compliant platform </p>
+											</li>
+											<li class="case-studies-item-list-item">
+												<p class="case-studies-item-list-item-title">
+													Implementing a scam protection system </p>
+											</li>
+											<li class="case-studies-item-list-item">
+												<p class="case-studies-item-list-item-title">
+													Conducting complex search engine optimization </p>
+											</li>
+										</ul>
+										<div class="case-studies-item-image-wrapper">
+											<div class="case-studies-item-image-small">
+												<img loading="lazy" decoding="async" width="143" height="45"
+													src="images/logo5.svg" class="attachment-full size-full" alt="">
+											</div>
+											<div class="case-studies-item-image-big">
+												<img loading="lazy" decoding="async" width="486" height="325"
+													src="images/truhoo-1.webp" class="attachment-full size-full" alt=""
+													srcset="images/truhoo-1.webp 486w, images/truhoo-1-300x201.webp 300w, images/truhoo-1-311x208.webp 311w, images/truhoo-1-288x193.webp 288w, images/truhoo-1-299x200.webp 299w, images/truhoo-1-328x219.webp 328w, images/truhoo-1-120x80.webp 120w, images/truhoo-1-374x250.webp 374w, images/truhoo-1-368x246.webp 368w, images/truhoo-1-260x174.webp 260w, images/truhoo-1-150x100.webp 150w, images/truhoo-1-20x13.webp 20w, images/truhoo-1-100x67.webp 100w"
+													sizes="(max-width: 486px) 100vw, 486px">
+											</div>
+										</div>
+										<p class="case-studies-item-button">
+											See full case study
+										</p>
+									</a>
+								</div>
+								<div class="case-studies-item swiper-slide">
+									<a href="https://cloudhawktech.com/works/123-sourcing/" class="case-studies-item-link">
+										<div class="case-studies-item-back"></div>
+										<h3 class="case-studies-item-title">
+											Load planning system </h3>
+										<ul class="case-studies-item-list">
+											<li class="case-studies-item-list-item">
+												<p class="case-studies-item-list-item-title">
+													Building a cost-efficient proof of concept </p>
+											</li>
+											<li class="case-studies-item-list-item">
+												<p class="case-studies-item-list-item-title">
+													Automating analytics to reduce labor costs </p>
+											</li>
+											<li class="case-studies-item-list-item">
+												<p class="case-studies-item-list-item-title">
+													Ensuring software interoperability and scalability </p>
+											</li>
+										</ul>
+										<div class="case-studies-item-image-wrapper">
+											<div class="case-studies-item-image-small">
+												<img loading="lazy" decoding="async" width="143" height="45"
+													src="images/123-sourcing.svg" class="attachment-full size-full"
+													alt="">
+											</div>
+											<div class="case-studies-item-image-big">
+												<img loading="lazy" decoding="async" width="492" height="365"
+													src="images/123-sourcing-1-1.webp" class="attachment-full size-full"
+													alt=""
+													srcset="images/123-sourcing-1-1.webp 492w, images/123-sourcing-1-1-300x223.webp 300w, images/123-sourcing-1-1-280x208.webp 280w, images/123-sourcing-1-1-270x200.webp 270w, images/123-sourcing-1-1-328x243.webp 328w, images/123-sourcing-1-1-120x90.webp 120w, images/123-sourcing-1-1-337x250.webp 337w, images/123-sourcing-1-1-368x273.webp 368w, images/123-sourcing-1-1-260x193.webp 260w, images/123-sourcing-1-1-135x100.webp 135w, images/123-sourcing-1-1-20x15.webp 20w, images/123-sourcing-1-1-100x74.webp 100w"
+													sizes="(max-width: 492px) 100vw, 492px">
+											</div>
+										</div>
+										<p class="case-studies-item-button">
+											See full case study
+										</p>
+									</a>
+								</div>
+								<div class="case-studies-item swiper-slide">
+									<a href="https://cloudhawktech.com/works/iot-fleet-management-for-rakwireless/"
+										class="case-studies-item-link">
+										<div class="case-studies-item-back"></div>
+										<h3 class="case-studies-item-title">
+											Enterprise-level IoT-based solution </h3>
+										<ul class="case-studies-item-list">
+											<li class="case-studies-item-list-item">
+												<p class="case-studies-item-list-item-title">
+													Designing a scalable and maintainable architecture </p>
+											</li>
+											<li class="case-studies-item-list-item">
+												<p class="case-studies-item-list-item-title">
+													Moving to a SaaS-based service delivery model </p>
+											</li>
+											<li class="case-studies-item-list-item">
+												<p class="case-studies-item-list-item-title">
+													Improving a large IoT device management ecosystem </p>
+											</li>
+										</ul>
+										<div class="case-studies-item-image-wrapper">
+											<div class="case-studies-item-image-small">
+												<img loading="lazy" decoding="async" width="143" height="45"
+													src="images/logo-1-1-1.svg" class="attachment-full size-full"
+													alt="">
+											</div>
+											<div class="case-studies-item-image-big">
+												<img loading="lazy" decoding="async" width="486" height="325"
+													src="images/wisdm_rak.webp" class="attachment-full size-full" alt=""
+													srcset="images/wisdm_rak.webp 486w, images/wisdm_rak-300x201.webp 300w, images/wisdm_rak-311x208.webp 311w, images/wisdm_rak-288x193.webp 288w, images/wisdm_rak-299x200.webp 299w, images/wisdm_rak-328x219.webp 328w, images/wisdm_rak-120x80.webp 120w, images/wisdm_rak-374x250.webp 374w, images/wisdm_rak-368x246.webp 368w, images/wisdm_rak-260x174.webp 260w, images/wisdm_rak-150x100.webp 150w, images/wisdm_rak-20x13.webp 20w, images/wisdm_rak-100x67.webp 100w"
+													sizes="(max-width: 486px) 100vw, 486px">
+											</div>
+										</div>
+										<p class="case-studies-item-button">
+											See full case study
+										</p>
+									</a>
+								</div>
+								<div class="case-studies-item swiper-slide">
+									<a href="https://cloudhawktech.com/works/data-strategy-for-online-banking/"
+										class="case-studies-item-link">
+										<div class="case-studies-item-back"></div>
+										<h3 class="case-studies-item-title">
+											Data strategy for online banking </h3>
+										<ul class="case-studies-item-list">
+											<li class="case-studies-item-list-item">
+												<p class="case-studies-item-list-item-title">
+													Building a future-proof data foundation </p>
+											</li>
+											<li class="case-studies-item-list-item">
+												<p class="case-studies-item-list-item-title">
+													Improving data quality for user growth and fraud reduction </p>
+											</li>
+											<li class="case-studies-item-list-item">
+												<p class="case-studies-item-list-item-title">
+													Ensuring compliance and building customer trust </p>
+											</li>
+										</ul>
+										<div class="case-studies-item-image-wrapper">
+											<div class="case-studies-item-image-small">
+												<img loading="lazy" decoding="async" width="154" height="45"
+													src="images/oxygen_logo-white.svg" class="attachment-full size-full"
+													alt="">
+											</div>
+											<div class="case-studies-item-image-big">
+												<img loading="lazy" decoding="async" width="328" height="231"
+													src="images/oxygen.webp" class="attachment-full size-full" alt=""
+													srcset="images/oxygen.webp 328w, images/oxygen-300x211.webp 300w, images/oxygen-295x208.webp 295w, images/oxygen-288x203.webp 288w, images/oxygen-284x200.webp 284w, images/oxygen-120x85.webp 120w, images/oxygen-260x183.webp 260w, images/oxygen-142x100.webp 142w, images/oxygen-20x14.webp 20w, images/oxygen-100x70.webp 100w"
+													sizes="(max-width: 328px) 100vw, 328px">
+											</div>
+										</div>
+										<p class="case-studies-item-button">
+											See full case study
+										</p>
+									</a>
+								</div>
+								<div class="case-studies-item swiper-slide">
+									<a href="https://cloudhawktech.com/works/healthcare-management-system-for-restorixhealth/"
+										class="case-studies-item-link">
+										<div class="case-studies-item-back"></div>
+										<h3 class="case-studies-item-title">
+											Patient management system for RestorixHealth </h3>
+										<ul class="case-studies-item-list">
+											<li class="case-studies-item-list-item">
+												<p class="case-studies-item-list-item-title">
+													Ensuring instant access to patient information </p>
+											</li>
+											<li class="case-studies-item-list-item">
+												<p class="case-studies-item-list-item-title">
+													Enabling automated data aggregation and management </p>
+											</li>
+											<li class="case-studies-item-list-item">
+												<p class="case-studies-item-list-item-title">
+													Setting up real-time order management of medical products </p>
+											</li>
+											<li class="case-studies-item-list-item">
+												<p class="case-studies-item-list-item-title">
+													Improving user experience to allow intuitive patient management </p>
+											</li>
+										</ul>
+										<div class="case-studies-item-image-wrapper">
+											<div class="case-studies-item-image-small">
+												<img loading="lazy" decoding="async" width="219" height="46"
+													src="images/RestorixHealth_logo.svg"
+													class="attachment-full size-full" alt="">
+											</div>
+											<div class="case-studies-item-image-big">
+												<img loading="lazy" decoding="async" width="328" height="231"
+													src="images/restorix-2.webp" class="attachment-full size-full"
+													alt=""
+													srcset="images/restorix-2.webp 328w, images/restorix-2-300x211.webp 300w, images/restorix-2-295x208.webp 295w, images/restorix-2-288x203.webp 288w, images/restorix-2-284x200.webp 284w, images/restorix-2-120x85.webp 120w, images/restorix-2-260x183.webp 260w, images/restorix-2-142x100.webp 142w, images/restorix-2-20x14.webp 20w, images/restorix-2-100x70.webp 100w"
+													sizes="(max-width: 328px) 100vw, 328px">
+											</div>
+										</div>
+										<p class="case-studies-item-button">
+											See full case study
+										</p>
+									</a>
+								</div>
+								<div class="case-studies-item swiper-slide">
+									<a href="https://cloudhawktech.com/works/kpmg/" class="case-studies-item-link">
+										<div class="case-studies-item-back"></div>
+										<h3 class="case-studies-item-title">
+											Online communication platform </h3>
+										<ul class="case-studies-item-list">
+											<li class="case-studies-item-list-item">
+												<p class="case-studies-item-list-item-title">
+													Developing an iOS mobile application </p>
+											</li>
+											<li class="case-studies-item-list-item">
+												<p class="case-studies-item-list-item-title">
+													Designing an intuitive user experience </p>
+											</li>
+											<li class="case-studies-item-list-item">
+												<p class="case-studies-item-list-item-title">
+													Simplifying client–consultant collaboration </p>
+											</li>
+										</ul>
+										<div class="case-studies-item-image-wrapper">
+											<div class="case-studies-item-image-small">
+												<img loading="lazy" decoding="async" width="143" height="45"
+													src="images/jn-1.svg" class="attachment-full size-full" alt="">
+											</div>
+											<div class="case-studies-item-image-big">
+												<img loading="lazy" decoding="async" width="486" height="325"
+													src="images/kpmg.webp" class="attachment-full size-full" alt=""
+													srcset="images/kpmg.webp 486w, images/kpmg-300x201.webp 300w, images/kpmg-311x208.webp 311w, images/kpmg-288x193.webp 288w, images/kpmg-299x200.webp 299w, images/kpmg-328x219.webp 328w, images/kpmg-120x80.webp 120w, images/kpmg-374x250.webp 374w, images/kpmg-368x246.webp 368w, images/kpmg-260x174.webp 260w, images/kpmg-150x100.webp 150w, images/kpmg-20x13.webp 20w, images/kpmg-100x67.webp 100w"
+													sizes="(max-width: 486px) 100vw, 486px">
+											</div>
+										</div>
+										<p class="case-studies-item-button">
+											See full case study
+										</p>
+									</a>
+								</div>
+								<div class="case-studies-item swiper-slide">
+									<a href="https://cloudhawktech.com/works/refining-documentation-repository-for-premium-food-manufacturer/"
+										class="case-studies-item-link">
+										<div class="case-studies-item-back"></div>
+										<h3 class="case-studies-item-title">
+											Centralized knowledge repository for a premium food manufacturer </h3>
+										<ul class="case-studies-item-list">
+											<li class="case-studies-item-list-item">
+												<p class="case-studies-item-list-item-title">
+													Improving the integration between internal systems and overall
+													infrastructure visibility </p>
+											</li>
+											<li class="case-studies-item-list-item">
+												<p class="case-studies-item-list-item-title">
+													Streamlining onboarding, product support, and change management
+													processes </p>
+											</li>
+											<li class="case-studies-item-list-item">
+												<p class="case-studies-item-list-item-title">
+													Enhancing permission management and bringing it up to the Integrated
+													Information Infrastructure Reference Model (III-RM) standards </p>
+											</li>
+										</ul>
+										<div class="case-studies-item-image-wrapper">
+											<div class="case-studies-item-image-small">
+												<img loading="lazy" decoding="async" width="71" height="45"
+													src="images/premium-food-manufacturer_logo-white.svg"
+													class="attachment-full size-full" alt="">
+											</div>
+											<div class="case-studies-item-image-big">
+												<img loading="lazy" decoding="async" width="328" height="231"
+													src="images/updating-solution-landscape-documentation-for-premium-food-manufacturer.webp"
+													class="attachment-full size-full" alt=""
+													srcset="images/updating-solution-landscape-documentation-for-premium-food-manufacturer.webp 328w, images/updating-solution-landscape-documentation-for-premium-food-manufacturer-300x211.webp 300w, images/updating-solution-landscape-documentation-for-premium-food-manufacturer-295x208.webp 295w, images/updating-solution-landscape-documentation-for-premium-food-manufacturer-288x203.webp 288w, images/updating-solution-landscape-documentation-for-premium-food-manufacturer-284x200.webp 284w, images/updating-solution-landscape-documentation-for-premium-food-manufacturer-120x85.webp 120w, images/updating-solution-landscape-documentation-for-premium-food-manufacturer-260x183.webp 260w, images/updating-solution-landscape-documentation-for-premium-food-manufacturer-142x100.webp 142w, images/updating-solution-landscape-documentation-for-premium-food-manufacturer-20x14.webp 20w, images/updating-solution-landscape-documentation-for-premium-food-manufacturer-100x70.webp 100w"
+													sizes="(max-width: 328px) 100vw, 328px">
+											</div>
+										</div>
+										<p class="case-studies-item-button">
+											See full case study
+										</p>
+									</a>
+								</div>
+								<div class="case-studies-item swiper-slide">
+									<a href="https://cloudhawktech.com/works/amazing-discoveries-smart-tv/"
+										class="case-studies-item-link">
+										<div class="case-studies-item-back"></div>
+										<h3 class="case-studies-item-title">
+											Smart TV app development for a nonprofit company </h3>
+										<ul class="case-studies-item-list">
+											<li class="case-studies-item-list-item">
+												<p class="case-studies-item-list-item-title">
+													improving existing user satisfaction by adding sorting feature to
+													video app </p>
+											</li>
+											<li class="case-studies-item-list-item">
+												<p class="case-studies-item-list-item-title">
+													quardupling the number of new Samsung TV users in four months </p>
+											</li>
+											<li class="case-studies-item-list-item">
+												<p class="case-studies-item-list-item-title">
+													enhancing operational visibility by documenting workflows and
+													internal processes </p>
+											</li>
+										</ul>
+										<div class="case-studies-item-image-wrapper">
+											<div class="case-studies-item-image-small">
+												<img loading="lazy" decoding="async" width="162" height="45"
+													src="images/amazing-discoveries_logo-white.svg"
+													class="attachment-full size-full" alt="">
+											</div>
+											<div class="case-studies-item-image-big">
+												<img loading="lazy" decoding="async" width="328" height="231"
+													src="images/Amazing-discoveries_preview-home-page-case-studies-block.png"
+													class="attachment-full size-full" alt=""
+													srcset="images/Amazing-discoveries_preview-home-page-case-studies-block.png 328w, images/Amazing-discoveries_preview-home-page-case-studies-block-300x211.png 300w, images/Amazing-discoveries_preview-home-page-case-studies-block-295x208.png 295w, images/Amazing-discoveries_preview-home-page-case-studies-block-288x203.png 288w, images/Amazing-discoveries_preview-home-page-case-studies-block-284x200.png 284w, images/Amazing-discoveries_preview-home-page-case-studies-block-120x85.png 120w, images/Amazing-discoveries_preview-home-page-case-studies-block-260x183.png 260w, images/Amazing-discoveries_preview-home-page-case-studies-block-142x100.png 142w, images/Amazing-discoveries_preview-home-page-case-studies-block-20x14.png 20w, images/Amazing-discoveries_preview-home-page-case-studies-block-100x70.png 100w"
+													sizes="(max-width: 328px) 100vw, 328px">
+											</div>
+										</div>
+										<p class="case-studies-item-button">
+											See full case study
+										</p>
+									</a>
+								</div>
+								
+							</div>
+						</div>
+						<div class="case-studies-swiper-navigation-mobile">
+							<div class="case-studies-button-prev-tablet"></div>
+							<div class="case-studies-button-next-tablet"></div>
+						</div>
+					</div>
+					<div class="cta-dark-orange-bg">
+						<div class="cta-dark-orange-bg-container">
+							<div class="">
+								<h3 class="cta-dark-orange-bg-title">
+									Looking for a reliable software development company? </h3>
+								<p class="cta-dark-orange-bg-text">
+									Build a high-quality FinTech product designed for seamless scaling, active user
+									acquisition, and stable performance under high loads with Cloud Hawk </p>
+							</div>
+							<a class="cta-dark-orange-bg-link" href="/contacts/">
+								Book a call </a>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+			<section class="faq" data-header="header-white" id="">
+				<div class="faq-dots-container">
+					<div class="faq-dots-wrapper">
+						<div class="faq-dots-1"></div>
+						<div class="faq-dots-2"></div>
+						<div class="faq-dots-3"></div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="faq-container">
+						<span class="faq-title">FAQ</span>
+					</div>
+					<div class="faq-list">
+						<div class="faq-item">
+							<div class="faq-question">
+								<h3 class="faq-question-title">
+									How does your software developer company ensure product security? </h3>
+								<div class="faq-question-image">
+
+								</div>
+							</div>
+							<div class="faq-answer">
+								<div class="faq-answer-text">
+									<p>
+									</p>
+									<p>Our software development agency has obtained ISO 27001 and ISO 9001
+										certifications for software development groups. These certifications demonstrate
+										that Cloud Hawk’ management and development processes comply with international
+										quality and security standards introduced by the International Organization for
+										Standardization (ISO).</p>
+									<p>�&nbsp;</p>
+									<p>Being ISO 9001-certified, our software development firm delivers quality software
+										engineering services in full accordance with the needs of our clients,
+										employees, and regulatory bodies. Our processes are well-established and
+										polished to continually improve performance and operational efficiency.</p>
+									<p>�&nbsp;</p>
+									<p>As an ISO 27001-certified software developer company, we build highly secure
+										software solutions that comply with business, legal, contractual, and regulatory
+										requirements, and we are constantly streamlining our information security
+										management system.</p>
+									<p></p>
+								</div>
+							</div>
+						</div>
+						<div class="faq-item">
+							<div class="faq-question">
+								<h3 class="faq-question-title">
+									What standards, laws, and regulations do you comply with? </h3>
+								<div class="faq-question-image"></div>
+							</div>
+							<div class="faq-answer">
+								<div class="faq-answer-text">
+									<p>
+									</p>
+									<p><span style="font-weight: 400;">A secure development process requires compliance
+											with applicable standards, laws, and regulations. As a </span><span
+											style="font-weight: 400;">software developer firm</span><span
+											style="font-weight: 400;">, Cloud Hawk creates software solutions for clients
+											in various countries and industries. While building solutions for the
+											healthcare industry, for example, we follow HIPAA, CFR, GDPR, FHIR, and HL7
+											requirements. We have also helped our clients obtain ONC Health IT
+											certification. While delivering projects for the FinTech industry, we comply
+											with PCI-DSS, PSD2, SOC2, and the GDPR.</span></p>
+									<p></p>
+								</div>
+							</div>
+						</div>
+						<div class="faq-item">
+							<div class="faq-question">
+								<h3 class="faq-question-title">
+									What industries does your software product development company have experience in?
+								</h3>
+								<div class="faq-question-image"></div>
+							</div>
+							<div class="faq-answer">
+								<div class="faq-answer-text">
+									<p>
+									</p>
+									<p><span style="font-weight: 400;">Cloud Hawk develops software solutions for clients
+											in numerous industries, with the largest number of projects delivered to
+											clients in healthcare, FinTech, IoT, and supply chain management. We have
+											also built software for the real estate, manufacturing, hotel and
+											hospitality, travel, and automotive markets. A lot of our projects are
+											covered by strict non-disclosure agreements (NDAs), and we operate in more
+											fields than those listed here. In total, we have delivered or are currently
+											working on over 300 projects.�&nbsp;</span></p>
+									<p>�&nbsp;</p>
+									<p><span style="font-weight: 400;">However, the number of projects we’ve worked on
+											and the industries in which we have experience only demonstrate part of the
+											value you receive when choosing Cloud Hawk</span><span
+											style="font-weight: 400;">. The software development</span><span
+											style="font-weight: 400;"> approaches, skills, knowledge, and expertise
+											we’ve gained throughout more than 14 years of operation help us deliver even
+											more value to our clients.�&nbsp;</span></p>
+									<p></p>
+								</div>
+							</div>
+						</div>
+						<div class="faq-item">
+							<div class="faq-question">
+								<h3 class="faq-question-title">
+									What benefits do you get as a result of Cloud Hawk’ domain experience? </h3>
+								<div class="faq-question-image"></div>
+							</div>
+							<div class="faq-answer">
+								<div class="faq-answer-text">
+									<p>
+									</p>
+									<p><span style="font-weight: 400;">Experience working in multiple domains helps us
+											approach development of new solutions with creativity and an innovative
+											mindset. Our engineers often find out-of-the box solutions to IT challenges
+											that they have learned while working in other industries. Also, as a
+											multi-industry software engineering company, we work with a large number of
+											popular technologies and are constantly extending our technology expertise,
+											which means we can provide specialists for </span><b>nearly </b><span
+											style="font-weight: 400;">any client requests.�&nbsp;</span></p>
+									<p>�&nbsp;</p>
+									<p><span style="font-weight: 400;">One of the advantages that our </span><span
+											style="font-weight: 400;">software development company</span><span
+											style="font-weight: 400;"> has gained while working in multiple industries
+											is enhanced problem-solving skills. Having faced a variety of
+											industry-specific challenges, we have a better understanding of how we
+											should act in specific situations, which methodologies to apply, and which
+											strategies to follow. This rich background assists our development teams by
+											allowing them to approach problem-solving from a more holistic
+											perspective.</span></p>
+									<p></p>
+								</div>
+							</div>
+						</div>
+						<div class="faq-item">
+							<div class="faq-question">
+								<h3 class="faq-question-title">
+									What expertise does your development software company have? </h3>
+								<div class="faq-question-image"></div>
+							</div>
+							<div class="faq-answer">
+								<div class="faq-answer-text">
+									<p>
+									</p>
+									<p><span style="font-weight: 400;">Our technical expertise includes:�&nbsp;</span>
+									</p>
+									<ul>
+										<li style="font-weight: 400;" aria-level="1"><span
+												style="font-weight: 400;">Cloud and DevOps</span></li>
+										<li style="font-weight: 400;" aria-level="1"><span
+												style="font-weight: 400;">Internet of Things (IoT)</span></li>
+										<li style="font-weight: 400;" aria-level="1"><span
+												style="font-weight: 400;">Cybersecurity</span></li>
+										<li style="font-weight: 400;" aria-level="1"><span
+												style="font-weight: 400;">Data science</span></li>
+										<li style="font-weight: 400;" aria-level="1"><span
+												style="font-weight: 400;">Machine learning (ML) and artificial
+												intelligence (AI)</span></li>
+										<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Big
+												data and analytics</span></li>
+										<li style="font-weight: 400;" aria-level="1"><span
+												style="font-weight: 400;">High-load systems</span></li>
+										<li style="font-weight: 400;" aria-level="1"><span
+												style="font-weight: 400;">Robotic process automation (RPA)�&nbsp;</span>
+										</li>
+										<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">UI
+												and UX design�&nbsp;</span></li>
+									</ul>
+									<p></p>
+								</div>
+							</div>
+						</div>
+						<div class="faq-item">
+							<div class="faq-question">
+								<h3 class="faq-question-title">
+									What solutions does your software developer company deliver? </h3>
+								<div class="faq-question-image"></div>
+							</div>
+							<div class="faq-answer">
+								<div class="faq-answer-text">
+									<p>
+									</p>
+									<p><span style="font-weight: 400;">We are able to help you with the following
+											solutions:�&nbsp;</span></p>
+									<p>�&nbsp;</p>
+									<p><b>SaaS development and migration. </b><span style="font-weight: 400;">Cloud Hawk
+											specialists have experience developing cloud-based solutions with scalable
+											and maintainable architectures to meet specific business goals and market
+											needs. If you want to move to a new business model, a Cloud Hawk team can plan
+											and carry out your SaaS migration.�&nbsp;</span></p>
+									<p>�&nbsp;</p>
+									<p><b>End-to-end business solutions. </b><span style="font-weight: 400;">If you need
+											to extend your product ecosystem or build it from the ground up to cover all
+											of your business needs and processes, Cloud Hawk will ensure seamless
+											integrations, full interoperability, and swift and complete data
+											exchange.�&nbsp;</span></p>
+									<p>�&nbsp;</p>
+									<p><b>Digital business transformation.</b><span style="font-weight: 400;"> We will
+											help you digitize, automate, and optimize all your operational processes.
+											Our </span><span style="font-weight: 400;">software development
+											company</span><span style="font-weight: 400;"> is ready to build a web
+											solution of any complexity that meets your objectives.�&nbsp;�&nbsp;</span>
+									</p>
+									<p>�&nbsp;</p>
+									<p><b>Mobile software development.</b><span style="font-weight: 400;"> If you need a
+											customer-facing mobile application for successfully running your business,
+											Cloud Hawk is ready to help you deliver a user-centric, efficient, and
+											conversion-optimized iOS, Android, or cross-platform mobile app.</span></p>
+									<p>�&nbsp;</p>
+									<p><b>Communication platform development. </b><span
+											style="font-weight: 400;">Whether it’s for a wide audience or for your own
+											business use, we can support you in building a feature-rich communication
+											platform or functional modules capable of meeting your business’s or
+											customers’ communication needs.�&nbsp;�&nbsp;</span></p>
+									<p></p>
+								</div>
+							</div>
+						</div>
+						<div class="faq-item">
+							<div class="faq-question">
+								<h3 class="faq-question-title">
+									What does the software development life cycle look like in your IT software
+									development company? </h3>
+								<div class="faq-question-image"></div>
+							</div>
+							<div class="faq-answer">
+								<div class="faq-answer-text">
+									<p>
+									</p>
+									<p><span style="font-weight: 400;">Cloud Hawk is </span><span
+											style="font-weight: 400;">a software development company</span><span
+											style="font-weight: 400;"> that not only supports clients during development
+											but also provides multifaceted services at each stage of the software
+											development process. These include IT consulting, post-release solution
+											support, pre-sales support, participation in demos for investors, and
+											more.</span></p>
+									<p>�&nbsp;</p>
+									<p><b>Negotiations</b></p>
+									<p>�&nbsp;</p>
+									<p><span style="font-weight: 400;">As an experienced </span><span
+											style="font-weight: 400;">software product development company</span><span
+											style="font-weight: 400;">, Cloud Hawk will guide you throughout the
+											partnership. Starting from the negotiation phase, we will make sure your
+											intellectual property is safe by signing a non-disclosure agreement (NDA).
+											Our </span><span style="font-weight: 400;">software development
+											organization</span><span style="font-weight: 400;"> will scrutinize all of
+											your requirements and business needs, your stakeholders, and your product
+											vision to make sure we are on the same page and understand your long-term
+											goals. After this, we will provide you with rough cost and time estimates, a
+											proposed team composition and technology stack, and other project details on
+											demand.�&nbsp;</span></p>
+									<p>�&nbsp;</p>
+									<p><b>Discovery</b></p>
+									<p>�&nbsp;</p>
+									<p><span style="font-weight: 400;">Right after we sign a contract, our </span><span
+											style="font-weight: 400;">software dev company</span><span
+											style="font-weight: 400;"> starts a discovery phase, which involves a
+											detailed business analysis of your project with artifacts prepared by the
+											business analysis team and approved by stakeholders. These include a user
+											story map, user flows, auxiliary diagrams, and other artifacts that aid in
+											designing and streamlining your solution’s business logic and providing your
+											customers with top-notch functionality. At this stage, UI/UX designers start
+											preparing the first drafts of your solution’s design, and our solution
+											architect works on the solution software document (SSD) that outlines all
+											technical details.�&nbsp;</span></p>
+									<p>�&nbsp;</p>
+									<p><span style="font-weight: 400;">The business analysis team also prepares the
+											scope of work for project managers and developers as well as the product
+											development backlog during the discovery phase. Stakeholder engagement is
+											vital here, as a lot of details, such as deadlines, are strictly reviewed
+											with the client. While the scope of work and product development backlog are
+											being prepared, developers from our </span><span
+											style="font-weight: 400;">programming company</span><span
+											style="font-weight: 400;"> gradually join the team, go through the
+											onboarding process, and prepare to build your solution. Stakeholders can
+											actively participate in interviewing and approving developers.</span></p>
+									<p>�&nbsp;</p>
+									<p><b>Development</b></p>
+									<p>�&nbsp;</p>
+									<p><span style="font-weight: 400;">Your solution moves from a documented vision to a
+											tangible product during the development phase. Our developers use the Agile
+											methodology and work in sprints to write high-quality code, build all
+											required features, and integrate with any third-party
+											services.�&nbsp;</span></p>
+									<p>�&nbsp;</p>
+									<p><b>Testing</b></p>
+									<p>�&nbsp;</p>
+									<p><span style="font-weight: 400;">The next stage is testing, where our testing
+											engineers complete comprehensive checks of the solution’s performance and
+											security in line with your initial requirements. Finally, you will have a
+											solution that is ready to serve your customers and generate revenue for your
+											business.�&nbsp;</span></p>
+									<p>�&nbsp;</p>
+									<p><span style="font-weight: 400;">Upon request, our team can continue partnering
+											with you by providing continuous product support: implementing new
+											functionality, enhancing solution performance and stability, and so
+											on.�&nbsp;�&nbsp;</span></p>
+									<p></p>
+								</div>
+							</div>
+						</div>
+						<div class="faq-item">
+							<div class="faq-question">
+								<h3 class="faq-question-title">
+									How does your software building company ensure software quality? </h3>
+								<div class="faq-question-image"></div>
+							</div>
+							<div class="faq-answer">
+								<div class="faq-answer-text">
+									<p>
+									</p>
+									<p><span style="font-weight: 400;">At Cloud Hawk, we pay close attention to quality
+											assurance. In order to deliver a product that meets business needs and
+											requirements, our quality assurance specialists start working at the
+											pre-development stage, during which they help to identify gaps in the
+											solution’s business logic. This way, the development team can avoid
+											potential issues when creating project documentation, and our client can
+											save on development costs. To confirm that a product’s business logic is
+											adequate, quality assurance specialists check the wireframes for possible
+											gaps in business logic.�&nbsp;</span></p>
+									<p>�&nbsp;</p>
+									<p><b>Test planning session</b></p>
+									<p>�&nbsp;</p>
+									<p><span style="font-weight: 400;">At the beginning of each sprint, QA specialists
+											plan each testing session and create sprint checklists based on the feature
+											set to be delivered by the end of the sprint. As soon as there is enough
+											material to test, QAs thoroughly check components. The Cloud Hawk QA
+											department usually relies on an on-the-go testing approach. Because a
+											solution’s requirements can change over time, we usually design testing
+											strategies for each sprint independently based on the current state of the
+											given solution. Such an approach not only reduces the amount of work for QA
+											specialists but also saves money for our clients.�&nbsp;</span></p>
+									<p>�&nbsp;</p>
+									<p><b>Testing</b></p>
+									<p>�&nbsp;</p>
+									<p><span style="font-weight: 400;">During the testing phase, QAs work on test
+											checklists or test scenarios. It’s common to use checklists for
+											uncomplicated tasks because they require fewer resources, while test
+											scenarios are used for complex tasks. In terms of optimizing efforts and
+											increasing cost-efficiency, our QA teams have come up with an effective test
+											strategy that involves exploiting test checklists even for complicated tasks
+											where possible.�&nbsp;</span></p>
+									<p>�&nbsp;</p>
+									<p><b>Testing automation</b></p>
+									<p>�&nbsp;</p>
+									<p><span style="font-weight: 400;">There’s always room for automated testing. If
+											relevant, Cloud Hawk specialists automate regression, smoke, data-driven, and
+											performance and load testing. By automating these types of testing, our
+											teams save time and resources for more complicated features and parts of the
+											code that require manual testing. </span></p>
+									<p></p>
+								</div>
+							</div>
+						</div>
+						<div class="faq-item">
+							<div class="faq-question">
+								<h3 class="faq-question-title">
+									What do Cloud Hawk project managers do to improve development efficiency? </h3>
+								<div class="faq-question-image"></div>
+							</div>
+							<div class="faq-answer">
+								<div class="faq-answer-text">
+									<p>
+									</p>
+									<p><span style="font-weight: 400;">Project management is essential during all stages
+											of the development process. Our </span><span
+											style="font-weight: 400;">software developers company </span><span
+											style="font-weight: 400;">ensures full project transparency for our clients.
+											Cloud Hawk project managers are responsible for managing development according
+											to clients’ requirements and take part in the project lifecycle starting
+											from the negotiation stage. Their first priority is to identify and analyze
+											the client’s essential requirements for project development, including
+											resource constraints, the scope of work, and goals. This information helps
+											project managers organize the whole process, allocate resources, and adjust
+											to the client’s limitations.�&nbsp;</span></p>
+									<p>�&nbsp;</p>
+									<p><span style="font-weight: 400;">During the development stage, project managers
+											start planning each step of development, decomposing tasks, and organizing
+											sprints. They consider all of the client’s time constraints to properly
+											schedule development and deliver the final product on time. Additionally,
+											project managers create a RACI matrix so that stakeholders and team members
+											can know their responsibilities. This document is accessible to all project
+											participants and aids in decision-making. Project managers are also
+											responsible for reporting on the project scope and project performance, the
+											budget, milestone lists, and so on.�&nbsp;</span></p>
+									<p>�&nbsp;</p>
+									<p><span style="font-weight: 400;">Project managers review all artifacts and adjust
+											them to reflect new requirements and operational workflows in cases of
+											on-demand team expansion. Their additional responsibilities include
+											onboarding specialists, coaching the team, and monitoring relationships and
+											the overall atmosphere/mood in the team.</span></p>
+									<p>�&nbsp;</p>
+									<p><span style="font-weight: 400;">As part of their responsibilities, project
+											managers hold meetings with the team and stakeholders to make sure that
+											processes are transparent and that stakeholders are aware of everything
+											that’s going on in terms of solution development. One of the crucial
+											responsibilities of a project manager is conducting risk mitigation sessions
+											and responding quickly to unexpected challenges or crisis situations.
+										</span></p>
+									<p></p>
+								</div>
+							</div>
+						</div>
+						<div class="faq-item">
+							<div class="faq-question">
+								<h3 class="faq-question-title">
+									How do you handle project constraints? </h3>
+								<div class="faq-question-image"></div>
+							</div>
+							<div class="faq-answer">
+								<div class="faq-answer-text">
+									<p>
+									</p>
+									<p><span style="font-weight: 400;">Business owners who work with software
+											engineering companies have common concerns regarding the time, budget, and
+											scope of work. In other words, they hope to get the product within a set
+											timeframe, within the approved budget, and without an unexpected increase in
+											the project’s scope. Cloud Hawk understands this and strives to stay within
+											all limits set at the early stages of product development.�&nbsp;</span></p>
+									<p>�&nbsp;</p>
+									<p><span style="font-weight: 400;">Our constraint management strategy consists
+											of:</span></p>
+									<p>�&nbsp;</p>
+									<p><b>Detailed strategizing.</b><span style="font-weight: 400;"> Our project
+											managers design a separate strategy for each stage of the development
+											process by analyzing the scope of work for a given stage and breaking it
+											down into small tasks to clearly define the resources required. This helps
+											to avoid unexpected obstacles and ensure that software engineers have enough
+											time to deliver the product.</span></p>
+									<p>�&nbsp;</p>
+									<p><b>Balanced resource allocation.</b><span style="font-weight: 400;"> Our main
+											goal is to wisely allocate responsibilities and workload between team
+											members so that everybody does an equal amount of work. This way, we can
+											avoid burnout and consequent delays in completing tasks.�&nbsp;</span></p>
+									<p>�&nbsp;</p>
+									<p><b>Process and communication transparency.</b><span style="font-weight: 400;">
+											Our clients are always aware of intermediate development results; this helps
+											us to track alignment with deadlines and resource use. Also, we stick to
+											transparent communication processes within our software engineering teams.
+											This helps us to address developers’ concerns as early as possible,
+											effectively mitigate any risks, and avoid unexpected delays and extra
+											costs.�&nbsp;</span></p>
+									<p>�&nbsp;</p>
+									<p><span style="font-weight: 400;">While dealing with time, budget, and scope
+											constraints, we also pay close attention to the quality of our development
+											process. This is important as, in addition to staying within the project’s
+											constraints, we want to ensure the product’s overall quality and customer
+											satisfaction.</span></p>
+									<p></p>
+								</div>
+							</div>
+						</div>
+						<div class="faq-item">
+							<div class="faq-question">
+								<h3 class="faq-question-title">
+									Why is Cloud Hawk a trustworthy software engineering company? </h3>
+								<div class="faq-question-image"></div>
+							</div>
+							<div class="faq-answer">
+								<div class="faq-answer-text">
+									<p>
+									</p>
+									<p><span style="font-weight: 400;">You can rely on us to deliver high-quality
+											solutions based on the most suitable technologies. Cloud Hawk clients rely on
+											our team of experts to ensure they’re building software correctly. The
+											documentation we provide allows for quick onboarding and efficient coaching
+											and ensures that the product’s architecture is scalable and ready for the
+											future.</span></p>
+									<p>�&nbsp;</p>
+									<p><span style="font-weight: 400;">If you’re looking for a partner with technical
+											know-how and well-established processes, you should definitely consider
+											Cloud Hawk. Our team is extremely flexible in adapting to requirements and is
+											engaged in development and delivery. We don’t just work to deliver the best
+											technical solution; we make sure it is in our client’s
+											interest.�&nbsp;</span></p>
+									<p>�&nbsp;</p>
+									<p><span style="font-weight: 400;">Cloud Hawk has a deep understanding of compliance
+											and privacy in healthcare, FinTech, supply chain management, real estate,
+											automotive, and other industries. With our own practices, methodologies, and
+											tools, we seamlessly integrate into our clients’ processes and corporate
+											culture at all levels. We give our clients flexibility in running their
+											business so they can focus on achieving their goals.</span></p>
+									<p></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+			<section class="contact-us" data-header="header-black" id="contact_us">
+				<div class="contact-us-container">
+					<div class="container">
+						<div class="contact-us-wrapper">
+							<div class="contact-us-form-wrapper">
+								<div class="contact-us-form-container">
+									<h3 class="contact-us-form-title">
+										Collaborate with Cloud Hawk </h3>
+
+									<div class="wpcf7 no-js" id="wpcf7-f228-p216-o1" lang="en-US" dir="ltr">
+										<div class="screen-reader-response">
+											<p role="status" aria-live="polite" aria-atomic="true"></p>
+											<ul></ul>
+										</div>
+	
+											<form id="contact-form" onsubmit="handleSubmit(); return false;" 
+											class="wpcf7-form init wpcf7-acceptance-as-validation" aria-label="Contact form" enctype="multipart/form-data" novalidate="novalidate" data-status="init">
+                           
+											<div style="display: none;">
+												<input type="hidden" name="_wpcf7" value="228">
+												<input type="hidden" name="_wpcf7_version" value="5.9.8">
+												<input type="hidden" name="_wpcf7_locale" value="en_US">
+												<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f228-p216-o1">
+												<input type="hidden" name="_wpcf7_container_post" value="216">
+												<input type="hidden" name="_wpcf7_posted_data_hash" value="">
+												<input type="hidden" name="_wpcf7_recaptcha_response" value="">
+											</div>
+											<div class="contact-form-info-wrapper">
+												<div class="contact-form-input-wrapper js-input"><span
+														class="wpcf7-form-control-wrap" data-name="fullName"><input
+															size="40" maxlength="1000"
+															class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required input-text"
+															aria-required="true" aria-invalid="false"
+															placeholder="Full name" value="" type="text"
+															name="fullName"></span><label for="fullName">Full name<b
+															style="color:#FF6300">*</b></label></div>
+												<div class="contact-form-input-wrapper js-input"><span
+														class="wpcf7-form-control-wrap" data-name="your-email"><input
+															size="40" maxlength="100"
+															class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email input-text"
+															aria-required="true" aria-invalid="false"
+															placeholder="Email address" value="" type="email"
+															name="your-email"></span><label for="your-email">Email
+														address<b style="color:#FF6300">*</b></label></div>
+												<div class="contact-form-input-wrapper js-input"><span
+														class="wpcf7-form-control-wrap" data-name="orgName"><input
+															size="40" maxlength="1000"
+															class="wpcf7-form-control wpcf7-text input-text"
+															aria-invalid="false" placeholder="Company name" value=""
+															type="text" name="orgName"></span><label
+														for="orgName">Company name</label></div>
+												<div class="contact-form-input-wrapper js-input"><span
+														class="wpcf7-form-control-wrap" data-name="your-phone"><input
+															size="40" maxlength="400"
+															class="wpcf7-form-control wpcf7-tel wpcf7-text wpcf7-validates-as-tel input-text"
+															aria-invalid="false" placeholder="Phone number" value=""
+															type="tel" name="your-phone"></span><label
+														for="your-phone">Phone number</label></div>
+											</div>
+											<div class="contact-form-text-area-wrapper js-input">
+												<div><span class="wpcf7-form-control-wrap" data-name="details"><input
+															size="40" maxlength="1000"
+															class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required input-text"
+															aria-required="true" aria-invalid="false"
+															placeholder="About your project" value="" type="text"
+															name="details"></span><label for="details"> About your
+														project <b style="color:#FF6300">*</b></label></div>
+											</div>
+											<div class="contact-form-file-wrapper">
+												<label for="wpcf7-file">Attach a file</label>
+												<p class="contact-form-file-text">Please upload a file with one of the
+													following extensions: .pdf, .docx, .odt, .ods, .ppt/x, .xls/x, .rtf,
+													.txt</p>
+												<div class="contact-form-file-info-wrapper">
+													<p class="contact-form-file-info-wrapper-title">Name_of_file.pdf</p>
+													<p class="contact-form-file-info-wrapper-weight">10.53 MB</p> <span
+														class="contact-form-file-info-wrapper-button-close"></span>
+												</div>
+												<span class="wpcf7-form-control-wrap" data-name="attach-file"><input
+														size="40" class="wpcf7-form-control wpcf7-file"
+														accept=".pdf,.docx,.odt,.ods,.ppt,.pptx,.xls,.xlsx,.rtf,.txt"
+														aria-invalid="false" type="file" name="attach-file"></span>
+											</div>
+											<div class="contact-form-checkbox-wrapper">
+												<div class="contact-form-acceptance-container">
+													<span class="wpcf7-form-control-wrap"
+														data-name="privacyPolicyAccepted"><span
+															class="wpcf7-form-control wpcf7-acceptance"><span
+																class="wpcf7-list-item"><label><input type="checkbox"
+																		name="privacyPolicyAccepted" value="1"
+																		aria-invalid="false"><span
+																		class="wpcf7-list-item-label"><span
+																			class="contact-form-acceptance-label">I have
+																			read <a href="/privacy-notice/"
+																				target="_blank">Privacy Notice</a><b
+																				style="color:#FF6300">*</b></span></span></label></span></span></span>
+												</div>
+											</div>
+											<div class="contact-form-additional-privacy-container checkbox-js"><span
+													class="wpcf7-form-control-wrap" data-name="receiveEmails"><span
+														class="wpcf7-form-control wpcf7-checkbox"><span
+															class="wpcf7-list-item first last"><label><input
+																	type="checkbox" name="receiveEmails[]"
+																	value="I agree to receive marketing materials about news, events, and proposals from Cloud Hawk"><span
+																	class="wpcf7-list-item-label">I agree to receive
+																	marketing materials about news, events, and
+																	proposals from
+																	Cloud Hawk</span></label></span></span></span></div>
+											<div class="contact-form-recaptcha-container">
+												<span class="wpcf7-form-control-wrap recaptcha"
+													data-name="recaptcha"><span
+														data-sitekey="6LcO6mAnAAAAADWhPb8a_RyRt_AHuYgoX6iCpgIP"
+														class="wpcf7-form-control wpcf7-recaptcha g-recaptcha"></span>
+													<noscript>
+														<div class="grecaptcha-noscript">
+															<iframe loading="lazy"
+																src="https://www.google.com/recaptcha/api/fallback?k=6LcO6mAnAAAAADWhPb8a_RyRt_AHuYgoX6iCpgIP"
+																frameborder="0" scrolling="no" width="310" height="430">
+															</iframe>
+															<textarea name="g-recaptcha-response" rows="3" cols="40"
+																placeholder="reCaptcha Response Here">
+		</textarea>
+														</div>
+													</noscript>
+												</span>
+											</div>
+											<input class="wpcf7-form-control wpcf7-hidden path-history" value=""
+												type="hidden" name="path-history">
+											<input
+												class="wpcf7-form-control wpcf7-submit has-spinner contact-form-button"
+												type="submit" value="Send message">
+											<div class="wpcf7-response-output" aria-hidden="true"></div>
+											
+                                           <script src="/src/pages/api/contact.js" defer></script>
+										</form>
+									</div>
+								</div>
+								<div class="contact-us-thanks">
+									<img loading="lazy" decoding="async" src="images/success.svg" alt="success"
+										width="110" height="110">
+									<p class="contact-us-thanks-title">
+										got it! </p>
+									<p class="contact-us-thanks-text">
+										Keep an eye on your inbox. We’ll be in touch shortly<br>
+										Meanwhile, you can explore our hottest case studies and read<br>
+										client feedback on Clutch. </p>
+									<a href="https://clutch.co/profile/Cloud Hawk#reviews"
+										class="contact-us-thanks-button" target="_blank">
+										See Cloud Hawk reviews </a>
+								</div>
+								<div class="contact-us-error">
+									<img loading="lazy" decoding="async" src="images/error.svg" alt="error" width="110"
+										height="110">
+									<p class="contact-us-error-title">opps!</p>
+									<p class="contact-us-error-text">
+										Oops, the form hasn’t been submitted. Please, try again
+									</p>
+									<a href="#" class="contact-us-error-button">Retry</a>
+								</div>
+							</div>
+
+							<div class="contact-us-info-wrapper">
+								<div class="contact-us-info-brief-wrapper">
+									<p class="contact-us-info-brief-title">Cloud Hawk in brief</p>
+									<ul class="contact-us-info-brief-list">
+										<li class="contact-us-info-brief-item">
+											<span class="contact-us-info-brief-item-title">6+ </span>
+											<p class="contact-us-info-brief-item-text">
+												years of experience </p>
+										</li>
+										<li class="contact-us-info-brief-item">
+											<span class="contact-us-info-brief-item-title">500+</span>
+											<p class="contact-us-info-brief-item-text">
+												IT experts aboard </p>
+										</li>
+										<li class="contact-us-info-brief-item">
+											<span class="contact-us-info-brief-item-title">35+</span>
+											<p class="contact-us-info-brief-item-text">
+												active clients </p>
+										</li>
+									</ul>
+									<ul class="contact-us-info-brief-logo-list">
+										<li class="contact-us-info-brief-logo-item logo-grayscale">
+											<figure>
+												<img loading="lazy" decoding="async" width="141" height="60"
+													src="images/kpmg.svg" class="attachment-full size-full" alt="">
+											</figure>
+										</li>
+										<li class="contact-us-info-brief-logo-item logo-grayscale">
+											<figure>
+												<img loading="lazy" decoding="async" width="200" height="50"
+													src="images/bosch.svg" class="attachment-full size-full" alt="">
+											</figure>
+										</li>
+										<li class="contact-us-info-brief-logo-item logo-grayscale">
+											<figure>
+												<img loading="lazy" decoding="async" width="280" height="60"
+													src="images/toyota.svg" class="attachment-full size-full" alt="">
+											</figure>
+										</li>
+									</ul>
+								</div>
+								<div class="contact-us-info-content allow-copy">
+									<ul class="contact-us-info-content-list">
+										<li class="contact-us-info-content-item">
+											<p class="contact-us-info-content-item-title">
+												Project inquiries </p>
+											<div class="contact-us-info-content-item-link-wrapper">
+												<a class="contact-us-info-content-item-link email-text-for-copy"
+													href="mailto:hello@Cloud Hawk.com">info@cloudhawktech.com </a>
+												<div class="contact-us-info-content-item-link-copy">
+													<button class="email-text-copy-btn"></button>
+													<span class="email-copy-message">Copied</span>
+												</div>
+											</div>
+										</li>
+										<li class="contact-us-info-content-item">
+											<p class="contact-us-info-content-item-title">
+												Careers </p>
+											<div class="contact-us-info-content-item-link-wrapper">
+												<a class="contact-us-info-content-item-link email-text-for-copy"
+													href="mailto:careers@Cloud Hawk.com">careers@cloudhawktech.com </a>
+												<div class="contact-us-info-content-item-link-copy">
+													<button class="email-text-copy-btn"></button>
+													<span class="email-copy-message">Copied</span>
+												</div>
+											</div>
+										</li>
+										<li class="contact-us-info-content-item">
+											<p class="contact-us-info-content-item-title">
+												Phone number </p>
+											<a class="contact-us-info-content-item-link" href="tel:+44 788 4809964">+44 788 4809964</a>
+										</li>
+									</ul>
+									<div class="contact-us-info-content-offices-wrapper">
+										<p class="contact-us-info-content-offices-title">
+											Our offices </p>
+										<ul class="contact-us-info-content-offices-list">
+											<li class="contact-us-info-content-offices-item">
+												<div class="contact-us-info-content-offices-item-title-wrapper">
+													<img loading="lazy" decoding="async" width="24" height="16"
+														src="images/UAE.webp" class="attachment-full size-full"
+														alt="">
+													<p class="contact-us-info-content-offices-item-title">
+														UAE</p>
+												</div>
+												<div class="contact-us-info-content-offices-item-text">
+													<div class="contact-us-info-content-offices-item-text-title">
+														Al.khaleej building Deira Dubai </div>
+												</div>
+											</li>
+											<li class="contact-us-info-content-offices-item">
+												<div class="contact-us-info-content-offices-item-title-wrapper">
+													<img loading="lazy" decoding="async" width="24" height="16"
+														src="images/UK.webp" class="attachment-full size-full"
+														alt="">
+													<p class="contact-us-info-content-offices-item-title">
+														UK </p>
+												</div>
+												<div class="contact-us-info-content-offices-item-text">
+													<div class="contact-us-info-content-offices-item-text-title">
+														SO140DB Southampton, United Kingdom </div>
+												</div>
+											</li>
+										
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		</main>
+	</Layout>
+	</div>
+
+	<script is:inline src="/js/hooks.min.js" id="wp-hooks-js"></script>
+	<script is:inline src="/js/i18n.min.js" id="wp-i18n-js"></script>
+	<script is:inline id="wp-i18n-js-after">
+		wp.i18n.setLocaleData({ 'text direction\u0004ltr': ['ltr'] });
+	</script>
+	<script is:inline src="/js/index.js" id="swv-js"></script>
+	<script is:inline id="contact-form-7-js-extra">
+		var wpcf7 = { "api": { "root": "https:\/\/Cloud Hawk.com\/wp-json\/", "namespace": "contact-form-7\/v1" } };
+	</script>
+	<script is:inline src="/js/particleslider.js"></script>
+	<script is:inline src="/js/index_1.js" id="contact-form-7-js"></script>
+	<script is:inline src="/js/hero_section_main.js" id="block-acf-hero-section-main-js"></script>
+	<script is:inline src="/js/wpcf7-recaptcha-controls.js" id="wpcf7-recaptcha-controls-js"></script>
+	<script is:inline id="google-recaptcha-js-extra">
+		var wpcf7iqfix = { "recaptcha_empty": "Please verify that you are not a robot.", "response_err": "wpcf7-recaptcha: Could not verify reCaptcha response." };
+	</script>
+	<script is:inline src="/js/api.js" id="google-recaptcha-js"></script>
+	<script></script>
+
+</body>
+
+</html>

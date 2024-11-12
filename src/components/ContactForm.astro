@@ -1,0 +1,115 @@
+---
+
+const handleSubmit = () => {
+    const form = document.getElementById('contact-form') as HTMLFormElement; // Cast to HTMLFormElement
+    const formData = new FormData(form);
+    
+    fetch('/api/contact', {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => {
+        if (response.ok) {
+            alert('Message sent successfully!');
+        } else {
+            alert('There was an error sending your message.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('There was an error sending your message.');
+    });
+};
+---
+
+<section class="contact-us" id="contact_us">
+    <div class="contact-us-container">
+        <div class="container">
+            <div class="contact-us-wrapper">
+                <div class="contact-us-form-wrapper">
+                    <div class="contact-us-form-container">
+                        <h3 class="contact-us-form-title">Collaborate with Yalantis</h3>
+                            <form id="contact-form" onsubmit="handleSubmit(); return false;" aria-label="Contact form" enctype="multipart/form-data">
+                            <div class="contact-form-info-wrapper">
+                                <div class="contact-form-input-wrapper">
+                                    <input
+                                        class="input-text"
+                                        placeholder="Full name"
+                                        type="text"
+                                        name="fullName"
+                                        required
+                                    />
+                                    <label for="fullName">Full name <b style="color:#FF6300">*</b></label>
+                                </div>
+                                <div class="contact-form-input-wrapper">
+                                    <input
+                                        class="input-text"
+                                        placeholder="Email address"
+                                        type="email"
+                                        name="your-email"
+                                        required
+                                    />
+                                    <label for="your-email">Email address <b style="color:#FF6300">*</b></label>
+                                </div>
+                                <div class="contact-form-input-wrapper">
+                                    <input
+                                        class="input-text"
+                                        placeholder="Company name"
+                                        type="text"
+                                        name="orgName"
+                                    />
+                                    <label for="orgName">Company name</label>
+                                </div>
+                                <div class="contact-form-input-wrapper">
+                                    <input
+                                        class="input-text"
+                                        placeholder="Phone number"
+                                        type="tel"
+                                        name="your-phone"
+                                    />
+                                    <label for="your-phone">Phone number</label>
+                                </div>
+                            </div>
+                            <div class="contact-form-text-area-wrapper">
+                                <input
+                                    class="input-text"
+                                    placeholder="About your project"
+                                    type="text"
+                                    name="details"
+                                    required
+                                />
+                                <label for="details">About your project <b style="color:#FF6300">*</b></label>
+                            </div>
+                            <div class="contact-form-file-wrapper">
+                                <label for="attach-file">Attach a file</label>
+                                <input
+                                    class="wpcf7-file"
+                                    type="file"
+                                    name="attach-file"
+                                    accept=".pdf,.docx,.odt,.ods,.ppt,.pptx,.xls,.xlsx,.rtf,.txt"
+                                />
+                            </div>
+                            <div class="contact-form-checkbox-wrapper">
+                                <label>
+                                    <input type="checkbox" name="privacyPolicyAccepted" required />
+                                    I have read <a href="/privacy-notice/" target="_blank">Privacy Notice</a> <b style="color:#FF6300">*</b>
+                                </label>
+                            </div>
+                            <div class="contact-form-additional-privacy-container">
+                                <label>
+                                    <input type="checkbox" name="receiveEmails[]" value="I agree to receive marketing materials" />
+                                    I agree to receive marketing materials about news, events, and proposals from Yalantis
+                                </label>
+                            </div>
+                            <div class="contact-form-recaptcha-container">
+                                <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
+                            </div>
+                            <input class="contact-form-button" type="submit" value="Send message" />
+                            <div class="wpcf7-response-output" aria-hidden="true"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
